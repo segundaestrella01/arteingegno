@@ -1,0 +1,38 @@
+# Fan metafield: open_span_cm
+#
+# Width of the fan measured tip-to-tip when fully opened, in centimeters.
+# The primary size dimension for fans — used for size filters, comparison
+# tables, and collection card badges.
+
+mutation CreateFanOpenSpanCmDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Open span (cm)",
+#     "namespace": "custom.fan",
+#     "key": "open_span_cm",
+#     "description": "Fan width tip-to-tip when fully opened, in centimeters.",
+#     "type": "number_decimal",
+#     "ownerType": "PRODUCT"
+#   }
+# }

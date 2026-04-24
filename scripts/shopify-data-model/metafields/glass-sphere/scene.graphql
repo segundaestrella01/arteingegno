@@ -1,0 +1,39 @@
+# Glass sphere metafield: scene
+#
+# Short descriptor of the scene or motif depicted inside the sphere.
+# Written for display on the PDP and collection cards — keep it evocative
+# but concise (one sentence max). Examples: "Anchor on a rope coil",
+# "Mermaid beneath coral", "Nautical compass rose".
+
+mutation CreateGlassSphereSceneDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Scene",
+#     "namespace": "custom.glass_sphere",
+#     "key": "scene",
+#     "description": "Short evocative descriptor of the motif inside the sphere, shown on PDP and collection cards.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

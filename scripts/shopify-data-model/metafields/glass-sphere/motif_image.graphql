@@ -1,0 +1,38 @@
+# Glass sphere metafield: motif_image
+#
+# Close-up photograph of the inner scene / motif element, shot separately
+# from the sphere product photos. Used as an editorial detail image on the
+# PDP — the "behind the glass" reveal shot.
+
+mutation CreateGlassSphereMotifImageDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Motif image",
+#     "namespace": "custom.glass_sphere",
+#     "key": "motif_image",
+#     "description": "Close-up of the inner scene element, used as a detail / reveal image on the PDP.",
+#     "type": "file_reference",
+#     "ownerType": "PRODUCT"
+#   }
+# }

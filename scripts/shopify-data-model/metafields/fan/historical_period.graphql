@@ -1,0 +1,39 @@
+# Fan metafield: historical_period
+#
+# The historical period or artistic movement that inspired this fan's design.
+# Adds cultural context for collector-minded buyers and powers editorial
+# storytelling. Controlled vocabulary: Rococo, Victorian, Belle Époque,
+# Art Nouveau, Art Deco, Contemporary.
+
+mutation CreateFanHistoricalPeriodDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Historical period",
+#     "namespace": "custom.fan",
+#     "key": "historical_period",
+#     "description": "Inspiring historical period or art movement: Rococo, Victorian, Belle Époque, Art Nouveau, Art Deco, Contemporary.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

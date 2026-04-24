@@ -1,0 +1,39 @@
+# Shared metafield: occasion
+#
+# List of occasions this product suits (Wedding, Birthday, Anniversary, etc.).
+# Powers "Gift guide" merchandising filters — e.g., surfacing all Jewelry
+# suitable for Weddings. Values are free-text strings; controlled vocabulary
+# is enforced at data-entry time, not by the API.
+
+mutation CreateOccasionDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Occasion",
+#     "namespace": "custom.shared",
+#     "key": "occasion",
+#     "description": "Occasions this product suits (Wedding, Birthday, Anniversary, etc.). Used for gift-guide filters.",
+#     "type": "list.single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

@@ -1,0 +1,38 @@
+# Glass sphere metafield: glass_type
+#
+# The glass-making technique used for this sphere. Affects visual quality,
+# clarity, and price positioning. Controlled vocabulary: Blown, Pressed.
+# (Murano and Crystal are sub-categories of Blown for our catalog.)
+
+mutation CreateGlassSphereGlassTypeDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Glass type",
+#     "namespace": "custom.glass_sphere",
+#     "key": "glass_type",
+#     "description": "Glass-making technique: Blown, Pressed.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

@@ -1,0 +1,40 @@
+# Jewelry metafield: sub_type
+#
+# The specific jewelry category within the Jewelry product type.
+# Used for faceted filtering (e.g., show only Necklaces) and for
+# conditional display of other jewelry-specific fields on the PDP.
+# Controlled vocabulary at data-entry time: Ring, Bracelet, Necklace,
+# Earrings, Anklet, Brooch.
+
+mutation CreateJewelrySubTypeDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Sub-type",
+#     "namespace": "custom.jewelry",
+#     "key": "sub_type",
+#     "description": "Jewelry category: Ring, Bracelet, Necklace, Earrings, Anklet, Brooch.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

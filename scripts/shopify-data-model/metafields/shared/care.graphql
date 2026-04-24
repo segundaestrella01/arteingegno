@@ -1,0 +1,39 @@
+# Shared metafield: care
+#
+# Care and maintenance instructions shown on the PDP. Complements the Story
+# field — Story explains the origin, Care explains how to preserve the piece.
+# Stored as multi-line text; update once per material family and reuse
+# across products of the same type.
+
+mutation CreateCareDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Care instructions",
+#     "namespace": "custom.shared",
+#     "key": "care",
+#     "description": "How to care for and maintain the piece. Shown on the PDP below the product description.",
+#     "type": "multi_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

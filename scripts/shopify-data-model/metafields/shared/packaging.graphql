@@ -1,0 +1,38 @@
+# Shared metafield: packaging
+#
+# Short description of the packaging included with the product
+# (e.g., "Velvet pouch", "Branded gift box with ribbon", "Kraft paper bag").
+# Used on PDPs as a visual ops signal and as an upsell hook for gift wrapping.
+
+mutation CreatePackagingDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Packaging",
+#     "namespace": "custom.shared",
+#     "key": "packaging",
+#     "description": "Description of the packaging included with the product (velvet pouch, gift box, etc.).",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

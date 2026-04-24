@@ -1,0 +1,38 @@
+# Jewelry metafield: base_metal
+#
+# The base material before any plating is applied.
+# Relevant for allergy disclosures and material storytelling.
+# Controlled vocabulary: Brass, Sterling Silver 925, Stainless Steel, Gold 18k.
+
+mutation CreateJewelryBaseMetalDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Base metal",
+#     "namespace": "custom.jewelry",
+#     "key": "base_metal",
+#     "description": "Base material before plating: Brass, Sterling Silver 925, Stainless Steel, Gold 18k.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

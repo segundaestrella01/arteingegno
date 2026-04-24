@@ -1,0 +1,57 @@
+# Shared metafield: editorial_collections
+#
+# Links a product to one or more brand-level editorial collections
+# (e.g., "Mediterraneo", "Nodo Marinaro"). These are the brand's own
+# curated groupings, distinct from Shopify's built-in Collections.
+# Reusable across product families — a collection can span jewelry + spheres.
+#
+# PREREQUISITE: the `collection` metaobject definition must exist first —
+# run `../../metaobjects/collection.graphql` before this file.
+
+mutation CreateEditorialCollectionsDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+      validations {
+        name
+        value
+      }
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Editorial collections",
+#     "namespace": "custom.shared",
+#     "key": "editorial_collections",
+#     "description": "Brand-level editorial collections this product belongs to (e.g. Mediterraneo). Distinct from Shopify Collections.",
+#     "type": "list.metaobject_reference",
+#     "ownerType": "PRODUCT",
+#     "validations": [
+#       {
+#         "name": "metaobject_definition",
+#         "value": "<collection metaobject definition ID from metaobjects/collection.graphql run>"
+#       }
+#     ]
+#   }
+# }
+#
+# The `validations[metaobject_definition]` value is the ID returned
+# from running collection.graphql (e.g. "gid://shopify/MetaobjectDefinition/123").
+# Fetch it first with:
+#   query { metaobjectDefinitionByType(type: "collection") { id } }

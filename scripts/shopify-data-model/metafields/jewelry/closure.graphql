@@ -1,0 +1,38 @@
+# Jewelry metafield: closure
+#
+# The type of clasp or fastening used. Affects both UX (ease of wearing)
+# and the level of security. Controlled vocabulary: Lobster clasp,
+# Spring ring, Toggle, Hook, Fishhook (earrings), Push-back, Elastic, None.
+
+mutation CreateJewelryClosureDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Closure",
+#     "namespace": "custom.jewelry",
+#     "key": "closure",
+#     "description": "Clasp or fastening type: Lobster clasp, Spring ring, Toggle, Hook, Push-back, Elastic, None.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

@@ -1,0 +1,38 @@
+# Fan metafield: sub_type
+#
+# The mechanical style of the fan. Controlled vocabulary: Folding, Hand (rigid), Brisé.
+# Used for faceted filtering and for conditionally showing/hiding
+# relevant specs (e.g., rib count only applies to Folding and Brisé fans).
+
+mutation CreateFanSubTypeDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Sub-type",
+#     "namespace": "custom.fan",
+#     "key": "sub_type",
+#     "description": "Fan mechanism style: Folding, Hand (rigid), Brisé.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

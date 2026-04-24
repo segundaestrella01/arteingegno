@@ -8,7 +8,7 @@
 # Referenced by per-product metafields of type
 # metaobject_reference.
 #
-# Run: once per store (dev first, then prod after verification).
+# Run: once against the production store (mattiastore-3117.myshopify.com).
 
 mutation CreateEditorialCollectionDefinition($definition: MetaobjectDefinitionCreateInput!) {
   metaobjectDefinitionCreate(definition: $definition) {

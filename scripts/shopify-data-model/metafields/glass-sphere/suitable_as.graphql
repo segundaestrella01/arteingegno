@@ -1,0 +1,39 @@
+# Glass sphere metafield: suitable_as
+#
+# Suggested use contexts for the sphere. Powers the "Suitable as" section
+# on the PDP and gift-guide collection filters. Controlled vocabulary:
+# Desk decoration, Shelf display, Display cabinet, Paperweight, Gift.
+# Multiple values allowed.
+
+mutation CreateGlassSphereSuitableAsDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Suitable as",
+#     "namespace": "custom.glass_sphere",
+#     "key": "suitable_as",
+#     "description": "Suggested use contexts: Desk decoration, Shelf display, Display cabinet, Paperweight, Gift.",
+#     "type": "list.single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

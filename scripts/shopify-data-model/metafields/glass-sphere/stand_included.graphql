@@ -1,0 +1,38 @@
+# Glass sphere metafield: stand_included
+#
+# True if a display stand is included in the box. Drives a "Stand included"
+# badge on collection cards and the PDP. If the stand is a separate SKU,
+# leave false and add a cross-sell link instead.
+
+mutation CreateGlassSphereStandIncludedDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Stand included",
+#     "namespace": "custom.glass_sphere",
+#     "key": "stand_included",
+#     "description": "True if a display stand is included in the box.",
+#     "type": "boolean",
+#     "ownerType": "PRODUCT"
+#   }
+# }

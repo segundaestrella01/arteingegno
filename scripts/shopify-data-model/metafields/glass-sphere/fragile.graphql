@@ -1,0 +1,39 @@
+# Glass sphere metafield: fragile
+#
+# Defaults to true for all glass spheres — signals the fulfillment team
+# to use fragile-rated packaging and triggers a "Handle with care" note
+# in the order confirmation email. Set false only for resin/non-glass
+# variants that happen to use the Glass sphere product type.
+
+mutation CreateGlassSphereFragileDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Fragile",
+#     "namespace": "custom.glass_sphere",
+#     "key": "fragile",
+#     "description": "True for items requiring fragile-rated shipping. Defaults to true for all glass spheres.",
+#     "type": "boolean",
+#     "ownerType": "PRODUCT"
+#   }
+# }

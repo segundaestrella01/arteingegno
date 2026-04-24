@@ -1,0 +1,39 @@
+# Fan metafield: decoration
+#
+# The artistic technique used to decorate the fan leaf. Central to the
+# brand story and price positioning. Controlled vocabulary:
+# Hand-painted silk, Printed silk, Lace, Embroidered, Laser-cut,
+# Mother-of-pearl inlay, Undecorated (plain).
+
+mutation CreateFanDecorationDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Decoration",
+#     "namespace": "custom.fan",
+#     "key": "decoration",
+#     "description": "Decoration technique on the fan leaf: Hand-painted silk, Printed silk, Lace, Embroidered, Laser-cut, etc.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

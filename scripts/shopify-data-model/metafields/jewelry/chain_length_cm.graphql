@@ -1,0 +1,39 @@
+# Jewelry metafield: chain_length_cm
+#
+# Chain length in centimeters at the default/only length for this SKU.
+# Only populate for necklaces and bracelets where the SKU is a fixed length.
+# If the chain comes in multiple lengths, model length as a variant option
+# instead of populating this metafield.
+
+mutation CreateJewelryChainLengthCmDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Chain length (cm)",
+#     "namespace": "custom.jewelry",
+#     "key": "chain_length_cm",
+#     "description": "Chain length in centimeters for fixed-length necklaces and bracelets. Leave null when length is a variant option.",
+#     "type": "number_decimal",
+#     "ownerType": "PRODUCT"
+#   }
+# }

@@ -1,0 +1,38 @@
+# Shared metafield: made_to_order
+#
+# Boolean flag indicating this product is made to order and not held in stock.
+# When true, show lead time prominently at checkout and suppress the default
+# "ships in X days" messaging. Always pair with lead_time_days.
+
+mutation CreateMadeToOrderDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Made to order",
+#     "namespace": "custom.shared",
+#     "key": "made_to_order",
+#     "description": "True if this product is made to order. Suppresses stock messaging and surfaces lead_time_days at checkout.",
+#     "type": "boolean",
+#     "ownerType": "PRODUCT"
+#   }
+# }

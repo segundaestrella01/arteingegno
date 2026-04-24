@@ -1,0 +1,38 @@
+# Fan metafield: rib_count
+#
+# Number of ribs (sticks) in the fan. A higher rib count generally
+# indicates finer craftsmanship and a more graceful open profile.
+# Displayed in the PDP specifications table for collector-minded buyers.
+
+mutation CreateFanRibCountDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Rib count",
+#     "namespace": "custom.fan",
+#     "key": "rib_count",
+#     "description": "Number of ribs (sticks) in the fan.",
+#     "type": "number_integer",
+#     "ownerType": "PRODUCT"
+#   }
+# }

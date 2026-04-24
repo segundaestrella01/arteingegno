@@ -1,0 +1,40 @@
+# Glass sphere metafield: diameter_cm
+#
+# Outer diameter of the sphere in centimeters. Used for size filters,
+# PDP specifications table, and as the key dimension for collection
+# display (small / medium / large).
+# Note: if sold in multiple sizes, diameter is modeled as a variant option;
+# populate this metafield only for single-size SKUs.
+
+mutation CreateGlassSpheresDiameterCmDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Diameter (cm)",
+#     "namespace": "custom.glass_sphere",
+#     "key": "diameter_cm",
+#     "description": "Outer diameter of the sphere in centimeters. Use for single-size SKUs; use variant option for multi-size.",
+#     "type": "number_decimal",
+#     "ownerType": "PRODUCT"
+#   }
+# }

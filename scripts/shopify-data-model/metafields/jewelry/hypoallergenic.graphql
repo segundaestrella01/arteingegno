@@ -1,0 +1,38 @@
+# Jewelry metafield: hypoallergenic
+#
+# Indicates the piece is suitable for sensitive skin. Broader claim than
+# nickel_free — typically also implies no cobalt, no chromium, and skin-safe
+# plating. Drives a "Hypoallergenic" badge and filter on collection pages.
+
+mutation CreateJewelryHypoallergenicDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Hypoallergenic",
+#     "namespace": "custom.jewelry",
+#     "key": "hypoallergenic",
+#     "description": "True if the piece is suitable for sensitive skin (no nickel, cobalt, or skin-irritating plating).",
+#     "type": "boolean",
+#     "ownerType": "PRODUCT"
+#   }
+# }

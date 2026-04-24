@@ -14,11 +14,16 @@ Attributes every product family uses, stored under namespace
 | `packaging.graphql`       | `packaging`      | `single_line_text_field`     | Description of gift box / pouch included    |
 | `theme_refs.graphql`      | `themes`         | `list.metaobject_reference`  | Links to `theme` metaobjects                |
 | `editorial_collections.graphql` | `editorial_collections` | `list.metaobject_reference` | Links to `collection` metaobjects |
-| `artisan_ref.graphql`     | `artisan`        | `metaobject_reference`       | Optional; links to `artisan` metaobject     |
 
-Run `theme_refs.graphql`, `editorial_collections.graphql`, and
-`artisan_ref.graphql` AFTER the matching metaobject definitions exist —
-they reference those types.
+**Deferred:** the `custom.shared.artisan` metafield (and its backing
+`artisan` metaobject) is not part of the current scope — public
+artisan attribution has been deferred by user decision.
+
+Run `theme_refs.graphql` and `editorial_collections.graphql` AFTER
+the matching metaobject definitions exist — they reference those
+types and the `validations[metaobject_definition]` value in their
+variables payload must be the GID returned by the matching
+`metaobjects/*.graphql` run.
 
 ## Why not `custom.product.*`?
 

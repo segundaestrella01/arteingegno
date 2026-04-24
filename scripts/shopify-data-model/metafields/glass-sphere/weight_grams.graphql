@@ -1,0 +1,38 @@
+# Glass sphere metafield: weight_grams
+#
+# Total weight of the sphere (without stand or packaging) in grams.
+# Used for shipping calculations and as a buying signal for collectors
+# comparing sphere quality and density.
+
+mutation CreateGlassSphereWeightGramsDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Weight (g)",
+#     "namespace": "custom.glass_sphere",
+#     "key": "weight_grams",
+#     "description": "Weight of the sphere in grams, excluding stand and packaging.",
+#     "type": "number_decimal",
+#     "ownerType": "PRODUCT"
+#   }
+# }

@@ -1,0 +1,38 @@
+# Fan metafield: closed_length_cm
+#
+# Length of the fan from the pivot/rivet to the tip when fully closed,
+# in centimeters. Useful for buyers assessing portability and for
+# packaging size calculations.
+
+mutation CreateFanClosedLengthCmDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Closed length (cm)",
+#     "namespace": "custom.fan",
+#     "key": "closed_length_cm",
+#     "description": "Length of the fan when fully closed, in centimeters.",
+#     "type": "number_decimal",
+#     "ownerType": "PRODUCT"
+#   }
+# }

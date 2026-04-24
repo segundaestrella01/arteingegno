@@ -7,7 +7,7 @@
 # A single product can reference multiple themes (metafield of type
 # list.metaobject_reference).
 #
-# Run: once per store (dev first, then prod after verification).
+# Run: once against the production store (mattiastore-3117.myshopify.com).
 
 mutation CreateThemeDefinition($definition: MetaobjectDefinitionCreateInput!) {
   metaobjectDefinitionCreate(definition: $definition) {

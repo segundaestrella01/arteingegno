@@ -1,0 +1,38 @@
+# Jewelry metafield: weight_grams
+#
+# Total weight of the piece in grams, excluding packaging.
+# Useful for shipping weight estimates and for customers comparing
+# delicate vs. statement pieces.
+
+mutation CreateJewelryWeightGramsDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Weight (g)",
+#     "namespace": "custom.jewelry",
+#     "key": "weight_grams",
+#     "description": "Weight of the piece in grams, excluding packaging.",
+#     "type": "number_decimal",
+#     "ownerType": "PRODUCT"
+#   }
+# }

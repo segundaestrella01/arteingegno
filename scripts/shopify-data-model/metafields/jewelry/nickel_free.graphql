@@ -1,0 +1,38 @@
+# Jewelry metafield: nickel_free
+#
+# Indicates whether this piece contains no nickel — important for EU buyers
+# given EU nickel regulations on skin-contact jewelry. Drives a "Nickel free"
+# badge and powers filtering for allergy-sensitive shoppers.
+
+mutation CreateJewelryNickelFreeDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Nickel free",
+#     "namespace": "custom.jewelry",
+#     "key": "nickel_free",
+#     "description": "True if the piece contains no nickel. Relevant for EU nickel regulations and allergy-sensitive buyers.",
+#     "type": "boolean",
+#     "ownerType": "PRODUCT"
+#   }
+# }

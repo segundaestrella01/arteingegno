@@ -1,0 +1,38 @@
+# Fan metafield: ribs_material
+#
+# The material of the fan's structural ribs (the sticks/spokes).
+# Determines perceived quality, weight, and fragrance (sandalwood).
+# Controlled vocabulary: Sandalwood, Bamboo, Mother-of-pearl, Bone alternative, Resin.
+
+mutation CreateFanRibsMaterialDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Ribs material",
+#     "namespace": "custom.fan",
+#     "key": "ribs_material",
+#     "description": "Material of the fan ribs: Sandalwood, Bamboo, Mother-of-pearl, Bone alternative, Resin.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

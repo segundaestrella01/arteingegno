@@ -1,0 +1,38 @@
+# Shared metafield: lead_time_days
+#
+# Business days from order confirmation until the item is ready to ship.
+# Only meaningful when made_to_order = true. Rendered as a customer-facing
+# promise ("Ready in X business days") on the PDP and at checkout.
+
+mutation CreateLeadTimeDaysDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Lead time (days)",
+#     "namespace": "custom.shared",
+#     "key": "lead_time_days",
+#     "description": "Business days from order confirmation until ready to ship. Used when made_to_order is true.",
+#     "type": "number_integer",
+#     "ownerType": "PRODUCT"
+#   }
+# }

@@ -1,0 +1,40 @@
+# Jewelry metafield: plating
+#
+# Plating applied over the base metal. Used for merchandising filters
+# ("gold-plated", "rhodium") and material storytelling on the PDP.
+# Controlled vocabulary: None, Gold 18k, Rose Gold, Rhodium.
+# Note: if the same physical piece is sold in multiple plating finishes,
+# model it as a variant option instead of a metafield.
+
+mutation CreateJewelryPlatingDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Plating",
+#     "namespace": "custom.jewelry",
+#     "key": "plating",
+#     "description": "Plating finish applied over the base metal: None, Gold 18k, Rose Gold, Rhodium.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

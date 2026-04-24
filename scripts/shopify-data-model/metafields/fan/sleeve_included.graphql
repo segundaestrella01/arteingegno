@@ -1,0 +1,38 @@
+# Fan metafield: sleeve_included
+#
+# True if a protective sleeve or pouch is included in the box.
+# High-end fans are typically sold with a sleeve to prevent leaf
+# damage during storage. Drives a "Sleeve included" badge on the PDP.
+
+mutation CreateFanSleeveIncludedDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Sleeve included",
+#     "namespace": "custom.fan",
+#     "key": "sleeve_included",
+#     "description": "True if a protective sleeve or pouch is included in the box.",
+#     "type": "boolean",
+#     "ownerType": "PRODUCT"
+#   }
+# }
