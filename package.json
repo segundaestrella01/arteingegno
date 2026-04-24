@@ -1,0 +1,24 @@
+{
+  "name": "arteingegno",
+  "version": "1.0.0",
+  "description": "Custom Shopify theme for Arte&Ingegno, a jewelry store. Based on the **Horizon** theme (v3.5.1) by Shopify.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/segundaestrella01/arteingegno.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/segundaestrella01/arteingegno/issues"
+  },
+  "homepage": "https://github.com/segundaestrella01/arteingegno#readme",
+  "devDependencies": {
+    "@shopify/cli": "^3.94.0"
+  }
+}
