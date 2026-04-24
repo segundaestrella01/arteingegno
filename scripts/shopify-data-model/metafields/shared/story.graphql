@@ -1,0 +1,38 @@
+# Shared metafield: story
+#
+# Long-form narrative for the product detail page — the "soul" text
+# that explains the piece's origin, symbolism, and craft. This is the
+# single most important field for the brand's narrative positioning.
+
+mutation CreateStoryDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Story",
+#     "namespace": "custom.shared",
+#     "key": "story",
+#     "description": "Long-form narrative for the product detail page — origin, symbolism, and craft.",
+#     "type": "multi_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

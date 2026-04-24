@@ -1,0 +1,77 @@
+# Metaobject: Editorial collection
+#
+# Curatorial groupings (e.g. "Summer 2026 capsule", "Gift ideas under
+# €50") that span multiple Shopify Collections and product types.
+# Distinct from Shopify's built-in Collections — those are for
+# navigational grouping; these are for storytelling pages.
+#
+# Referenced by per-product metafields of type
+# metaobject_reference.
+#
+# Run: once per store (dev first, then prod after verification).
+
+mutation CreateEditorialCollectionDefinition($definition: MetaobjectDefinitionCreateInput!) {
+  metaobjectDefinitionCreate(definition: $definition) {
+    metaobjectDefinition {
+      id
+      name
+      type
+      fieldDefinitions {
+        key
+        name
+        type {
+          name
+        }
+      }
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload to use when executing this mutation:
+#
+# {
+#   "definition": {
+#     "name": "Editorial collection",
+#     "type": "collection",
+#     "description": "Curatorial groupings that span product families — used for storytelling pages like seasonal capsules or gift guides.",
+#     "fieldDefinitions": [
+#       {
+#         "key": "title",
+#         "name": "Title",
+#         "type": "single_line_text_field",
+#         "required": true
+#       },
+#       {
+#         "key": "slug",
+#         "name": "Slug",
+#         "type": "single_line_text_field",
+#         "required": true
+#       },
+#       {
+#         "key": "tagline",
+#         "name": "Tagline",
+#         "type": "single_line_text_field"
+#       },
+#       {
+#         "key": "description",
+#         "name": "Description",
+#         "type": "multi_line_text_field"
+#       },
+#       {
+#         "key": "hero_image",
+#         "name": "Hero image",
+#         "type": "file_reference"
+#       },
+#       {
+#         "key": "active",
+#         "name": "Active",
+#         "type": "boolean"
+#       }
+#     ]
+#   }
+# }

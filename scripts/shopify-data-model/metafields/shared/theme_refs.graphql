@@ -1,0 +1,55 @@
+# Shared metafield: themes (list of Theme metaobject references)
+#
+# Links a product to one or more Theme metaobjects. Powers theme
+# landing pages and theme filters on collection listings.
+#
+# PREREQUISITE: the `theme` metaobject definition must exist first —
+# run `../../metaobjects/theme.graphql` before this file.
+
+mutation CreateThemesRefDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+      validations {
+        name
+        value
+      }
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Themes",
+#     "namespace": "custom.shared",
+#     "key": "themes",
+#     "description": "One or more Theme metaobject references that categorize this product.",
+#     "type": "list.metaobject_reference",
+#     "ownerType": "PRODUCT",
+#     "validations": [
+#       {
+#         "name": "metaobject_definition",
+#         "value": "<theme metaobject definition ID from metaobjects/theme.graphql run>"
+#       }
+#     ]
+#   }
+# }
+#
+# The `validations[metaobject_definition]` value is the ID returned
+# from running theme.graphql (e.g. "gid://shopify/MetaobjectDefinition/123").
+# Fetch it first with a query like:
+#   query { metaobjectDefinitionByType(type: "theme") { id } }

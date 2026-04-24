@@ -1,0 +1,71 @@
+# Metaobject: Theme
+#
+# Customer-facing thematic groupings (nautical, zodiac, celestial,
+# botanical, etc.). Used to power theme landing pages and as a
+# filter facet on collection listings.
+#
+# A single product can reference multiple themes (metafield of type
+# list.metaobject_reference).
+#
+# Run: once per store (dev first, then prod after verification).
+
+mutation CreateThemeDefinition($definition: MetaobjectDefinitionCreateInput!) {
+  metaobjectDefinitionCreate(definition: $definition) {
+    metaobjectDefinition {
+      id
+      name
+      type
+      fieldDefinitions {
+        key
+        name
+        type {
+          name
+        }
+      }
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload to use when executing this mutation:
+#
+# {
+#   "definition": {
+#     "name": "Theme",
+#     "type": "theme",
+#     "description": "Customer-facing thematic grouping used across product families (nautical, zodiac, celestial, botanical, etc.).",
+#     "fieldDefinitions": [
+#       {
+#         "key": "name",
+#         "name": "Name",
+#         "type": "single_line_text_field",
+#         "required": true
+#       },
+#       {
+#         "key": "slug",
+#         "name": "Slug",
+#         "type": "single_line_text_field",
+#         "required": true
+#       },
+#       {
+#         "key": "description",
+#         "name": "Description",
+#         "type": "multi_line_text_field"
+#       },
+#       {
+#         "key": "icon",
+#         "name": "Icon",
+#         "type": "file_reference"
+#       },
+#       {
+#         "key": "hero_image",
+#         "name": "Hero image",
+#         "type": "file_reference"
+#       }
+#     ]
+#   }
+# }

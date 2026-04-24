@@ -1,0 +1,40 @@
+# Shared metafield: handcrafted
+#
+# Boolean flag marking a product as handcrafted (defaults to true for
+# the Arte&Ingegno catalog but kept as a field so the rare exception
+# can be modeled).
+#
+# Used on PDPs to render the "Handcrafted" badge.
+
+mutation CreateHandcraftedDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Handcrafted",
+#     "namespace": "custom.shared",
+#     "key": "handcrafted",
+#     "description": "True if the piece is handcrafted by an artisan.",
+#     "type": "boolean",
+#     "ownerType": "PRODUCT"
+#   }
+# }
