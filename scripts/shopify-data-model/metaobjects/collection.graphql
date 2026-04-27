@@ -37,7 +37,7 @@ mutation CreateEditorialCollectionDefinition($definition: MetaobjectDefinitionCr
 # {
 #   "definition": {
 #     "name": "Editorial collection",
-#     "type": "collection",
+#     "type": "brand_collection",
 #     "description": "Curatorial groupings that span product families — used for storytelling pages like seasonal capsules or gift guides.",
 #     "fieldDefinitions": [
 #       {

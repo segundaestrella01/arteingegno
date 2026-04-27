@@ -36,7 +36,7 @@ mutation CreateThemeDefinition($definition: MetaobjectDefinitionCreateInput!) {
 # {
 #   "definition": {
 #     "name": "Theme",
-#     "type": "theme",
+#     "type": "product_theme",
 #     "description": "Customer-facing thematic grouping used across product families (nautical, zodiac, celestial, botanical, etc.).",
 #     "fieldDefinitions": [
 #       {

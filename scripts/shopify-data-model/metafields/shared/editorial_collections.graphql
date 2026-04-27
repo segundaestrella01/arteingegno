@@ -54,4 +54,4 @@ mutation CreateEditorialCollectionsDefinition($definition: MetafieldDefinitionIn
 # The `validations[metaobject_definition]` value is the ID returned
 # from running collection.graphql (e.g. "gid://shopify/MetaobjectDefinition/123").
 # Fetch it first with:
-#   query { metaobjectDefinitionByType(type: "collection") { id } }
+#   query { metaobjectDefinitionByType(type: "brand_collection") { id } }

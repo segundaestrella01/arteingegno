@@ -52,4 +52,4 @@ mutation CreateThemesRefDefinition($definition: MetafieldDefinitionInput!) {
 # The `validations[metaobject_definition]` value is the ID returned
 # from running theme.graphql (e.g. "gid://shopify/MetaobjectDefinition/123").
 # Fetch it first with a query like:
-#   query { metaobjectDefinitionByType(type: "theme") { id } }
+#   query { metaobjectDefinitionByType(type: "product_theme") { id } }
