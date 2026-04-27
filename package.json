@@ -4,7 +4,13 @@
   "description": "Custom Shopify theme for Arte&Ingegno, a jewelry store. Based on the **Horizon** theme (v3.5.1) by Shopify.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "shopify:configure": "node scripts/shopify-mgr/cli.js configure",
+    "shopify:auth": "node scripts/shopify-mgr/cli.js auth mattiastore-3117.myshopify.com",
+    "shopify:stores": "node scripts/shopify-mgr/cli.js stores",
+    "shopify:check": "node scripts/shopify-mgr/cli.js schema check mattiastore-3117.myshopify.com",
+    "shopify:apply:dry": "node scripts/shopify-mgr/cli.js schema apply mattiastore-3117.myshopify.com --dry-run",
+    "shopify:apply": "node scripts/shopify-mgr/cli.js schema apply mattiastore-3117.myshopify.com"
   },
   "repository": {
     "type": "git",

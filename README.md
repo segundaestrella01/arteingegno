@@ -36,6 +36,42 @@ shopify theme push
 shopify theme pull
 ```
 
+## Store data model
+
+Metaobject and metafield definitions are managed via `scripts/shopify-mgr/` — a zero-dependency Node.js CLI that talks directly to the Shopify Admin GraphQL API using a Partner-app OAuth token.
+
+Definition files (one per definition) live under `scripts/shopify-data-model/`. Run order and ID resolution are handled automatically by the CLI.
+
+### One-time setup
+
+1. Create a Shopify Partner app at [partners.shopify.com](https://partners.shopify.com) with redirect URI `http://localhost:3456/callback` and scopes `read_products,write_products,read_metaobjects,write_metaobjects`.
+2. Save the credentials:
+   ```bash
+   npm run shopify:configure
+   ```
+3. Authenticate against the store (opens a browser):
+   ```bash
+   npm run shopify:auth
+   ```
+
+### Common commands
+
+| Command | What it does |
+|---|---|
+| `npm run shopify:check` | List all existing metaobject + metafield definitions on the store |
+| `npm run shopify:apply:dry` | Preview what would be created (no writes) |
+| `npm run shopify:apply` | Apply all definitions in order; skips any that already exist |
+| `npm run shopify:stores` | List stores that have a saved token |
+
+To apply a single file:
+```bash
+node scripts/shopify-mgr/cli.js schema apply mattiastore-3117.myshopify.com metaobjects/theme.graphql
+```
+
+Secrets are stored in `.env` at the project root (gitignored). See `scripts/shopify-mgr/README.md` for full documentation.
+
+---
+
 ## Base theme
 
 Built on [Horizon](https://themes.shopify.com/themes/horizon) v3.5.1 — Shopify's official theme. Refer to the [Shopify theme documentation](https://help.shopify.com/manual/online-store/themes) for theming concepts.

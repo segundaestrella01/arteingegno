@@ -1,0 +1,149 @@
+<svg viewBox="0 0 1000 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" font-family="system-ui, -apple-system, sans-serif">
+  <title id="title">Arte&amp;Ingegno proposed product data model on Shopify</title>
+  <desc id="desc">Three product types — Jewelry, Glass sphere, Fan — each with up to three variant options and a list of family-specific metafields. Below, a shared taxonomy section shows metaobjects (Collection, Theme, Artisan) and cross-cutting metafields used across all three families, plus tag conventions for merchandising.</desc>
+
+  <text x="500" y="38" text-anchor="middle" font-size="20" font-weight="600" fill="#1a1a1a">Arte&amp;Ingegno — product data model</text>
+  <text x="500" y="60" text-anchor="middle" font-size="13" fill="#6a6a6a">Three product types · shared taxonomy · Shopify-native model</text>
+
+  <g transform="translate(30, 80)">
+    <rect x="0" y="0" width="14" height="14" rx="3" fill="#efece4" stroke="#d9d5cc"/>
+    <text x="22" y="11" font-size="11" fill="#3a3a3a">Per-family</text>
+    <rect x="100" y="0" width="14" height="14" rx="3" fill="#e4ddcc" stroke="#d9d5cc"/>
+    <text x="122" y="11" font-size="11" fill="#3a3a3a">Shared / metaobject</text>
+    <rect x="250" y="0" width="14" height="14" rx="3" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+    <text x="272" y="11" font-size="11" fill="#3a3a3a">Variant option</text>
+  </g>
+
+  <g transform="translate(30, 120)">
+    <rect x="0" y="0" width="290" height="52" rx="8" fill="#efece4" stroke="#d9d5cc"/>
+    <text x="16" y="22" font-size="15" font-weight="600" fill="#1a1a1a">Jewelry</text>
+    <text x="16" y="40" font-size="11" fill="#6a6a6a">product type: Jewelry</text>
+    <text x="0" y="82" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">VARIANT OPTIONS (max 3)</text>
+    <g font-size="11" fill="#1a1a1a">
+      <rect x="0" y="92" width="90" height="26" rx="13" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+      <text x="45" y="109" text-anchor="middle">Size</text>
+      <rect x="100" y="92" width="90" height="26" rx="13" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+      <text x="145" y="109" text-anchor="middle">Finish</text>
+      <rect x="200" y="92" width="90" height="26" rx="13" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+      <text x="245" y="109" text-anchor="middle">Stone / accent</text>
+    </g>
+    <text x="0" y="148" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">METAFIELDS</text>
+    <g font-size="12" fill="#1a1a1a">
+      <text x="0" y="168">• Sub-type  <tspan fill="#6a6a6a" font-size="11">(ring, bracelet…)</tspan></text>
+      <text x="0" y="188">• Base metal <tspan fill="#6a6a6a" font-size="11">(brass, 925, 18k)</tspan></text>
+      <text x="0" y="208">• Plating <tspan fill="#6a6a6a" font-size="11">(gold, rose, rhodium)</tspan></text>
+      <text x="0" y="228">• Nickel-free <tspan fill="#6a6a6a" font-size="11">(bool)</tspan></text>
+      <text x="0" y="248">• Hypoallergenic <tspan fill="#6a6a6a" font-size="11">(bool)</tspan></text>
+      <text x="0" y="268">• Weight (g)</text>
+      <text x="0" y="288">• Closure type</text>
+      <text x="0" y="308">• Chain style</text>
+    </g>
+  </g>
+
+  <g transform="translate(355, 120)">
+    <rect x="0" y="0" width="290" height="52" rx="8" fill="#efece4" stroke="#d9d5cc"/>
+    <text x="16" y="22" font-size="15" font-weight="600" fill="#1a1a1a">Glass sphere</text>
+    <text x="16" y="40" font-size="11" fill="#6a6a6a">product type: Glass sphere</text>
+    <text x="0" y="82" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">VARIANT OPTIONS (max 3)</text>
+    <g font-size="11" fill="#1a1a1a">
+      <rect x="0" y="92" width="90" height="26" rx="13" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+      <text x="45" y="109" text-anchor="middle">Diameter</text>
+      <rect x="100" y="92" width="90" height="26" rx="13" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+      <text x="145" y="109" text-anchor="middle">Base / stand</text>
+      <rect x="200" y="92" width="90" height="26" rx="13" fill="none" stroke="#9a9a9a" stroke-dasharray="2,3" opacity="0.6"/>
+      <text x="245" y="109" text-anchor="middle" fill="#9a9a9a">reserved</text>
+    </g>
+    <text x="0" y="148" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">METAFIELDS</text>
+    <g font-size="12" fill="#1a1a1a">
+      <text x="0" y="168">• Scene / motif <tspan fill="#6a6a6a" font-size="11">(rich text)</tspan></text>
+      <text x="0" y="188">• Motif reference image</text>
+      <text x="0" y="208">• Glass type <tspan fill="#6a6a6a" font-size="11">(blown, pressed)</tspan></text>
+      <text x="0" y="228">• Weight (g)</text>
+      <text x="0" y="248">• Includes display stand</text>
+      <text x="0" y="268">• Suitable as <tspan fill="#6a6a6a" font-size="11">(desk, shelf…)</tspan></text>
+      <text x="0" y="288">• Fragile shipping <tspan fill="#6a6a6a" font-size="11">(bool)</tspan></text>
+    </g>
+  </g>
+
+  <g transform="translate(680, 120)">
+    <rect x="0" y="0" width="290" height="52" rx="8" fill="#efece4" stroke="#d9d5cc"/>
+    <text x="16" y="22" font-size="15" font-weight="600" fill="#1a1a1a">Fan</text>
+    <text x="16" y="40" font-size="11" fill="#6a6a6a">product type: Fan</text>
+    <text x="0" y="82" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">VARIANT OPTIONS (max 3)</text>
+    <g font-size="11" fill="#1a1a1a">
+      <rect x="0" y="92" width="90" height="26" rx="13" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+      <text x="45" y="109" text-anchor="middle">Style</text>
+      <rect x="100" y="92" width="90" height="26" rx="13" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+      <text x="145" y="109" text-anchor="middle">Size (span)</text>
+      <rect x="200" y="92" width="90" height="26" rx="13" fill="none" stroke="#6a6a6a" stroke-dasharray="3,2"/>
+      <text x="245" y="109" text-anchor="middle">Leaf / motif</text>
+    </g>
+    <text x="0" y="148" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">METAFIELDS</text>
+    <g font-size="12" fill="#1a1a1a">
+      <text x="0" y="168">• Sub-type <tspan fill="#6a6a6a" font-size="11">(folding, hand, brise)</tspan></text>
+      <text x="0" y="188">• Ribs material</text>
+      <text x="0" y="208">• Rib count</text>
+      <text x="0" y="228">• Open span (cm)</text>
+      <text x="0" y="248">• Closed length (cm)</text>
+      <text x="0" y="268">• Decoration technique</text>
+      <text x="0" y="288">• Includes sleeve / box</text>
+      <text x="0" y="308">• Historical style</text>
+    </g>
+  </g>
+
+  <g stroke="#d9d5cc" stroke-width="1" fill="none">
+    <path d="M 175 460 L 175 500" />
+    <path d="M 500 460 L 500 500" />
+    <path d="M 825 460 L 825 500" />
+    <path d="M 175 500 L 825 500" />
+  </g>
+
+  <g transform="translate(30, 520)">
+    <rect x="0" y="0" width="940" height="250" rx="10" fill="#f8f6f1" stroke="#e6e2d9"/>
+    <text x="20" y="28" font-size="14" font-weight="600" fill="#1a1a1a">Shared taxonomy — applies to all three families</text>
+    <text x="20" y="46" font-size="11" fill="#6a6a6a">Defined once, referenced by every product. Storytelling stays DRY.</text>
+    <text x="20" y="76" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">METAOBJECTS (reusable records)</text>
+    <g font-size="12" fill="#1a1a1a">
+      <rect x="20" y="86" width="290" height="48" rx="8" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="35" y="106" font-weight="600">Collection / line</text>
+      <text x="35" y="124" font-size="11" fill="#6a6a6a">e.g. "Mediterraneo", "Nodo Marinaro"</text>
+      <rect x="325" y="86" width="290" height="48" rx="8" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="340" y="106" font-weight="600">Theme</text>
+      <text x="340" y="124" font-size="11" fill="#6a6a6a">Nautical, Floral, Celestial… (multi)</text>
+      <rect x="630" y="86" width="290" height="48" rx="8" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="645" y="106" font-weight="600">Artisan / maker</text>
+      <text x="645" y="124" font-size="11" fill="#6a6a6a">Bio + portrait, reused across products</text>
+    </g>
+    <text x="20" y="162" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">SHARED METAFIELDS</text>
+    <g font-size="11" fill="#1a1a1a">
+      <rect x="20" y="172" width="80" height="24" rx="12" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="60" y="188" text-anchor="middle">Occasion</text>
+      <rect x="108" y="172" width="95" height="24" rx="12" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="155" y="188" text-anchor="middle">Handcrafted</text>
+      <rect x="211" y="172" width="110" height="24" rx="12" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="266" y="188" text-anchor="middle">Story / origin</text>
+      <rect x="329" y="172" width="135" height="24" rx="12" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="396" y="188" text-anchor="middle">Care instructions</text>
+      <rect x="472" y="172" width="115" height="24" rx="12" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="529" y="188" text-anchor="middle">Made-to-order</text>
+      <rect x="595" y="172" width="85" height="24" rx="12" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="637" y="188" text-anchor="middle">Lead time</text>
+      <rect x="688" y="172" width="85" height="24" rx="12" fill="#e4ddcc" stroke="#d9d5cc"/>
+      <text x="730" y="188" text-anchor="middle">Packaging</text>
+    </g>
+    <text x="20" y="222" font-size="11" font-weight="600" fill="#3a3a3a" letter-spacing="0.6">TAGS (merchandising shortcuts only — not for modeling)</text>
+    <g font-size="11" fill="#6a6a6a" font-family="ui-monospace, 'SF Mono', monospace">
+      <text x="20" y="238">gift-under-50 · bestseller · new-arrival · summer-2026 · back-in-stock</text>
+    </g>
+  </g>
+
+  <text x="500" y="810" text-anchor="middle" font-size="11" fill="#6a6a6a">
+    Shopify hard limits: 3 variant options per product · 100 variants per product (standard plans) · unlimited metafields &amp; metaobjects.
+  </text>
+  <text x="500" y="830" text-anchor="middle" font-size="11" fill="#6a6a6a">
+    Also set the native Shopify Product category — free SEO + Google Shopping + Meta catalog hygiene.
+  </text>
+  <text x="500" y="870" text-anchor="middle" font-size="11" font-style="italic" fill="#9a9a9a">
+    Structure is expensive to change. Values are always bulk-updatable via bulkOperationRunMutation.
+  </text>
+</svg>
