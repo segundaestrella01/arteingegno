@@ -23,6 +23,7 @@ const config = require('./lib/config');
 const { oauthFlow, REDIRECT_URI, SCOPES } = require('./lib/auth');
 const ENV_FILE = config.envFilePath();
 const schema = require('./lib/schema');
+const { seedProducts } = require('./lib/products');
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -57,6 +58,11 @@ SCHEMA:
   node cli.js schema apply <store> <path/to/file.graphql> [--dry-run]
       Apply a single definition file.
       Path is relative to scripts/shopify-data-model/ (e.g. metaobjects/theme.graphql)
+
+PRODUCTS:
+  node cli.js products seed <store> [--dry-run]
+      Seed dummy products into the store (DRAFT status, not visible on storefront).
+      Default seed: 10 realistic jewelry products.
 
 STORES:
   node cli.js stores
@@ -151,6 +157,41 @@ async function cmdSchema(subArgs) {
   process.exit(1);
 }
 
+async function cmdProducts(subArgs) {
+  const sub    = subArgs[0];
+  const store  = subArgs[1];
+  const dryRun = subArgs.includes('--dry-run');
+
+  if (!sub || !store) {
+    console.error('❌ Usage: node cli.js products seed <store> [--dry-run]');
+    process.exit(1);
+  }
+
+  if (sub !== 'seed') {
+    console.error(`❌ Unknown products sub-command: "${sub}". Only "seed" is supported.`);
+    process.exit(1);
+  }
+
+  const token = config.getToken(store);
+
+  const SEEDS = {
+    jewelry: require('./seeds/jewelry'),
+  };
+
+  // Determine which seed file to use — default to jewelry for now
+  const familyArg  = subArgs.find(a => !a.startsWith('--') && a !== sub && a !== store);
+  const familyKey  = familyArg ?? 'jewelry';
+  const seedData   = SEEDS[familyKey];
+
+  if (!seedData) {
+    console.error(`❌ Unknown seed family: "${familyKey}". Available: ${Object.keys(SEEDS).join(', ')}`);
+    process.exit(1);
+  }
+
+  const PRODUCT_TYPE = { jewelry: 'Jewelry', 'glass-sphere': 'Glass sphere', fan: 'Fan' };
+  await seedProducts(store, token, seedData, PRODUCT_TYPE[familyKey], dryRun);
+}
+
 function cmdStores() {
   const stores = config.listStores();
   if (stores.length === 0) {
@@ -173,7 +214,8 @@ async function main() {
   switch (command) {
     case 'configure': await cmdConfigure();          break;
     case 'auth':      await cmdAuth(rest[0]);         break;
-    case 'schema':    await cmdSchema(rest);          break;
+    case 'schema':    await cmdSchema(rest);           break;
+    case 'products':  await cmdProducts(rest);        break;
     case 'stores':    cmdStores();                    break;
     case 'help':
     case '--help':
