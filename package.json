@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "shopify:theme:dev": "shopify theme dev --store mattiastore-3117.myshopify.com",
+    "shopify:theme:push": "shopify theme push --store mattiastore-3117.myshopify.com",
+    "shopify:theme:pull": "shopify theme pull --store mattiastore-3117.myshopify.com",
     "shopify:configure": "node scripts/shopify-mgr/cli.js configure",
     "shopify:auth": "node scripts/shopify-mgr/cli.js auth mattiastore-3117.myshopify.com",
     "shopify:stores": "node scripts/shopify-mgr/cli.js stores",
