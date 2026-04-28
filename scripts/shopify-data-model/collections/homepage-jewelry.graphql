@@ -1,0 +1,43 @@
+# Collection: Homepage Jewelry
+#
+# Smart collection that auto-populates with any product tagged
+# `jewelry_homepage`. Apply this tag to the jewelry pieces you want
+# featured in the homepage product-list section.
+#
+# Handle: homepage-jewelry — referenced by the `featured_collection_rings`
+# section in templates/index.json.
+#
+# Run: once against the production store (mattiastore-3117.myshopify.com).
+
+mutation CreateHomepageJewelryCollection($input: CollectionInput!) {
+  collectionCreate(input: $input) {
+    collection {
+      id
+      title
+      handle
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+# Variables payload to use when executing this mutation:
+#
+# {
+#   "input": {
+#     "title": "Homepage Jewelry",
+#     "handle": "homepage-jewelry",
+#     "ruleSet": {
+#       "appliedDisjunctively": false,
+#       "rules": [
+#         {
+#           "column": "TAG",
+#           "relation": "EQUALS",
+#           "condition": "jewelry_homepage"
+#         }
+#       ]
+#     }
+#   }
+# }

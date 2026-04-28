@@ -1,0 +1,43 @@
+# Collection: New Arrivals
+#
+# Smart collection that auto-populates with any product tagged `new-in`.
+# The `new-in` tag is the project's operational flag for newly stocked
+# items (see CLAUDE.md tagging conventions).
+#
+# Handle: new-arrivals — referenced by the `featured_collection_new`
+# section in templates/index.json.
+#
+# Run: once against the production store (mattiastore-3117.myshopify.com).
+
+mutation CreateNewArrivalsCollection($input: CollectionInput!) {
+  collectionCreate(input: $input) {
+    collection {
+      id
+      title
+      handle
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+# Variables payload to use when executing this mutation:
+#
+# {
+#   "input": {
+#     "title": "New Arrivals",
+#     "handle": "new-arrivals",
+#     "ruleSet": {
+#       "appliedDisjunctively": false,
+#       "rules": [
+#         {
+#           "column": "TAG",
+#           "relation": "EQUALS",
+#           "condition": "new-in"
+#         }
+#       ]
+#     }
+#   }
+# }
