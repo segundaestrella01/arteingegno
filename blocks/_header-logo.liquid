@@ -121,13 +121,14 @@
   }
 
   .header-logo__image {
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 50%;
     height: var(--header-logo-image-height-mobile);
-    width: var(--header-logo-image-width-mobile);
+    width: var(--header-logo-image-height-mobile);
 
     @media screen and (min-width: 750px) {
       height: var(--header-logo-image-height);
-      width: var(--header-logo-image-width);
+      width: var(--header-logo-image-height);
     }
   }
 
