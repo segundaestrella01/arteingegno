@@ -481,7 +481,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Anelli</h3>",
+                "text": "<h3>Bigiotteria in Primo Piano</h3>",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "",
@@ -597,9 +597,9 @@
           "block_order": ["product-card-gallery", "product_title", "price"]
         }
       },
-      "name": "Anelli",
+      "name": "Bigiotteria in Primo Piano",
       "settings": {
-        "collection": "rings",
+        "collection": "homepage-jewelry",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 4,
