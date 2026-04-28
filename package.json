@@ -10,7 +10,9 @@
     "shopify:stores": "node scripts/shopify-mgr/cli.js stores",
     "shopify:check": "node scripts/shopify-mgr/cli.js schema check mattiastore-3117.myshopify.com",
     "shopify:apply:dry": "node scripts/shopify-mgr/cli.js schema apply mattiastore-3117.myshopify.com --dry-run",
-    "shopify:apply": "node scripts/shopify-mgr/cli.js schema apply mattiastore-3117.myshopify.com"
+    "shopify:apply": "node scripts/shopify-mgr/cli.js schema apply mattiastore-3117.myshopify.com",
+    "shopify:seed:dry": "node scripts/shopify-mgr/cli.js products seed mattiastore-3117.myshopify.com --dry-run",
+    "shopify:seed": "node scripts/shopify-mgr/cli.js products seed mattiastore-3117.myshopify.com"
   },
   "repository": {
     "type": "git",
