@@ -40,7 +40,7 @@ The token key is derived from the store's subdomain:
    ```
 5. Under **API access → Access scopes**, add:
    ```
-   read_products, write_products, read_metaobjects, write_metaobjects
+   read_products, write_products, read_metaobjects, write_metaobjects, read_metaobject_definitions, write_metaobject_definitions
    ```
 6. Save. Then open **Client credentials** — your Client ID and Client
    Secret are there.
