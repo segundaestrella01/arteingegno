@@ -1,0 +1,37 @@
+# Shared metafield: badge_2
+#
+# Second reassurance badge displayed below the Add to Cart button on the
+# product detail page (e.g. "Metalli preziosi riciclati").
+
+mutation CreateBadge2Definition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Badge 2",
+#     "namespace": "custom_shared",
+#     "key": "badge_2",
+#     "description": "Second reassurance badge shown under the Add to Cart button on the PDP.",
+#     "type": "single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

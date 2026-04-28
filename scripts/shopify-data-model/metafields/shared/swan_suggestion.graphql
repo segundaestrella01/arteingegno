@@ -1,0 +1,37 @@
+# Shared metafield: swan_suggestion
+#
+# Seller's personal recommendation or story for the product, displayed as
+# a full-width quote section ("Swan Suggerisce…") on the PDP.
+
+mutation CreateSwanSuggestionDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Swan Suggerisce",
+#     "namespace": "custom_shared",
+#     "key": "swan_suggestion",
+#     "description": "Seller's personal recommendation or story shown as a quote on the PDP ('Swan Suggerisce...' section).",
+#     "type": "multi_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }

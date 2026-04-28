@@ -27,6 +27,11 @@ const APPLY_ORDER = [
   // These two need metaobject IDs — resolved dynamically at runtime:
   'metafields/shared/theme_refs.graphql',
   'metafields/shared/editorial_collections.graphql',
+  // PDP display fields
+  'metafields/shared/badge_1.graphql',
+  'metafields/shared/badge_2.graphql',
+  'metafields/shared/badge_3.graphql',
+  'metafields/shared/swan_suggestion.graphql',
   // 3. Jewelry
   'metafields/jewelry/sub_type.graphql',
   'metafields/jewelry/base_metal.graphql',
@@ -54,6 +59,9 @@ const APPLY_ORDER = [
   'metafields/fan/closed_length_cm.graphql',
   'metafields/fan/sleeve_included.graphql',
   'metafields/fan/historical_period.graphql',
+  // 6. Collections
+  'collections/new-arrivals.graphql',
+  'collections/homepage-jewelry.graphql',
 ];
 
 // ---------------------------------------------------------------------------
