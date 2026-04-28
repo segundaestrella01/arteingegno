@@ -217,6 +217,84 @@
               },
               "block_order": []
             },
+            "badge_1": {
+              "type": "text",
+              "name": "Badge 1",
+              "settings": {
+                "text": "{{ closest.product.metafields.custom_shared.badge_1 }}",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "badge_2": {
+              "type": "text",
+              "name": "Badge 2",
+              "settings": {
+                "text": "{{ closest.product.metafields.custom_shared.badge_2 }}",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "badge_3": {
+              "type": "text",
+              "name": "Badge 3",
+              "settings": {
+                "text": "{{ closest.product.metafields.custom_shared.badge_3 }}",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "text_aEtTtq": {
               "type": "text",
               "name": "Product description",
@@ -249,6 +327,9 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "badge_1",
+            "badge_2",
+            "badge_3",
             "text_aEtTtq"
           ]
         }
@@ -264,6 +345,146 @@
         "padding-block-end": 0
       }
     },
+    "swan_suggerisce": {
+      "type": "section",
+      "blocks": {
+        "swan_heading": {
+          "type": "text",
+          "name": "Swan heading",
+          "settings": {
+            "text": "<h3>Swan Suggerisce…</h3>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h4",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "swan_quote": {
+          "type": "text",
+          "name": "Swan quote",
+          "settings": {
+            "text": "{{ closest.product.metafields.custom_shared.swan_suggestion }}",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "swan_heading",
+        "swan_quote"
+      ],
+      "name": "Swan Suggerisce",
+      "settings": {
+        "width": "page-width",
+        "color_scheme": "scheme-3",
+        "gap": 16,
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
+    },
+    "artisan_placeholder": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image_position": "cover"
+          }
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "space-between"
+          },
+          "blocks": {
+            "artisan_heading": {
+              "type": "text",
+              "name": "Artisan heading",
+              "settings": {
+                "text": "<h2>Fatto da mani esperte</h2>",
+                "type_preset": "rte",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "font": "var(--font-primary--family)",
+                "wrap": "pretty",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "artisan_bio": {
+              "type": "text",
+              "name": "Artisan bio",
+              "settings": {
+                "text": "<p>Ogni pezzo è realizzato a mano da artigiani locali con anni di esperienza nella lavorazione dei materiali. La loro cura si vede in ogni dettaglio.</p>",
+                "type_preset": "rte",
+                "width": "fit-content",
+                "max_width": "narrow",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "wrap": "pretty",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": ["artisan_heading", "artisan_bio"]
+        }
+      },
+      "name": "Artigiano",
+      "settings": {
+        "media_position": "left",
+        "media_width": "medium",
+        "media_height": "50svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "color_scheme": "scheme-2",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
       "blocks": {
@@ -271,7 +492,7 @@
           "type": "text",
           "name": "t:names.header",
           "settings": {
-            "text": "<h3>You may also like </h3>",
+            "text": "<h3>Potrebbe piacerti anche</h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -408,6 +629,8 @@
   },
   "order": [
     "main",
+    "swan_suggerisce",
+    "artisan_placeholder",
     "product_recommendations_qggXJq"
   ]
 }
