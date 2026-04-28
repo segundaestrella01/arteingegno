@@ -30,7 +30,7 @@ mutation CreateOccasionDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Occasion",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "occasion",
 #     "description": "Occasions this product suits (Wedding, Birthday, Anniversary, etc.). Used for gift-guide filters.",
 #     "type": "list.single_line_text_field",

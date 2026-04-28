@@ -30,7 +30,7 @@ mutation CreateGlassSphereSceneDefinition($definition: MetafieldDefinitionInput!
 # {
 #   "definition": {
 #     "name": "Scene",
-#     "namespace": "custom.glass_sphere",
+#     "namespace": "custom_glass_sphere",
 #     "key": "scene",
 #     "description": "Short evocative descriptor of the motif inside the sphere, shown on PDP and collection cards.",
 #     "type": "single_line_text_field",

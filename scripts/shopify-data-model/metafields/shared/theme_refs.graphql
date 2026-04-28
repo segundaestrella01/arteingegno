@@ -35,21 +35,16 @@ mutation CreateThemesRefDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Themes",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "themes",
 #     "description": "One or more Theme metaobject references that categorize this product.",
 #     "type": "list.metaobject_reference",
 #     "ownerType": "PRODUCT",
 #     "validations": [
 #       {
-#         "name": "metaobject_definition",
+#         "name": "metaobject_definition_id",
 #         "value": "<theme metaobject definition ID from metaobjects/theme.graphql run>"
 #       }
 #     ]
 #   }
 # }
-#
-# The `validations[metaobject_definition]` value is the ID returned
-# from running theme.graphql (e.g. "gid://shopify/MetaobjectDefinition/123").
-# Fetch it first with a query like:
-#   query { metaobjectDefinitionByType(type: "product_theme") { id } }

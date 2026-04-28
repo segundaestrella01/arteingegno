@@ -29,7 +29,7 @@ mutation CreateFanSleeveIncludedDefinition($definition: MetafieldDefinitionInput
 # {
 #   "definition": {
 #     "name": "Sleeve included",
-#     "namespace": "custom.fan",
+#     "namespace": "custom_fan",
 #     "key": "sleeve_included",
 #     "description": "True if a protective sleeve or pouch is included in the box.",
 #     "type": "boolean",

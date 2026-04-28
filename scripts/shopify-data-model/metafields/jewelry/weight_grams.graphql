@@ -29,7 +29,7 @@ mutation CreateJewelryWeightGramsDefinition($definition: MetafieldDefinitionInpu
 # {
 #   "definition": {
 #     "name": "Weight (g)",
-#     "namespace": "custom.jewelry",
+#     "namespace": "custom_jewelry",
 #     "key": "weight_grams",
 #     "description": "Weight of the piece in grams, excluding packaging.",
 #     "type": "number_decimal",

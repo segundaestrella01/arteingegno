@@ -29,7 +29,7 @@ mutation CreateFanSubTypeDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Sub-type",
-#     "namespace": "custom.fan",
+#     "namespace": "custom_fan",
 #     "key": "sub_type",
 #     "description": "Fan mechanism style: Folding, Hand (rigid), Brisé.",
 #     "type": "single_line_text_field",

@@ -31,7 +31,7 @@ mutation CreateGlassSpheresDiameterCmDefinition($definition: MetafieldDefinition
 # {
 #   "definition": {
 #     "name": "Diameter (cm)",
-#     "namespace": "custom.glass_sphere",
+#     "namespace": "custom_glass_sphere",
 #     "key": "diameter_cm",
 #     "description": "Outer diameter of the sphere in centimeters. Use for single-size SKUs; use variant option for multi-size.",
 #     "type": "number_decimal",

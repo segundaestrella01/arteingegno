@@ -30,7 +30,7 @@ mutation CreateFanDecorationDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Decoration",
-#     "namespace": "custom.fan",
+#     "namespace": "custom_fan",
 #     "key": "decoration",
 #     "description": "Decoration technique on the fan leaf: Hand-painted silk, Printed silk, Lace, Embroidered, Laser-cut, etc.",
 #     "type": "single_line_text_field",

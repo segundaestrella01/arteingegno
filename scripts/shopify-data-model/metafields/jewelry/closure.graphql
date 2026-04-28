@@ -29,7 +29,7 @@ mutation CreateJewelryClosureDefinition($definition: MetafieldDefinitionInput!) 
 # {
 #   "definition": {
 #     "name": "Closure",
-#     "namespace": "custom.jewelry",
+#     "namespace": "custom_jewelry",
 #     "key": "closure",
 #     "description": "Clasp or fastening type: Lobster clasp, Spring ring, Toggle, Hook, Push-back, Elastic, None.",
 #     "type": "single_line_text_field",

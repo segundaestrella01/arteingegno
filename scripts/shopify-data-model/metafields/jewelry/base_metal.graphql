@@ -29,7 +29,7 @@ mutation CreateJewelryBaseMetalDefinition($definition: MetafieldDefinitionInput!
 # {
 #   "definition": {
 #     "name": "Base metal",
-#     "namespace": "custom.jewelry",
+#     "namespace": "custom_jewelry",
 #     "key": "base_metal",
 #     "description": "Base material before plating: Brass, Sterling Silver 925, Stainless Steel, Gold 18k.",
 #     "type": "single_line_text_field",

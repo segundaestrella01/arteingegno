@@ -29,7 +29,7 @@ mutation CreateFanRibsMaterialDefinition($definition: MetafieldDefinitionInput!)
 # {
 #   "definition": {
 #     "name": "Ribs material",
-#     "namespace": "custom.fan",
+#     "namespace": "custom_fan",
 #     "key": "ribs_material",
 #     "description": "Material of the fan ribs: Sandalwood, Bamboo, Mother-of-pearl, Bone alternative, Resin.",
 #     "type": "single_line_text_field",

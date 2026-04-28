@@ -31,7 +31,7 @@ mutation CreateJewelryPlatingDefinition($definition: MetafieldDefinitionInput!) 
 # {
 #   "definition": {
 #     "name": "Plating",
-#     "namespace": "custom.jewelry",
+#     "namespace": "custom_jewelry",
 #     "key": "plating",
 #     "description": "Plating finish applied over the base metal: None, Gold 18k, Rose Gold, Rhodium.",
 #     "type": "single_line_text_field",

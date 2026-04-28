@@ -30,7 +30,7 @@ mutation CreateGlassSphereFragileDefinition($definition: MetafieldDefinitionInpu
 # {
 #   "definition": {
 #     "name": "Fragile",
-#     "namespace": "custom.glass_sphere",
+#     "namespace": "custom_glass_sphere",
 #     "key": "fragile",
 #     "description": "True for items requiring fragile-rated shipping. Defaults to true for all glass spheres.",
 #     "type": "boolean",

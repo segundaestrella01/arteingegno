@@ -29,7 +29,7 @@ mutation CreateGlassSphereMotifImageDefinition($definition: MetafieldDefinitionI
 # {
 #   "definition": {
 #     "name": "Motif image",
-#     "namespace": "custom.glass_sphere",
+#     "namespace": "custom_glass_sphere",
 #     "key": "motif_image",
 #     "description": "Close-up of the inner scene element, used as a detail / reveal image on the PDP.",
 #     "type": "file_reference",

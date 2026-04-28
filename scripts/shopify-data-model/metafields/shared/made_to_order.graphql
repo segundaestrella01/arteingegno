@@ -29,7 +29,7 @@ mutation CreateMadeToOrderDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Made to order",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "made_to_order",
 #     "description": "True if this product is made to order. Suppresses stock messaging and surfaces lead_time_days at checkout.",
 #     "type": "boolean",

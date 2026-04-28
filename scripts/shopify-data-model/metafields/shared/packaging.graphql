@@ -29,7 +29,7 @@ mutation CreatePackagingDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Packaging",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "packaging",
 #     "description": "Description of the packaging included with the product (velvet pouch, gift box, etc.).",
 #     "type": "single_line_text_field",

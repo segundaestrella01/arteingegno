@@ -29,7 +29,7 @@ mutation CreateFanRibCountDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Rib count",
-#     "namespace": "custom.fan",
+#     "namespace": "custom_fan",
 #     "key": "rib_count",
 #     "description": "Number of ribs (sticks) in the fan.",
 #     "type": "number_integer",

@@ -29,7 +29,7 @@ mutation CreateLeadTimeDaysDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Lead time (days)",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "lead_time_days",
 #     "description": "Business days from order confirmation until ready to ship. Used when made_to_order is true.",
 #     "type": "number_integer",

@@ -29,7 +29,7 @@ mutation CreateGlassSphereStandIncludedDefinition($definition: MetafieldDefiniti
 # {
 #   "definition": {
 #     "name": "Stand included",
-#     "namespace": "custom.glass_sphere",
+#     "namespace": "custom_glass_sphere",
 #     "key": "stand_included",
 #     "description": "True if a display stand is included in the box.",
 #     "type": "boolean",

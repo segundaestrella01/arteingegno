@@ -29,7 +29,7 @@ mutation CreateStoryDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Story",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "story",
 #     "description": "Long-form narrative for the product detail page — origin, symbolism, and craft.",
 #     "type": "multi_line_text_field",

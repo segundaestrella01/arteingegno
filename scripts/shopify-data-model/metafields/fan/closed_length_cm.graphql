@@ -29,7 +29,7 @@ mutation CreateFanClosedLengthCmDefinition($definition: MetafieldDefinitionInput
 # {
 #   "definition": {
 #     "name": "Closed length (cm)",
-#     "namespace": "custom.fan",
+#     "namespace": "custom_fan",
 #     "key": "closed_length_cm",
 #     "description": "Length of the fan when fully closed, in centimeters.",
 #     "type": "number_decimal",

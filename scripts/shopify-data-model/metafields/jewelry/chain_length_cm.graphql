@@ -30,7 +30,7 @@ mutation CreateJewelryChainLengthCmDefinition($definition: MetafieldDefinitionIn
 # {
 #   "definition": {
 #     "name": "Chain length (cm)",
-#     "namespace": "custom.jewelry",
+#     "namespace": "custom_jewelry",
 #     "key": "chain_length_cm",
 #     "description": "Chain length in centimeters for fixed-length necklaces and bracelets. Leave null when length is a variant option.",
 #     "type": "number_decimal",

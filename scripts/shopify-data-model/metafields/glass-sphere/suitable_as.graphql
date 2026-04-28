@@ -30,7 +30,7 @@ mutation CreateGlassSphereSuitableAsDefinition($definition: MetafieldDefinitionI
 # {
 #   "definition": {
 #     "name": "Suitable as",
-#     "namespace": "custom.glass_sphere",
+#     "namespace": "custom_glass_sphere",
 #     "key": "suitable_as",
 #     "description": "Suggested use contexts: Desk decoration, Shelf display, Display cabinet, Paperweight, Gift.",
 #     "type": "list.single_line_text_field",

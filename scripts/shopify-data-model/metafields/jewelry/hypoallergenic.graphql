@@ -29,7 +29,7 @@ mutation CreateJewelryHypoallergenicDefinition($definition: MetafieldDefinitionI
 # {
 #   "definition": {
 #     "name": "Hypoallergenic",
-#     "namespace": "custom.jewelry",
+#     "namespace": "custom_jewelry",
 #     "key": "hypoallergenic",
 #     "description": "True if the piece is suitable for sensitive skin (no nickel, cobalt, or skin-irritating plating).",
 #     "type": "boolean",

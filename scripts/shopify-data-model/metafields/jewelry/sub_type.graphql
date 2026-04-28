@@ -31,7 +31,7 @@ mutation CreateJewelrySubTypeDefinition($definition: MetafieldDefinitionInput!) 
 # {
 #   "definition": {
 #     "name": "Sub-type",
-#     "namespace": "custom.jewelry",
+#     "namespace": "custom_jewelry",
 #     "key": "sub_type",
 #     "description": "Jewelry category: Ring, Bracelet, Necklace, Earrings, Anklet, Brooch.",
 #     "type": "single_line_text_field",

@@ -30,7 +30,7 @@ mutation CreateFanHistoricalPeriodDefinition($definition: MetafieldDefinitionInp
 # {
 #   "definition": {
 #     "name": "Historical period",
-#     "namespace": "custom.fan",
+#     "namespace": "custom_fan",
 #     "key": "historical_period",
 #     "description": "Inspiring historical period or art movement: Rococo, Victorian, Belle Époque, Art Nouveau, Art Deco, Contemporary.",
 #     "type": "single_line_text_field",

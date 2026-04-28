@@ -31,7 +31,7 @@ mutation CreateHandcraftedDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Handcrafted",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "handcrafted",
 #     "description": "True if the piece is handcrafted by an artisan.",
 #     "type": "boolean",

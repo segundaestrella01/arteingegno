@@ -37,21 +37,16 @@ mutation CreateEditorialCollectionsDefinition($definition: MetafieldDefinitionIn
 # {
 #   "definition": {
 #     "name": "Editorial collections",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "editorial_collections",
 #     "description": "Brand-level editorial collections this product belongs to (e.g. Mediterraneo). Distinct from Shopify Collections.",
 #     "type": "list.metaobject_reference",
 #     "ownerType": "PRODUCT",
 #     "validations": [
 #       {
-#         "name": "metaobject_definition",
+#         "name": "metaobject_definition_id",
 #         "value": "<collection metaobject definition ID from metaobjects/collection.graphql run>"
 #       }
 #     ]
 #   }
 # }
-#
-# The `validations[metaobject_definition]` value is the ID returned
-# from running collection.graphql (e.g. "gid://shopify/MetaobjectDefinition/123").
-# Fetch it first with:
-#   query { metaobjectDefinitionByType(type: "brand_collection") { id } }

@@ -29,7 +29,7 @@ mutation CreateGlassSphereWeightGramsDefinition($definition: MetafieldDefinition
 # {
 #   "definition": {
 #     "name": "Weight (g)",
-#     "namespace": "custom.glass_sphere",
+#     "namespace": "custom_glass_sphere",
 #     "key": "weight_grams",
 #     "description": "Weight of the sphere in grams, excluding stand and packaging.",
 #     "type": "number_decimal",

@@ -29,7 +29,7 @@ mutation CreateGlassSphereGlassTypeDefinition($definition: MetafieldDefinitionIn
 # {
 #   "definition": {
 #     "name": "Glass type",
-#     "namespace": "custom.glass_sphere",
+#     "namespace": "custom_glass_sphere",
 #     "key": "glass_type",
 #     "description": "Glass-making technique: Blown, Pressed.",
 #     "type": "single_line_text_field",

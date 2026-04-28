@@ -29,7 +29,7 @@ mutation CreateJewelryNickelFreeDefinition($definition: MetafieldDefinitionInput
 # {
 #   "definition": {
 #     "name": "Nickel free",
-#     "namespace": "custom.jewelry",
+#     "namespace": "custom_jewelry",
 #     "key": "nickel_free",
 #     "description": "True if the piece contains no nickel. Relevant for EU nickel regulations and allergy-sensitive buyers.",
 #     "type": "boolean",

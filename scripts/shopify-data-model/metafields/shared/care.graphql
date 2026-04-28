@@ -30,7 +30,7 @@ mutation CreateCareDefinition($definition: MetafieldDefinitionInput!) {
 # {
 #   "definition": {
 #     "name": "Care instructions",
-#     "namespace": "custom.shared",
+#     "namespace": "custom_shared",
 #     "key": "care",
 #     "description": "How to care for and maintain the piece. Shown on the PDP below the product description.",
 #     "type": "multi_line_text_field",
