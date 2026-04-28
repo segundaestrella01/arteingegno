@@ -213,7 +213,7 @@
               "type": "text",
               "name": "Badge 1",
               "settings": {
-                "text": "{{ closest.product.metafields.custom_shared.badge_1 }}",
+                "text": "{{ closest.product.metafields.custom_shared.badge_1.value }}",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -239,7 +239,7 @@
               "type": "text",
               "name": "Badge 2",
               "settings": {
-                "text": "{{ closest.product.metafields.custom_shared.badge_2 }}",
+                "text": "{{ closest.product.metafields.custom_shared.badge_2.value }}",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -265,7 +265,7 @@
               "type": "text",
               "name": "Badge 3",
               "settings": {
-                "text": "{{ closest.product.metafields.custom_shared.badge_3 }}",
+                "text": "{{ closest.product.metafields.custom_shared.badge_3.value }}",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -370,7 +370,7 @@
           "type": "text",
           "name": "Swan quote",
           "settings": {
-            "text": "{{ closest.product.metafields.custom_shared.swan_suggestion }}",
+            "text": "{{ closest.product.metafields.custom_shared.swan_suggestion.value }}",
             "width": "100%",
             "max_width": "narrow",
             "alignment": "center",
