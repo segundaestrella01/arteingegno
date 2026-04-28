@@ -135,9 +135,9 @@ Short version:
 - **Variants** — only for true SKU-level differences (size / finish /
   chain length). Max 3 option dimensions per Shopify's limits.
 - **Product-type-scoped metafields** — stored under the namespace
-  `custom.<type>.*` (e.g. `custom.jewelry.base_metal`). These describe
+  `custom_<type>` (e.g. `custom_jewelry`, key `base_metal`). These describe
   properties specific to one family.
-- **Shared metafields** — stored under `custom.shared.*`. These are
+- **Shared metafields** — stored under `custom_shared`. These are
   fields every product family uses (Story, Care, Handcrafted flag,
   Lead time, etc.).
 - **Metaobjects** (reusable cross-family records) — namespace root
