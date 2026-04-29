@@ -2284,5 +2284,21 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "Tracking",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Google Tag Manager"
+      },
+      {
+        "type": "text",
+        "id": "gtm_container_id",
+        "label": "GTM Container ID",
+        "placeholder": "GTM-XXXXXXX",
+        "info": "Enter your Google Tag Manager container ID (e.g. GTM-XXXXXXX). Leave blank to disable GTM."
+      }
+    ]
   }
 ]

@@ -1,0 +1,19 @@
+{% comment %}
+  Google Tag Manager — <body> noscript fallback
+  Injected immediately after the opening <body> tag in layout/theme.liquid.
+  Required for tracking in browsers with JavaScript disabled.
+  Container ID is read from the same theme setting as gtm-head.liquid.
+{% endcomment %}
+{% if settings.gtm_container_id != blank %}
+  {%- assign gtm_id = settings.gtm_container_id | strip -%}
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id={{ gtm_id }}"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+    ></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+{% endif %}
