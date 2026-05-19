@@ -117,6 +117,67 @@
         "padding-block-end": 72
       }
     },
+    "brand_intro": {
+      "type": "section",
+      "blocks": {
+        "intro_text": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>ARTE E INGEGNO</h2><p>DOVE OGNI DETTAGLIO HA UNA STORIA</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "intro_text"
+      ],
+      "name": "Brand intro",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 40,
+        "padding-block-end": 24
+      }
+    },
     "category_showcase": {
       "type": "category-showcase",
       "blocks": {
@@ -922,6 +983,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "brand_intro",
     "category_showcase",
     "featured_collection_new",
     "brand_story",
