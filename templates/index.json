@@ -171,7 +171,7 @@
       },
       "name": "Categorie prodotto",
       "settings": {
-        "collection_handles": "necklaces,rings,bracelets",
+        "collection_handles": "necklaces,rings,bracelets,earrings",
         "layout_type": "carousel",
         "columns": 3,
         "mobile_card_size": "60cqw",
