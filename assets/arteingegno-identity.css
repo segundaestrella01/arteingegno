@@ -17,13 +17,13 @@
 
 /* ============================================================
    1. GLOBAL FONT OVERRIDE
-   Force Jost as the universal font stack. The settings_data.json
-   sets jost_n4/n8 for Shopify's font system; this rule is a
-   belt-and-braces fallback ensuring Jost from Google Fonts is used
-   even if the Shopify font pick doesn't resolve perfectly.
+   Two-font system mirroring Arms of Eve's Kugile + Avenir pattern:
+   - Jost (geometric sans) → everything: body, headings, nav, buttons, footer
+   - Cormorant Garamond (editorial serif) → hero/slideshow display headings only
    ============================================================ */
 :root {
   --font-jost: 'Jost', var(--font-body--family, sans-serif);
+  --font-display: 'Cormorant Garamond', serif;
   --color-brand-gold: #B19151;
   --color-brand-gold-deep: #8F7239;
   --color-brand-cream: #F3F0EA;
@@ -60,20 +60,39 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: var(--letter-spacing-brand);
 }
 
-h1, .h1 { font-weight: 800; }
-h2, .h2 { font-weight: 800; }
-h3, .h3 { font-weight: 800; }
-h4, .h4 { font-weight: 500; }
-h5, .h5 { font-weight: 500; }
-h6, .h6 { font-weight: 500; }
+h1, .h1 { font-weight: 500; }
+h2, .h2 { font-weight: 500; }
+h3, .h3 { font-weight: 500; }
+h4, .h4 { font-weight: 400; }
+h5, .h5 { font-weight: 400; }
+h6, .h6 { font-weight: 400; }
 
 /* Collection/product page titles */
 .collection__title,
 .page-title,
 .section-title {
-  font-weight: 800;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
+}
+
+/* ============================================================
+   2b. DISPLAY / HERO HEADINGS — Cormorant Garamond (the Kugile equivalent)
+   Applied only to large display headings inside hero, slideshow, and
+   layered-slideshow sections — exactly where the source site uses Kugile.
+   All other h1/h2/h3 outside these contexts keep Jost.
+   ============================================================ */
+.hero-wrapper .text-block.h1,
+.hero-wrapper .text-block.h2,
+.slideshow-section .text-block.h1,
+.slideshow-section .text-block.h2,
+.layered-slideshow-section .text-block.h1,
+.layered-slideshow-section .text-block.h2,
+.jumbo-text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* ============================================================
@@ -90,7 +109,7 @@ header nav a,
 [class*="nav__link"] {
   font-family: var(--font-jost);
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
 }
@@ -109,7 +128,7 @@ header nav a,
 form[action*="/cart"] button[type="submit"] {
   font-family: var(--font-jost);
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
   border-radius: 0;
@@ -123,7 +142,7 @@ form[action*="/cart"] button[type="submit"] {
 [class*="announcement"] {
   font-family: var(--font-jost);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: var(--letter-spacing-brand);
   text-transform: uppercase;
 }
@@ -147,7 +166,7 @@ form[action*="/cart"] button[type="submit"] {
 [class*="card__title"] {
   font-family: var(--font-jost);
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
 }
@@ -224,7 +243,7 @@ footer,
 [class*="footer"] strong {
   font-family: var(--font-jost);
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
   color: var(--color-brand-near-black);
@@ -270,7 +289,7 @@ select {
 .product-badge {
   font-family: var(--font-jost);
   font-size: 0.625rem;
-  font-weight: 800;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
   border-radius: 0;
@@ -294,7 +313,7 @@ select {
   border-radius: 0;
   font-family: var(--font-jost);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
