@@ -16,15 +16,26 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_Apr_28_2026_4.jpg",
-            "heading": "DOVE OGNI DETTAGLIO HA UNA STORIA",
-            "subheading": "Gioielli fatti a mano con materiali selezionati.",
-            "button_label": "Scopri la collezione",
+            "heading": "ORECCHINI",
+            "subheading": "Gioielli fotografati per terra",
+            "button_label": "",
             "button_link": "shopify://collections/all"
+          }
+        },
+        "slide_r6wmFW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_Apr_28_2026_1.jpg",
+            "heading": "Modelle",
+            "subheading": "Modelle fotografate da vicino",
+            "button_label": "Shop Now",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "slide_1"
+        "slide_1",
+        "slide_r6wmFW"
       ],
       "name": "Hero Slideshow",
       "settings": {
@@ -134,21 +145,6 @@
             "border_radius": 0
           },
           "blocks": {
-            "collection-card-image": {
-              "type": "_collection-card-image",
-              "static": true,
-              "settings": {
-                "image_ratio": "portrait",
-                "toggle_overlay": true,
-                "overlay_color": "#00000066",
-                "overlay_style": "gradient",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0
-              }
-            },
             "collection-title": {
               "type": "collection-title",
               "settings": {
@@ -170,10 +166,29 @@
                 "padding-block-end": 8,
                 "padding-inline-start": 8,
                 "padding-inline-end": 0
-              }
+              },
+              "blocks": {}
+            },
+            "collection-card-image": {
+              "type": "_collection-card-image",
+              "static": true,
+              "settings": {
+                "image_ratio": "portrait",
+                "toggle_overlay": true,
+                "overlay_color": "#00000066",
+                "overlay_style": "gradient",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              },
+              "blocks": {}
             }
           },
-          "block_order": ["collection-title"]
+          "block_order": [
+            "collection-title"
+          ]
         }
       },
       "name": "Categorie prodotto",
