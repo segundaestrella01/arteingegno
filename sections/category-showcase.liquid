@@ -1,0 +1,220 @@
+{% liquid
+  assign showcase_handles = section.settings.collection_handles | split: ','
+  assign card_count = showcase_handles.size
+%}
+
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+
+<div
+  class="
+    section
+    section--{{ section.settings.section_width }}
+    color-{{ section.settings.color_scheme }}
+    section-resource-list
+    spacing-style
+    gap-style
+  "
+  style="
+    {% render 'spacing-style', settings: section.settings %}
+    {% render 'gap-style', value: section.settings.gap %}
+  "
+>
+  <div class="section-resource-list__content">
+    {%- content_for 'blocks' -%}
+  </div>
+
+  {% assign first_item = true %}
+  {% capture list_items %}
+    {% for handle in showcase_handles %}
+      {% assign handle = handle | strip %}
+      {% assign cat_collection = collections[handle] %}
+      {% if cat_collection != blank %}
+        {% unless first_item %}<!--@list/split-->{% endunless %}
+        <div class="resource-list__item">
+          {%- content_for 'block',
+            type: '_collection-card',
+            id: 'static-collection-card',
+            closest.collection: cat_collection
+          -%}
+        </div>
+        {% assign first_item = false %}
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
+
+  {% assign list_items_array = list_items | strip | split: '<!--@list/split-->' %}
+
+  {% render 'resource-list',
+    list_items: list_items,
+    list_items_array: list_items_array,
+    settings: section.settings,
+    carousel_ref: 'categoryShowcase',
+    slide_count: card_count,
+    content_type: 'collections',
+    test_id: 'category-showcase-carousel'
+  %}
+</div>
+
+{% stylesheet %}
+  .category-showcase .collection-card__image {
+    overflow: hidden;
+  }
+
+  .category-showcase .collection-card__image .resource-image__image {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .category-showcase .collection-card:hover .resource-image__image {
+    transform: scale(1.05);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Categorie prodotto",
+  "class": "category-showcase",
+  "blocks": [
+    { "type": "@theme" },
+    { "type": "@app" },
+    { "type": "_divider" }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "collection_handles",
+      "label": "Collection handles (comma-separated)",
+      "info": "Handles of the collections to show, in order. Example: necklaces,rings,bracelets",
+      "default": "necklaces,rings,bracelets"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout_type",
+      "label": "Layout",
+      "options": [
+        { "value": "carousel", "label": "Carousel" },
+        { "value": "grid",     "label": "Grid" }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Columns (desktop)",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "mobile_card_size",
+      "label": "Mobile card size",
+      "options": [
+        { "value": "60cqw", "label": "1 card (peek)" },
+        { "value": "44cqw", "label": "2 cards" }
+      ],
+      "default": "60cqw"
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "Gap between cards",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "icons_style",
+      "label": "Navigation arrows",
+      "options": [
+        { "value": "none",    "label": "None" },
+        { "value": "arrow",   "label": "Arrows" },
+        { "value": "chevron", "label": "Chevrons" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "icons_shape",
+      "label": "Arrow style",
+      "options": [
+        { "value": "none",   "label": "None" },
+        { "value": "circle", "label": "Circle" },
+        { "value": "square", "label": "Square" }
+      ],
+      "default": "none",
+      "visible_if": "{{ section.settings.icons_style != 'none' }}"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Width",
+      "options": [
+        { "value": "page-width", "label": "Page" },
+        { "value": "full-width", "label": "Full" }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Section gap",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Categorie prodotto",
+      "category": "Collections"
+    }
+  ]
+}
+{% endschema %}

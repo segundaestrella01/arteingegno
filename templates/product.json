@@ -406,77 +406,6 @@
         "padding-block-end": 64
       }
     },
-    "artisan_placeholder": {
-      "type": "media-with-content",
-      "blocks": {
-        "media": {
-          "type": "_media-without-appearance",
-          "static": true,
-          "settings": {
-            "media_type": "image",
-            "image_position": "cover"
-          }
-        },
-        "content": {
-          "type": "_content-without-appearance",
-          "static": true,
-          "settings": {
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "space-between"
-          },
-          "blocks": {
-            "artisan_heading": {
-              "type": "text",
-              "name": "Artisan heading",
-              "settings": {
-                "text": "<h2>Fatto da mani esperte</h2>",
-                "type_preset": "rte",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "font": "var(--font-primary--family)",
-                "wrap": "pretty",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "artisan_bio": {
-              "type": "text",
-              "name": "Artisan bio",
-              "settings": {
-                "text": "<p>Ogni pezzo è realizzato a mano da artigiani locali con anni di esperienza nella lavorazione dei materiali. La loro cura si vede in ogni dettaglio.</p>",
-                "type_preset": "rte",
-                "width": "fit-content",
-                "max_width": "narrow",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "wrap": "pretty",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": ["artisan_heading", "artisan_bio"]
-        }
-      },
-      "name": "Artigiano",
-      "settings": {
-        "media_position": "left",
-        "media_width": "medium",
-        "media_height": "50svh",
-        "section_width": "full-width",
-        "extend_media": true,
-        "color_scheme": "scheme-2",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
       "blocks": {
@@ -528,7 +457,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "portrait",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -622,7 +551,6 @@
   "order": [
     "main",
     "swan_suggerisce",
-    "artisan_placeholder",
     "product_recommendations_qggXJq"
   ]
 }

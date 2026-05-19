@@ -1,0 +1,376 @@
+/*
+ * Arte&Ingegno — visual identity overrides
+ * Inspired by Arms of Eve's warm, editorial, uppercase aesthetic.
+ * Applied on top of Horizon v3.5.1.
+ *
+ * Palette:
+ *   #FDFAF5  warm white (page bg)
+ *   #111111  near-black (headings, nav)
+ *   #50504F  charcoal (body text)
+ *   #B19151  brand gold (CTA, accent)
+ *   #8F7239  deep gold (hover)
+ *   #F3F0EA  warm cream (footer, alt sections)
+ *   #ECE6DC  light cream (soft surfaces)
+ *
+ * Font: Jost (Google Fonts) — geometric sans, Avenir substitute.
+ */
+
+/* ============================================================
+   1. GLOBAL FONT OVERRIDE
+   Force Jost as the universal font stack. The settings_data.json
+   sets jost_n4/n8 for Shopify's font system; this rule is a
+   belt-and-braces fallback ensuring Jost from Google Fonts is used
+   even if the Shopify font pick doesn't resolve perfectly.
+   ============================================================ */
+:root {
+  --font-jost: 'Jost', var(--font-body--family, sans-serif);
+  --color-brand-gold: #B19151;
+  --color-brand-gold-deep: #8F7239;
+  --color-brand-cream: #F3F0EA;
+  --color-brand-cream-light: #ECE6DC;
+  --color-brand-warm-white: #FDFAF5;
+  --color-brand-charcoal: #50504F;
+  --color-brand-near-black: #111111;
+  --letter-spacing-brand: 0.05em;
+
+  /* Override Horizon's heading-loose to match AoE's 0.05em tracking */
+  --letter-spacing--heading-loose: 0.05em;
+  --letter-spacing--body-loose: 0.02em;
+  --letter-spacing--display-loose: 0.05em;
+}
+
+body,
+p,
+li,
+td,
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-jost);
+}
+
+/* ============================================================
+   2. HEADINGS — uppercase, tracked, geometric
+   ============================================================ */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-jost);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+}
+
+h1, .h1 { font-weight: 800; }
+h2, .h2 { font-weight: 800; }
+h3, .h3 { font-weight: 800; }
+h4, .h4 { font-weight: 500; }
+h5, .h5 { font-weight: 500; }
+h6, .h6 { font-weight: 500; }
+
+/* Collection/product page titles */
+.collection__title,
+.page-title,
+.section-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+}
+
+/* ============================================================
+   3. NAVIGATION — 12px / 800 / uppercase / 0.05em tracked
+   ============================================================ */
+.header__menu-item,
+.header__menu-item > a,
+.header__menu-item > button,
+.mega-menu__list-item > a,
+.mega-menu__link,
+header nav a,
+.header a,
+[class*="menu__link"],
+[class*="nav__link"] {
+  font-family: var(--font-jost);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+}
+
+/* ============================================================
+   4. BUTTONS — sharp corners, tracked uppercase
+   All border-radius is set to 0 in settings_data.json.
+   These rules enforce the tracking and weight.
+   ============================================================ */
+.button,
+.button--primary,
+.button--secondary,
+[class*="shopify-payment-button"],
+[class*="product-form__submit"],
+[class*="cart__checkout"],
+form[action*="/cart"] button[type="submit"] {
+  font-family: var(--font-jost);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+  border-radius: 0;
+}
+
+/* ============================================================
+   5. ANNOUNCEMENT BAR — warm, editorial
+   ============================================================ */
+.announcement-bar,
+.announcement-bar__message,
+[class*="announcement"] {
+  font-family: var(--font-jost);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-brand);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   6. PRODUCT GRID — tight 4px column gap, portrait 4:5 cards
+   ============================================================ */
+.product-grid,
+.collection-product-list,
+.resource-list {
+  column-gap: 0.25rem;
+  row-gap: 1.5rem;
+}
+
+/* Product card title — uppercase, tracked */
+.card__heading,
+.card__title,
+.card__name,
+.product-card__title,
+[class*="card__heading"],
+[class*="card__title"] {
+  font-family: var(--font-jost);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+}
+
+/* Price in product card */
+.price__container,
+.card .price,
+[class*="card"] .price {
+  font-weight: 300;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+}
+
+/* Portrait 4:5 aspect ratio for product images */
+.card__media,
+.product-card__image-wrapper,
+.card__media .media,
+[class*="card__image"] {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.card__media img,
+.product-card__image-wrapper img,
+[class*="card__image"] img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* No card border on collection grid */
+.card,
+.product-card {
+  border-radius: 0;
+  border: none;
+}
+
+/* ============================================================
+   7. PRODUCT DETAIL PAGE — title uppercase, tracked
+   ============================================================ */
+.product__title,
+.product-title,
+h1.product__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+  line-height: 1.33;
+}
+
+.price,
+.product__price,
+[class*="price__regular"],
+[class*="price__sale"] {
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   8. FOOTER — warm cream background, uppercase tracked links
+   ============================================================ */
+.footer,
+footer,
+.footer__inner {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-charcoal);
+}
+
+.footer__heading,
+.footer__column-heading,
+[class*="footer"] h3,
+[class*="footer"] h4,
+[class*="footer"] strong {
+  font-family: var(--font-jost);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+  color: var(--color-brand-near-black);
+}
+
+.footer a,
+.footer__list-item a,
+[class*="footer__link"] {
+  font-family: var(--font-jost);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+  color: var(--color-brand-charcoal);
+  text-decoration: none;
+}
+
+.footer a:hover,
+[class*="footer__link"]:hover {
+  color: var(--color-brand-near-black);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   9. FORM INPUTS — clean, minimal
+   ============================================================ */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+textarea,
+select {
+  border-radius: 0;
+  font-family: var(--font-jost);
+  font-weight: 300;
+}
+
+/* ============================================================
+   10. BADGES — uppercase
+   ============================================================ */
+.badge,
+[class*="badge__"],
+.product-badge {
+  font-family: var(--font-jost);
+  font-size: 0.625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-brand);
+  border-radius: 0;
+}
+
+/* ============================================================
+   11. PRICE / SALE COLOUR — brand gold for sale prices
+   ============================================================ */
+.price--on-sale .price__sale,
+[class*="price--sale"],
+.sale-price {
+  color: var(--color-brand-gold);
+}
+
+/* ============================================================
+   12. VARIANT PICKER — square buttons with gold selection
+   ============================================================ */
+.variant-picker__button,
+[class*="variant-picker"] button,
+[class*="swatch"] {
+  border-radius: 0;
+  font-family: var(--font-jost);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   13. QUANTITY SELECTOR & CART — clean lines
+   ============================================================ */
+.quantity__button,
+.quantity__input,
+[class*="quantity"] input,
+[class*="quantity"] button {
+  border-radius: 0;
+  font-family: var(--font-jost);
+}
+
+/* ============================================================
+   14. MISC — popover, drawer borders square
+   ============================================================ */
+.popover,
+.drawer,
+[class*="drawer__"],
+[class*="modal__"] {
+  border-radius: 0;
+}
+
+/* Star / review rating — brand gold */
+.rating-star,
+[class*="star"],
+.review-stars {
+  color: var(--color-brand-gold);
+}
+
+/* ============================================================
+   15. HOVER TRANSITIONS — gentle, 250ms
+   ============================================================ */
+a,
+button,
+.button {
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+}
+
+/* ============================================================
+   16. SECTION BACKGROUNDS — warm tones for alternating rows
+   ============================================================ */
+.color-scheme-2 {
+  background-color: var(--color-brand-cream);
+}
+
+.color-scheme-3 {
+  background-color: var(--color-brand-cream-light);
+}
+
+/* ============================================================
+   17. ANNOUNCEMENT BAR BACKGROUND
+   Arms of Eve uses a light warm bar; we match with brand cream.
+   ============================================================ */
+.section-announcement-bar,
+[class*="announcement-bar"] {
+  background-color: var(--color-brand-warm-white);
+}
+
+/* ============================================================
+   18. LOGO SIZING
+   Arms of Eve logo is tall-ish. Constrain to header height.
+   ============================================================ */
+.header__heading-logo,
+.header__logo img,
+[class*="header__logo"] img {
+  max-height: 50px;
+  width: auto;
+}
+
+@media (max-width: 749px) {
+  .header__heading-logo,
+  .header__logo img,
+  [class*="header__logo"] img {
+    max-height: 28px;
+  }
+}

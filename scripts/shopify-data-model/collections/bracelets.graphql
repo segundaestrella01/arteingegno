@@ -1,0 +1,31 @@
+# Collection: Bracelets
+#
+# Manual collection for the Bracelets product category.
+# Tagged with `category-showcase` so the category-showcase section
+# on the homepage picks it up automatically.
+#
+# Handle: bracelets
+# Run: once against the production store (mattiastore-3117.myshopify.com).
+
+mutation CreateBraceletsCollection($input: CollectionInput!) {
+  collectionCreate(input: $input) {
+    collection {
+      id
+      title
+      handle
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+# Variables:
+# {
+#   "input": {
+#     "title": "Bracelets",
+#     "handle": "bracelets",
+#     "tags": ["category-showcase"]
+#   }
+# }

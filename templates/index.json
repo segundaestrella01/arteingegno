@@ -108,6 +108,83 @@
         "padding-block-end": 72
       }
     },
+    "category_showcase": {
+      "type": "category-showcase",
+      "blocks": {
+        "static-collection-card": {
+          "type": "_collection-card",
+          "static": true,
+          "settings": {
+            "placement": "on_image",
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-end",
+            "collection_card_gap": 8,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-6",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0
+          },
+          "blocks": {
+            "collection-card-image": {
+              "type": "_collection-card-image",
+              "static": true,
+              "settings": {
+                "image_ratio": "portrait",
+                "toggle_overlay": true,
+                "overlay_color": "#00000066",
+                "overlay_style": "gradient",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              }
+            },
+            "collection-title": {
+              "type": "collection-title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1.125rem",
+                "line_height": "normal",
+                "letter_spacing": "loose",
+                "case": "uppercase",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 8,
+                "padding-inline-start": 8,
+                "padding-inline-end": 0
+              }
+            }
+          },
+          "block_order": ["collection-title"]
+        }
+      },
+      "name": "Categorie prodotto",
+      "settings": {
+        "collection_handles": "necklaces,rings,bracelets",
+        "layout_type": "carousel",
+        "columns": 3,
+        "mobile_card_size": "60cqw",
+        "columns_gap": 4,
+        "icons_style": "none",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 0,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 4,
+        "padding-block-end": 4
+      }
+    },
     "featured_collection_new": {
       "type": "product-list",
       "blocks": {
@@ -290,7 +367,7 @@
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "44cqw",
-        "columns_gap": 8,
+        "columns_gap": 4,
         "rows_gap": 24,
         "icons_style": "arrow",
         "icons_shape": "none",
@@ -708,7 +785,7 @@
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "44cqw",
-        "columns_gap": 8,
+        "columns_gap": 4,
         "rows_gap": 24,
         "icons_style": "arrow",
         "icons_shape": "none",
@@ -788,7 +865,7 @@
             "input_type_preset": "paragraph",
             "style_class": "button",
             "display_type": "text",
-            "label": "Sign up",
+            "label": "Iscriviti",
             "integrated_button": false,
             "button_type_preset": "paragraph",
             "padding-block-start": 0,
@@ -836,6 +913,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "category_showcase",
     "featured_collection_new",
     "brand_story",
     "trust_signals",

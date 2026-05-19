@@ -1,0 +1,31 @@
+# Collection: Rings
+#
+# Manual collection for the Rings product category.
+# Tagged with `category-showcase` so the category-showcase section
+# on the homepage picks it up automatically.
+#
+# Handle: rings
+# Run: once against the production store (mattiastore-3117.myshopify.com).
+
+mutation CreateRingsCollection($input: CollectionInput!) {
+  collectionCreate(input: $input) {
+    collection {
+      id
+      title
+      handle
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+# Variables:
+# {
+#   "input": {
+#     "title": "Rings",
+#     "handle": "rings",
+#     "tags": ["category-showcase"]
+#   }
+# }
