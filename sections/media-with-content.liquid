@@ -10,14 +10,27 @@
   if section.settings.media_position == 'right'
     assign media_class_modifier = media_class_modifier | append: ' media-with-content--media-right'
   endif
+
+  assign padding_start = section.settings['padding-block-start'] | default: 0
+  assign padding_end = section.settings['padding-block-end'] | default: 0
 %}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-block-start: {{ padding_start }}px;
+    padding-block-end: {{ padding_end }}px;
+  }
+  #shopify-section-{{ section.id }} .section-background {
+    top: {{ padding_start }}px;
+    bottom: {{ padding_end }}px;
+  }
+{% endstyle %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
-  class="section section--{{ section.settings.section_width }} disable-section-top-offset media-with-content color-{{ section.settings.color_scheme }} spacing-style {{ media_class_modifier }}"
+  class="section section--{{ section.settings.section_width }} disable-section-top-offset media-with-content color-{{ section.settings.color_scheme }} {{ media_class_modifier }}"
   data-testid="media-with-content"
   style="
-    {%- render 'spacing-style', settings: section.settings %}
     {% render 'border-override', settings: section.settings %}
     --media-height: {{ section.settings.media_height }};
     {%- case section.settings.media_height %}
