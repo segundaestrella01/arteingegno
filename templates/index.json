@@ -472,7 +472,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Bigiotteria in Primo Piano</h3>",
+                "text": "<h3>Gioielli in Primo Piano</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
