@@ -522,13 +522,14 @@
           "type": "_media-without-appearance",
           "static": true,
           "settings": {
-            "media_type": "external_video",
+            "media_type": "video",
             "external_video_url": "",
             "external_video_autoplay": true,
             "external_video_loop": true,
             "link": "",
+            "video": "shopify://files/videos/Glamorous Photoshoot BTS.mp4",
             "video_loop": true,
-            "video_autoplay": false,
+            "video_autoplay": true,
             "image_position": "cover",
             "video_position": "cover"
           },
