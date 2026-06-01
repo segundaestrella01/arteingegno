@@ -265,7 +265,7 @@
             "body": {
               "type": "text",
               "settings": {
-                "text": "<p>Arte&amp;Ingegno nasce dall’amore per i materiali veri e per le mani che li lavorano. Ogni gioiello è progettato e realizzato artigianalmente in Italia, con argento, acciaio e pietre selezionate.</p><p>Non produciamo in serie. Produciamo con cura.</p>",
+                "text": "<p>Non produciamo in serie. Ogni oggetto che trovi qui — che sia un gioiello, una sfera di vetro o un ventaglio — è stato scelto, studiato e lavorato con una logica precisa: durare nel tempo e avere qualcosa da dire.</p><p>L'ottone placcato oro che usiamo per i nostri gioielli non è una scorciatoia: è un materiale con carattere, che richiede cura e restituisce bellezza. Le sfere di vetro nascono da una tradizione artigianale che affonda le radici nel mondo del mare e della navigazione. I ventagli che selezioniamo sono pezzi da tenere, non da dimenticare in un cassetto.</p><p>Ogni volta che acquisti da noi, ti portiamo a casa anche il perché: da dove viene quell'oggetto, come è fatto, cosa lo rende diverso. Perché crediamo che capire un prodotto sia il primo passo per amarlo davvero.</p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
