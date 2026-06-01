@@ -25,9 +25,34 @@
         {
           "value": "video",
           "label": "t:options.video"
+        },
+        {
+          "value": "external_video",
+          "label": "YouTube / Vimeo"
         }
       ],
       "default": "image"
+    },
+    {
+      "type": "video_url",
+      "id": "external_video_url",
+      "label": "Video URL",
+      "accept": ["youtube", "vimeo"],
+      "visible_if": "{{ block.settings.media_type == 'external_video' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "external_video_autoplay",
+      "label": "t:settings.autoplay",
+      "default": true,
+      "visible_if": "{{ block.settings.media_type == 'external_video' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "external_video_loop",
+      "label": "t:settings.loop",
+      "default": true,
+      "visible_if": "{{ block.settings.media_type == 'external_video' }}"
     },
     {
       "type": "image_picker",
