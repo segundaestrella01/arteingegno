@@ -1,30 +1,13 @@
-{% liquid
+{%- liquid
   assign padding_start = section.settings['padding-block-start'] | default: 60
   assign padding_end   = section.settings['padding-block-end']   | default: 60
-%}
+-%}
 
 {% style %}
   #shopify-section-{{ section.id }} {
     background: transparent;
     padding-block-start: {{ padding_start }}px;
     padding-block-end: {{ padding_end }}px;
-    {%- case section.settings.section_height -%}
-      {%- when '50svh' -%}
-        --our-shop-height: 50svh; --our-shop-height-mobile: 30svh;
-      {%- when '60svh' -%}
-        --our-shop-height: 60svh; --our-shop-height-mobile: 50svh;
-      {%- when '80svh' -%}
-        --our-shop-height: 80svh; --our-shop-height-mobile: 70svh;
-      {%- when '100svh' -%}
-        --our-shop-height: 100svh; --our-shop-height-mobile: 100svh;
-      {%- else -%}
-        --our-shop-height: auto; --our-shop-height-mobile: auto;
-    {%- endcase %}
-  }
-
-  #shopify-section-{{ section.id }} .our-shop__inner {
-    margin-inline: auto;
-    padding-inline: var(--page-width-margin);
   }
 
   #shopify-section-{{ section.id }} .our-shop__title {
@@ -34,85 +17,75 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-block-end: 2.5rem;
+    padding-inline: var(--page-width-margin);
     color: var(--color-foreground);
   }
 
   #shopify-section-{{ section.id }} .our-shop__columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: stretch;
-    height: var(--our-shop-height);
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__image-placeholder {
+    aspect-ratio: 4 / 3;
+    background: var(--color-background-2, #f5f5f5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__image-placeholder svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
   }
 
   #shopify-section-{{ section.id }} .our-shop__text {
-    align-self: center;
-    margin: 24px;
+    padding-inline: 3rem;
     font-family: var(--font-body--family);
     font-size: var(--font-body--size);
     line-height: 1.7;
     color: var(--color-foreground);
   }
 
-  #shopify-section-{{ section.id }} .our-shop__image {
-    height: 100%;
-    overflow: hidden;
-  }
-
-  #shopify-section-{{ section.id }} .our-shop__image-placeholder {
-    height: 100%;
-    min-height: 300px;
-    background: var(--color-background-2, #f5f5f5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  #shopify-section-{{ section.id }} .our-shop__image-placeholder svg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.4;
-  }
-
-  #shopify-section-{{ section.id }} .our-shop__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .our-shop__columns {
       grid-template-columns: 1fr;
-      height: var(--our-shop-height-mobile);
+    }
+    #shopify-section-{{ section.id }} .our-shop__text {
+      padding-inline: var(--page-width-margin);
+      padding-block-start: 1.5rem;
     }
   }
 {% endstyle %}
 
-<div class="our-shop__inner">
-  <h2 class="our-shop__title">{{ section.settings.title }}</h2>
+<h2 class="our-shop__title">{{ section.settings.title }}</h2>
 
-  <div class="our-shop__columns">
-    <div class="our-shop__image">
-      {%- if section.settings.image != blank -%}
-        <img
-          src="{{ section.settings.image | image_url: width: 900 }}"
-          alt="{{ section.settings.image.alt | escape }}"
-          width="{{ section.settings.image.width }}"
-          height="{{ section.settings.image.height }}"
-          loading="lazy"
-        >
-      {%- else -%}
-        <div class="our-shop__image-placeholder">
-          {{ 'image' | placeholder_svg_tag }}
-        </div>
-      {%- endif -%}
-    </div>
-    <div class="our-shop__text">
-      {{ section.settings.content }}
-    </div>
+<div class="our-shop__columns">
+  <div class="our-shop__image">
+    {%- if section.settings.image != blank -%}
+      <img
+        src="{{ section.settings.image | image_url: width: 900 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        loading="lazy"
+      >
+    {%- else -%}
+      <div class="our-shop__image-placeholder">
+        {{ 'image' | placeholder_svg_tag }}
+      </div>
+    {%- endif -%}
+  </div>
+  <div class="our-shop__text">
+    {{ section.settings.content }}
   </div>
 </div>
 
@@ -135,25 +108,12 @@
       "type": "richtext",
       "id": "content",
       "label": "Content",
-      "default": "<p>C'è qualcosa che uno schermo non riesce a trasmettere: il peso di un bracciale tra le mani, il riflesso della luce su una sfera di vetro, la texture di un ventaglio aperto per la prima volta.</p><p>Il nostro negozio a Palau è il posto dove ogni oggetto racconta la sua storia di persona. Puoi toccare, provare, fare domande — e scoprire che dietro ogni pezzo c'è un processo, una scelta, un perché.</p><p>Non venire solo per comprare. Vieni per capire cosa rende un gioiello diverso dagli altri, cosa significa lavorare l'ottone placcato oro, perché una sfera di vetro può diventare un oggetto da custodire per anni.</p><p><strong>Ti aspettiamo.</strong></p></div>"
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
     },
     {
       "type": "image_picker",
       "id": "image",
       "label": "Shop image"
-    },
-    {
-      "type": "select",
-      "id": "section_height",
-      "label": "Height",
-      "options": [
-        { "value": "auto",   "label": "Auto" },
-        { "value": "50svh",  "label": "Small" },
-        { "value": "60svh",  "label": "Medium" },
-        { "value": "80svh",  "label": "Large" },
-        { "value": "100svh", "label": "Full screen" }
-      ],
-      "default": "60svh"
     },
     {
       "type": "range",
