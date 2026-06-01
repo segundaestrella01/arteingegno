@@ -1,0 +1,151 @@
+{% liquid
+  assign padding_start = section.settings['padding-block-start'] | default: 60
+  assign padding_end   = section.settings['padding-block-end']   | default: 60
+%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    background: transparent;
+    padding-block-start: {{ padding_start }}px;
+    padding-block-end: {{ padding_end }}px;
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__inner {
+    max-width: var(--page-width);
+    margin-inline: auto;
+    padding-inline: var(--page-width-margin);
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__title {
+    font-family: var(--font-body--family);
+    font-style: var(--font-body--style);
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-block-end: 2.5rem;
+    color: var(--color-foreground);
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__text {
+    font-family: var(--font-body--family);
+    font-size: var(--font-body--size);
+    line-height: 1.7;
+    color: var(--color-foreground);
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__image-placeholder {
+    aspect-ratio: 4 / 3;
+    background: var(--color-background-2, #f5f5f5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__image-placeholder svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+  }
+
+  #shopify-section-{{ section.id }} .our-shop__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .our-shop__columns {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<div class="our-shop__inner">
+  <h2 class="our-shop__title">{{ section.settings.title }}</h2>
+
+  <div class="our-shop__columns">
+    <div class="our-shop__image">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          alt="{{ section.settings.image.alt | escape }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+        >
+      {%- else -%}
+        <div class="our-shop__image-placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="our-shop__text">
+      {{ section.settings.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Our Shop",
+  "tag": "section",
+  "class": "section-wrapper",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Come to visit our shop in Palau"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Shop image"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Shop"
+    }
+  ]
+}
+{% endschema %}

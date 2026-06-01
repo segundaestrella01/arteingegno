@@ -750,6 +750,16 @@
         "padding-block-start": 60,
         "padding-block-end": 60
       }
+    },
+    "our_shop": {
+      "type": "our-shop",
+      "name": "Our Shop",
+      "settings": {
+        "title": "Come to visit our shop in Palau",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
     }
   },
   "order": [
@@ -759,6 +769,7 @@
     "brand_story",
     "featured_collection_rings",
     "trust_signals",
+    "our_shop",
     "email_signup"
   ]
 }
