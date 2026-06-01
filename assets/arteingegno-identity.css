@@ -1,18 +1,21 @@
 /*
  * Arte&Ingegno — visual identity overrides
- * Inspired by Arms of Eve's warm, editorial, uppercase aesthetic.
+ * Concept: "Bosco & Ottone" — forest green, warm parchment, brass gold.
  * Applied on top of Horizon v3.5.1.
  *
  * Palette:
- *   #FDFAF5  warm white (page bg)
- *   #111111  near-black (headings, nav)
- *   #50504F  charcoal (body text)
- *   #B19151  brand gold (CTA, accent)
+ *   #F2EAD8  warm parchment (primary bg)
+ *   #E4D9C0  aged linen (alternating sections)
+ *   #D5C9AE  clay (deeper neutral)
+ *   #2B3D28  forest green (hero, bold sections)
+ *   #1E1A12  warm near-black (headings)
+ *   #4A4035  warm brown (body text)
+ *   #B19151  brass gold (CTA, accent)
  *   #8F7239  deep gold (hover)
- *   #F3F0EA  warm cream (footer, alt sections)
- *   #ECE6DC  light cream (soft surfaces)
  *
- * Font: Jost (Google Fonts) — geometric sans, Avenir substitute.
+ * Fonts:
+ *   Cormorant Garamond — section headings & hero display
+ *   Jost — UI elements: nav, buttons, badges, labels
  */
 
 /* ============================================================
@@ -24,16 +27,26 @@
 :root {
   --font-jost: 'Jost', var(--font-body--family, sans-serif);
   --font-display: 'Cormorant Garamond', serif;
+
+  /* Bosco & Ottone palette */
   --color-brand-gold: #B19151;
   --color-brand-gold-deep: #8F7239;
-  --color-brand-cream: #F3F0EA;
-  --color-brand-cream-light: #ECE6DC;
-  --color-brand-warm-white: #FDFAF5;
-  --color-brand-charcoal: #50504F;
-  --color-brand-near-black: #111111;
+  --color-brand-parchment: #F2EAD8;
+  --color-brand-linen: #E4D9C0;
+  --color-brand-clay: #D5C9AE;
+  --color-brand-forest: #2B3D28;
+  --color-brand-warm-black: #1E1A12;
+  --color-brand-warm-brown: #4A4035;
+
+  /* Legacy aliases kept for compatibility with section overrides below */
+  --color-brand-cream: #E4D9C0;
+  --color-brand-cream-light: #D5C9AE;
+  --color-brand-warm-white: #F2EAD8;
+  --color-brand-charcoal: #4A4035;
+  --color-brand-near-black: #1E1A12;
+
   --letter-spacing-brand: 0.05em;
 
-  /* Override Horizon's heading-loose to match AoE's 0.05em tracking */
   --letter-spacing--heading-loose: 0.05em;
   --letter-spacing--body-loose: 0.02em;
   --letter-spacing--display-loose: 0.05em;
@@ -61,9 +74,9 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 { font-weight: 500; }
-h2, .h2 { font-weight: 500; }
-h3, .h3 { font-weight: 500; }
-h4, .h4 { font-weight: 400; }
+h2, .h2 { font-weight: 500; font-size: 1.75rem; }
+h3, .h3 { font-weight: 500; font-size: 1.25rem; }
+h4, .h4 { font-weight: 400; font-size: 1rem; }
 h5, .h5 { font-weight: 400; }
 h6, .h6 { font-weight: 400; }
 
@@ -74,6 +87,25 @@ h6, .h6 { font-weight: 400; }
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
+}
+
+/* ============================================================
+   2a. HERO SLIDESHOW — heading & subheading sizes
+   Overrides the liquid-inline defaults: bigger heading, readable subheading.
+   ============================================================ */
+.hero-slideshow-wrapper .hero-slideshow__heading {
+  font-size: clamp(2.75rem, 7vw, 5rem);
+}
+
+@media (max-width: 749px) {
+  .hero-slideshow-wrapper .hero-slideshow__heading {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+}
+
+.hero-slideshow-wrapper .hero-slideshow__subheading {
+  font-size: 1.125rem;
+  letter-spacing: 0.12em;
 }
 
 /* ============================================================
@@ -440,4 +472,65 @@ button,
   --button-background-color: var(--color-brand-gold-deep);
   --button-border-color: var(--color-brand-gold-deep);
   --button-color: #fff;
+}
+
+/* ============================================================
+   20. BODY COPY SIZE — 16px for comfortable reading
+   Targets content paragraphs in sections; excludes UI text
+   (buttons, badges, nav) which keep their own smaller sizes.
+   ============================================================ */
+p:not(.announcement-bar__text):not(.card__vendor):not(.hero-slideshow__subheading):not(.hero-slideshow__heading),
+li,
+.rte p,
+.rte li {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   21. SECTION HEADINGS — Cormorant Garamond
+   Extends the editorial serif from hero-only to all content
+   section h2/h3. UI headings (nav, drawer titles) stay Jost.
+   ============================================================ */
+.section h2,
+.section h3,
+.our-shop__title,
+.media-with-content h2,
+.media-with-content h3,
+[class*="section--"] h2,
+[class*="section--"] h3,
+.newsletter h2,
+.newsletter h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   22. FOOTER — use new palette variables
+   ============================================================ */
+.footer,
+footer,
+.footer__inner {
+  background-color: var(--color-brand-forest);
+  color: var(--color-brand-parchment);
+}
+
+.footer__heading,
+.footer__column-heading,
+[class*="footer"] h3,
+[class*="footer"] h4,
+[class*="footer"] strong {
+  color: var(--color-brand-parchment);
+}
+
+.footer a,
+.footer__list-item a,
+[class*="footer__link"] {
+  color: var(--color-brand-linen);
+}
+
+.footer a:hover,
+[class*="footer__link"]:hover {
+  color: var(--color-brand-parchment);
 }
