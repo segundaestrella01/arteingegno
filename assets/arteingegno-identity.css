@@ -238,6 +238,14 @@ form[action*="/cart"] button[type="submit"] {
 }
 
 /* ============================================================
+   6b. SWAN SUGGERISCE — position context for branch decorations
+   ============================================================ */
+[id*="swan_suggerisce"] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================================
    7. PRODUCT DETAIL PAGE — title uppercase, tracked
    ============================================================ */
 .product__title,
@@ -248,6 +256,18 @@ h1.product__title {
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
   line-height: 1.33;
+}
+
+/* PDP text block title — Cormorant Garamond 24px, overrides global h1 rule */
+.product-information-section .text-block h1,
+.product-information .text-block h1,
+[class*="product-information"] .text-block h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  text-transform: uppercase;
 }
 
 .price,
