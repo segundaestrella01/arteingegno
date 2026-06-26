@@ -495,7 +495,17 @@ button,
 }
 
 /* ============================================================
-   20. BODY COPY SIZE — 18px for comfortable reading
+   20. BASE FONT SIZE — 1rem = 18px
+   Sets the root to 112.5% (18/16) so every rem unit in the
+   theme resolves to 18px. Accessibility-safe: uses % so the
+   user's browser font-size preference is still respected.
+   ============================================================ */
+html {
+  font-size: 112.5%;
+}
+
+/* ============================================================
+   21. BODY COPY SIZE — 18px (1rem at new base)
    Targets content paragraphs in sections; excludes UI text
    (buttons, badges, nav) which keep their own smaller sizes.
    ============================================================ */
@@ -503,12 +513,12 @@ p:not(.announcement-bar__text):not(.card__vendor):not(.hero-slideshow__subheadin
 li,
 .rte p,
 .rte li {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
 /* ============================================================
-   21. SECTION HEADINGS — Cormorant Garamond
+   22. SECTION HEADINGS — Cormorant Garamond
    Extends the editorial serif from hero-only to all content
    section h2/h3. UI headings (nav, drawer titles) stay Jost.
    ============================================================ */
