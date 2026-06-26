@@ -554,3 +554,13 @@ footer,
 [class*="footer__link"]:hover {
   color: var(--color-brand-parchment);
 }
+
+/* ============================================================
+   GALLERY PEEK — next image visible in carousel
+   The theme's built-in hint only fires on mobile via its own
+   media query. We extend it to desktop and reinforce mobile so
+   the next image always peeks ~12% at the edge of the frame.
+   ============================================================ */
+.media-gallery--carousel :not(.dialog-zoomed-gallery) > .product-media-container:not(:only-child) {
+  width: 88%;
+}
