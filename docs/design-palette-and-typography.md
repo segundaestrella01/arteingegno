@@ -55,12 +55,11 @@ Applied: 2026-06-01
 
 | Role | Font | Shopify handle | Notes |
 |------|------|---------------|-------|
-| Heading | Playfair Display Bold | `playfair_display_n7` | Classic editorial serif; confident at display sizes |
-| Subheading | Playfair Display Regular | `playfair_display_n4` | Same family, lighter weight |
-| Body | DM Sans Regular | `dm_sans_n4` | Clean humanist sans, warm and readable |
-| Accent / buttons | DM Sans Medium | `dm_sans_n5` | Works in uppercase for CTAs |
-
-> **Note:** Cormorant Garamond (`cormorant_garamond_*`) is not in Shopify's font library — attempting to use it causes an upload error. Playfair Display was chosen as the closest available alternative: both are high-contrast, elegant display serifs suited to jewellery/artisan brands.
+| Heading | Jost ExtraBold | `jost_n8` | Geometric sans; closest available to Avenir ExtraBold |
+| Subheading | Jost Medium | `jost_n5` | Same family, medium weight |
+| Body | Jost Regular | `jost_n4` | Clean, warm, readable |
+| Accent / buttons | Jost ExtraBold | `jost_n8` | Uppercase tracked CTAs |
+| Display / hero | Cormorant Garamond | *(Google Fonts — loaded in `layout/theme.liquid`)* | Editorial serif for hero and section display headings only; not available as a Shopify font handle, loaded directly via Google Fonts |
 
 ### Type scale
 
@@ -74,7 +73,7 @@ Applied: 2026-06-01
 | H6 | 12px | display-loose | — | — |
 | Body | 15px | body-loose | — | — |
 
-**Letter spacing rationale:** Cormorant Garamond has generous natural spacing at large sizes; `heading-normal` prevents the overwide tracking that suited the previous geometric Jost font.
+**Letter spacing rationale:** `heading-normal` suits Jost at display sizes; Cormorant Garamond display headings use a slightly wider 0.08em set in `arteingegno-identity.css` to match its natural generous spacing.
 
 ---
 
@@ -82,4 +81,5 @@ Applied: 2026-06-01
 
 | Date | Change |
 |------|--------|
-| 2026-06-01 | Initial palette v1 applied — replaced Jost with Playfair Display / DM Sans; introduced forest green scheme-4; shifted all neutrals from cold cream to warm parchment. Cormorant Garamond not available in Shopify font library — Playfair Display used instead. |
+| 2026-06-01 | Initial palette v1 applied — introduced forest green scheme-4; shifted all neutrals from cold cream to warm parchment. Font system: Jost (all UI/body) + Cormorant Garamond (display headings via Google Fonts). |
+| 2026-06-26 | Corrected font documentation — Playfair Display / DM Sans were planned but never implemented. Actual system is Jost + Cormorant Garamond. |
