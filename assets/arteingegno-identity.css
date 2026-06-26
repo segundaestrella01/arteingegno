@@ -556,6 +556,13 @@ footer,
 }
 
 /* ============================================================
+   GALLERY CONTROLS — hide dots/counter, keep arrows only
+   ============================================================ */
+.media-gallery--carousel slideshow-controls {
+  display: none;
+}
+
+/* ============================================================
    GALLERY PEEK — next image visible in carousel
    The theme's built-in hint only fires on mobile via its own
    media query. We extend it to desktop and reinforce mobile so
