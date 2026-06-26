@@ -250,6 +250,18 @@ h1.product__title {
   line-height: 1.33;
 }
 
+/* PDP text block title — Cormorant Garamond 24px, overrides global h1 rule */
+.product-information-section .text-block h1,
+.product-information .text-block h1,
+[class*="product-information"] .text-block h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
 .price,
 .product__price,
 [class*="price__regular"],
