@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -7,20 +16,18 @@
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
-            "media_presentation": "grid",
-            "media_columns": "two",
+            "media_presentation": "slideshow",
+            "media_columns": "one",
             "image_gap": 4,
-            "large_first_image": false,
-            "icons_style": "none",
+            "large_first_image": true,
+            "icons_style": "arrow",
             "slideshow_controls_style": "counter",
             "slideshow_mobile_controls_style": "dots",
-            "thumbnail_position": "right",
-            "thumbnail_width": 44,
-            "aspect_ratio": "adapt",
+            "thumbnail_position": "left",
+            "thumbnail_width": 72,
+            "aspect_ratio": "portrait",
             "constrain_to_viewport": true,
-            "media_fit": "contain",
-            "media_radius": 0,
-            "extend_media": false,
+            "media_fit": "cover",
             "zoom": true,
             "video_loop": false,
             "hide_variants": true,
@@ -41,7 +48,7 @@
             "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
-            "gap": 28,
+            "gap": 24,
             "sticky_details_desktop": true,
             "inherit_color_scheme": true,
             "color_scheme": "scheme-1",
@@ -62,7 +69,6 @@
               "type": "group",
               "name": "Header",
               "settings": {
-                "open_in_new_tab": false,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
@@ -70,7 +76,7 @@
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
+                "gap": 8,
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -90,6 +96,7 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "open_in_new_tab": false,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -137,7 +144,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "color": "var(--color-foreground)",
-                    "padding-block-start": 4,
+                    "padding-block-start": 8,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
@@ -209,92 +216,157 @@
               },
               "block_order": []
             },
-            "badge_1": {
-              "type": "text",
-              "name": "Badge 1",
+            "badges_row": {
+              "type": "group",
+              "name": "Badges row",
               "settings": {
-                "text": "<p>{{ closest.product.metafields.custom_shared.badge_1.value }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 24,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "open_in_new_tab": false,
+                "padding-block-start": 12,
+                "padding-block-end": 12,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "badge_1": {
+                  "type": "text",
+                  "name": "Badge 1",
+                  "settings": {
+                    "text": "<p>{{ closest.product.metafields.custom_shared.badge_1.value }}</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "badge_2": {
+                  "type": "text",
+                  "name": "Badge 2",
+                  "settings": {
+                    "text": "<p>{{ closest.product.metafields.custom_shared.badge_2.value }}</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "badge_3": {
+                  "type": "text",
+                  "name": "Badge 3",
+                  "settings": {
+                    "text": "<p>{{ closest.product.metafields.custom_shared.badge_3.value }}</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "badge_1",
+                "badge_2",
+                "badge_3"
+              ]
             },
-            "badge_2": {
-              "type": "text",
-              "name": "Badge 2",
+            "divider_mid": {
+              "type": "_divider",
+              "name": "Divider",
               "settings": {
-                "text": "<p>{{ closest.product.metafields.custom_shared.badge_2.value }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
                 "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-block-end": 0
               },
               "blocks": {}
             },
-            "badge_3": {
-              "type": "text",
-              "name": "Badge 3",
+            "description_tabs": {
+              "type": "custom-liquid",
+              "name": "Description tabs",
               "settings": {
-                "text": "<p>{{ closest.product.metafields.custom_shared.badge_3.value }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "custom_liquid": "{%- assign ts = product.metafields.custom_shared.story.value -%}{%- assign tm = product.description -%}{%- assign tc = product.metafields.custom_shared.care.value -%}{%- if ts != blank or tm != blank or tc != blank -%}<div class='ai-tabs' id='ai-tabs-{{ block.id }}'><style>.ai-tabs{font-family:var(--font-body--family)}.ai-tabs__nav{display:flex;border-bottom:1px solid var(--color-border);overflow-x:auto}.ai-tabs__btn{background:none;border:none;border-bottom:2px solid transparent;padding:12px 16px;cursor:pointer;font-family:var(--font-body--family);font-size:.875rem;color:var(--color-foreground);letter-spacing:.04em;margin-bottom:-1px;white-space:nowrap}.ai-tabs__btn[aria-selected='true']{border-bottom-color:var(--color-foreground);font-weight:600}.ai-tabs__panel{padding:20px 0;font-size:.9375rem;line-height:1.65;color:var(--color-foreground)}.ai-tabs__panel[hidden]{display:none}.ai-tabs__mobile{display:none}@media(max-width:749px){.ai-tabs__nav,.ai-tabs__panels{display:none}.ai-tabs__mobile{display:block}.ai-tabs__mobile details{border-bottom:1px solid var(--color-border)}.ai-tabs__mobile summary{list-style:none;padding:16px 0;font-family:var(--font-body--family);font-size:.875rem;cursor:pointer;display:flex;justify-content:space-between}.ai-tabs__mobile summary::-webkit-details-marker{display:none}.ai-tabs__mobile summary::after{content:'+'}.ai-tabs__mobile details[open] summary::after{content:'-'}.ai-tabs__mobile .ai-acc-body{padding-bottom:16px;font-size:.9375rem;line-height:1.65}}</style><nav class='ai-tabs__nav' role='tablist'>{%- if ts != blank %}<button class='ai-tabs__btn' role='tab' aria-controls='tab-storia-{{ block.id }}'>Storia del pezzo</button>{%- endif %}{%- if tm != blank %}<button class='ai-tabs__btn' role='tab' aria-controls='tab-materiali-{{ block.id }}'>Materiali e finitura</button>{%- endif %}{%- if tc != blank %}<button class='ai-tabs__btn' role='tab' aria-controls='tab-cura-{{ block.id }}'>Note pratiche</button>{%- endif %}</nav><div class='ai-tabs__panels'>{%- if ts != blank %}<div class='ai-tabs__panel' id='tab-storia-{{ block.id }}' role='tabpanel' hidden>{{ ts }}</div>{%- endif %}{%- if tm != blank %}<div class='ai-tabs__panel' id='tab-materiali-{{ block.id }}' role='tabpanel' hidden>{{ tm }}</div>{%- endif %}{%- if tc != blank %}<div class='ai-tabs__panel' id='tab-cura-{{ block.id }}' role='tabpanel' hidden>{{ tc }}</div>{%- endif %}</div><div class='ai-tabs__mobile'>{%- if ts != blank %}<details open><summary>Storia del pezzo</summary><div class='ai-acc-body'>{{ ts }}</div></details>{%- endif %}{%- if tm != blank %}<details><summary>Materiali e finitura</summary><div class='ai-acc-body'>{{ tm }}</div></details>{%- endif %}{%- if tc != blank %}<details><summary>Note pratiche</summary><div class='ai-acc-body'>{{ tc }}</div></details>{%- endif %}</div><script>(function(){var s=document.currentScript;var r=s?s.closest('.ai-tabs'):null;if(!r)return;var btns=r.querySelectorAll('.ai-tabs__btn');var panels=r.querySelectorAll('.ai-tabs__panel');function activate(b){btns.forEach(function(x){x.setAttribute('aria-selected','false')});panels.forEach(function(p){p.hidden=true});b.setAttribute('aria-selected','true');var p=r.querySelector('#'+b.getAttribute('aria-controls'));if(p)p.hidden=false}btns.forEach(function(b){b.addEventListener('click',function(){activate(b)})});if(btns.length)activate(btns[0])})();</script></div>{%- endif -%}"
               },
               "blocks": {}
             },
-            "text_aEtTtq": {
+            "artisan_stamp": {
               "type": "text",
-              "name": "Product description",
+              "name": "Artisan stamp",
               "settings": {
-                "text": "{{ closest.product.description }}",
+                "text": "<p><em>Lavorato a mano nel nostro atelier</em></p>",
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-primary--family)",
                 "font_size": "",
@@ -306,8 +378,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-start": 20,
+                "padding-block-end": 8,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -319,10 +391,10 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "badge_1",
-            "badge_2",
-            "badge_3",
-            "text_aEtTtq"
+            "badges_row",
+            "divider_mid",
+            "description_tabs",
+            "artisan_stamp"
           ]
         }
       },
@@ -399,9 +471,8 @@
       ],
       "name": "Swan Suggerisce",
       "settings": {
-        "width": "page-width",
-        "color_scheme": "scheme-3",
         "gap": 16,
+        "color_scheme": "scheme-3",
         "padding-block-start": 64,
         "padding-block-end": 64
       }
