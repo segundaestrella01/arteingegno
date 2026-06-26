@@ -412,6 +412,14 @@
     "swan_suggerisce": {
       "type": "section",
       "blocks": {
+        "swan_deco": {
+          "type": "custom-liquid",
+          "name": "Branch decorations",
+          "settings": {
+            "custom_liquid": "<style>.swan-branches{position:absolute;top:50%;width:220px;pointer-events:none;display:none}.swan-branches--left{left:0;transform:translateY(-50%) scaleX(-1)}.swan-branches--right{right:0;transform:translateY(-50%)}@media(min-width:990px){.swan-branches{display:block}}</style><img class=\"swan-branches swan-branches--left\" src=\"{{ 'branches.png' | asset_url }}\" alt=\"\" width=\"220\" loading=\"lazy\"><img class=\"swan-branches swan-branches--right\" src=\"{{ 'branches.png' | asset_url }}\" alt=\"\" width=\"220\" loading=\"lazy\">"
+          },
+          "blocks": {}
+        },
         "swan_heading": {
           "type": "text",
           "name": "Swan heading",
@@ -466,6 +474,7 @@
         }
       },
       "block_order": [
+        "swan_deco",
         "swan_heading",
         "swan_quote"
       ],
