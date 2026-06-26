@@ -495,7 +495,7 @@ button,
 }
 
 /* ============================================================
-   20. BODY COPY SIZE — 16px for comfortable reading
+   20. BODY COPY SIZE — 18px for comfortable reading
    Targets content paragraphs in sections; excludes UI text
    (buttons, badges, nav) which keep their own smaller sizes.
    ============================================================ */
@@ -503,7 +503,7 @@ p:not(.announcement-bar__text):not(.card__vendor):not(.hero-slideshow__subheadin
 li,
 .rte p,
 .rte li {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.75;
 }
 
