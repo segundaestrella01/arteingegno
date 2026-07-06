@@ -40,7 +40,7 @@
       "name": "Hero Slideshow",
       "settings": {
         "autoplay_speed": 5,
-        "section_height": "large",
+        "section_height": "full-screen",
         "color_scheme": "scheme-6",
         "toggle_overlay": true,
         "overlay_color": "#12121266",
