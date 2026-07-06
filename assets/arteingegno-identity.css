@@ -94,7 +94,7 @@ h6, .h6 { font-weight: 400; }
    Overrides the liquid-inline defaults: bigger heading, readable subheading.
    ============================================================ */
 .hero-slideshow-wrapper .hero-slideshow__heading {
-  font-size: clamp(2.75rem, 7vw, 5rem);
+  font-size: clamp(2.75rem, 7vw, 3rem);
 }
 
 @media (max-width: 749px) {
