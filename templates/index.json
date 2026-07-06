@@ -16,9 +16,9 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_Apr_28_2026_4.jpg",
-            "heading": "ORECCHINI",
-            "subheading": "Gioielli fotografati per terra",
-            "button_label": "",
+            "heading": "Dettagli che parlano di te",
+            "subheading": "",
+            "button_label": "Scopri il nostro Catalogo",
             "button_link": "shopify://collections/all"
           }
         },
@@ -26,16 +26,27 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/WhatsApp_Image_Apr_28_2026_1.jpg",
-            "heading": "Modelle",
-            "subheading": "Modelle fotografate da vicino",
-            "button_label": "Shop Now",
+            "heading": "Indossa ciò che ti rappresenta",
+            "subheading": "",
+            "button_label": "Scopri le nostre Collezioni di Collane",
+            "button_link": ""
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "image": "",
+            "heading": "Oggetti che diventano ricordi",
+            "subheading": "",
+            "button_label": "Best sellers",
             "button_link": ""
           }
         }
       },
       "block_order": [
         "slide_1",
-        "slide_r6wmFW"
+        "slide_r6wmFW",
+        "slide_3"
       ],
       "name": "Hero Slideshow",
       "settings": {
