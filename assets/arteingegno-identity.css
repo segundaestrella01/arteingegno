@@ -452,27 +452,38 @@ button,
    Heading at h1 scale, tagline at h3 scale, tight vertical rhythm.
    Selector uses [id$=] because Shopify prepends a template token to the ID.
    Arms of Eve equivalent: "EFFORTLESS STACKING, TIMELESS STYLE" section.
+
+   Markup is <h1>heading</h1><h2>tagline</h2><p>(free text)</p>. The h1/h2
+   rules below are self-contained (explicit font-family/weight/letter-
+   spacing, boosted specificity via the extra ".section" qualifier) so
+   they win over the generic ".section h2" Cormorant rule further down
+   this file — that keeps the tagline in its original Jost look now that
+   it's a real heading tag instead of a <p>. The trailing <p> is left
+   unstyled here on purpose: it inherits the theme's normal paragraph
+   look, matching body copy elsewhere (e.g. the Brand story section).
    ============================================================ */
 [id$="__brand_intro"] .text-block {
   text-align: center;
 }
 
-[id$="__brand_intro"] h2 {
+[id$="__brand_intro"] .section h1 {
+  font-family: var(--font-display);
   font-size: var(--font-h1--size);
-  font-weight: 300;
-  letter-spacing: 0.08em;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-block-end: 0.4em;
   line-height: 1.1;
 }
 
-[id$="__brand_intro"] p {
-  font-size: var(--font-h3--size);
+[id$="__brand_intro"] .section h2 {
+  font-family: var(--font-jost);
+  font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-block-start: 0;
-  line-height: 1.4;
+  line-height: 1.75;
 }
 
 [id$="__brand_intro"] .button-secondary {

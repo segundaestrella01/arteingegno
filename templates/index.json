@@ -56,7 +56,7 @@
         "intro_text": {
           "type": "text",
           "settings": {
-            "text": "<h2>ARTE E INGEGNO</h2><p>DOVE OGNI DETTAGLIO HA UNA STORIA</p>",
+            "text": "<h1>ARTE E INGEGNO</h1><h2>DOVE OGNI DETTAGLIO HA UNA STORIA</h2><p></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
