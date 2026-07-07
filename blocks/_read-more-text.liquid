@@ -1,0 +1,155 @@
+{%- doc -%}
+  Renders a paragraph truncated to a set number of characters, with a
+  "show more / show less" toggle to reveal the rest.
+{%- enddoc -%}
+
+{% liquid
+  assign full_text = block.settings.text | strip_newlines | strip
+  assign truncate_length = block.settings.truncate_length | default: 300
+  assign is_long = false
+
+  if full_text.size > truncate_length
+    assign is_long = true
+    assign next_char = full_text | slice: truncate_length, 1
+
+    if next_char == '' or next_char == ' '
+      assign visible_text = full_text | slice: 0, truncate_length
+    else
+      assign visible_words = full_text | slice: 0, truncate_length | split: ' '
+      assign trimmed_count = visible_words.size | minus: 1
+      assign visible_words = visible_words | slice: 0, trimmed_count
+      assign visible_text = visible_words | join: ' '
+    endif
+
+    assign visible_length = visible_text.size
+    assign hidden_text = full_text | slice: visible_length, 999999
+  else
+    assign visible_text = full_text
+  endif
+%}
+
+{% if full_text != blank %}
+  <div
+    class="read-more-text spacing-style{% if block.settings.width == '100%' %} read-more-text--full{% endif %}"
+    style="
+      {% render 'spacing-padding', settings: block.settings %}
+      text-align: {{ block.settings.alignment }};
+    "
+    {{ block.shopify_attributes }}
+  >
+    {% if is_long %}
+      <show-more-component class="show-more" data-expanded="false" data-skip-node-update="true">
+        <p ref="showMoreContent" class="read-more-text__paragraph">
+          {{- visible_text | escape -}}
+          <span ref="showMoreItems[]" class="hidden">{{ hidden_text | escape }}</span>
+        </p>
+        <button
+          class="show-more__button button-unstyled button-unstyled--with-icon"
+          ref="showMoreButton"
+          on:click="/toggle"
+          aria-expanded="false"
+        >
+          <span class="svg-wrapper icon-plus">
+            {{- 'icon-plus.svg' | inline_asset_content -}}
+          </span>
+          <span class="show-more__label show-more__label--more">{{- 'actions.show_more' | t -}}</span>
+          <span class="show-more__label show-more__label--less">{{- 'actions.show_less' | t -}}</span>
+        </button>
+      </show-more-component>
+    {% else %}
+      <p class="read-more-text__paragraph">{{ visible_text | escape }}</p>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .read-more-text {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .read-more-text--full {
+    width: 100%;
+  }
+
+  .read-more-text__paragraph {
+    font-family: var(--font-body--family);
+    font-size: 1rem;
+    line-height: normal;
+    color: var(--color-foreground);
+    margin: 0;
+  }
+
+  .read-more-text .show-more__button {
+    margin-block-start: var(--gap-2xs, 8px);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Text with read more",
+  "tag": null,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "range",
+      "id": "truncate_length",
+      "label": "Truncate after (characters)",
+      "min": 50,
+      "max": 1000,
+      "step": 10,
+      "default": 300
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "options": [
+        { "value": "fit-content", "label": "Fit content" },
+        { "value": "100%", "label": "Fill" }
+      ],
+      "default": "100%"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with read more",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
