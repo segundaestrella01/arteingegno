@@ -5,6 +5,7 @@ Attributes every product family uses, stored under namespace
 
 | File                      | Key              | Type                         | Notes                                      |
 |---------------------------|------------------|------------------------------|--------------------------------------------|
+| `dettagli.graphql`        | `dettagli`       | `list.single_line_text_field` | Bullet list of key specs shown on PDP      |
 | `occasion.graphql`        | `occasion`       | `list.single_line_text_field` | Wedding, Christmas, birthday, etc.         |
 | `handcrafted.graphql`     | `handcrafted`    | `boolean`                    | Defaults to true for A&I catalog            |
 | `story.graphql`           | `story`          | `multi_line_text_field`      | The narrative shown on PDP                  |
