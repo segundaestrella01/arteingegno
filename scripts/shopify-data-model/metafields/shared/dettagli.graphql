@@ -1,0 +1,38 @@
+# Shared metafield: dettagli
+#
+# Bullet list of product details — materials, dimensions, finish, or any
+# key specs shown prominently on the PDP between the title and the buy buttons.
+# Each list item renders as one bullet point in the storefront.
+
+mutation CreateDettagliDefinition($definition: MetafieldDefinitionInput!) {
+  metafieldDefinitionCreate(definition: $definition) {
+    createdDefinition {
+      id
+      name
+      namespace
+      key
+      type {
+        name
+      }
+      ownerType
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+
+# Variables payload:
+#
+# {
+#   "definition": {
+#     "name": "Dettagli",
+#     "namespace": "custom_shared",
+#     "key": "dettagli",
+#     "description": "Bullet list of product details shown on the PDP (materials, dimensions, finish, etc.).",
+#     "type": "list.single_line_text_field",
+#     "ownerType": "PRODUCT"
+#   }
+# }
