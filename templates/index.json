@@ -35,7 +35,6 @@
         "slide_3": {
           "type": "slide",
           "settings": {
-            "image": "",
             "heading": "Oggetti che diventano ricordi",
             "subheading": "",
             "button_label": "Best sellers",
@@ -93,7 +92,7 @@
           "type": "_read-more-text",
           "settings": {
             "text": "Da Arte e Ingegno crediamo che un oggetto non sia solo qualcosa da indossare o da regalare, ma una storia da vivere. Selezioniamo con cura bigiotteria artigianale, accessori e creazioni realizzate con materiali di qualità, pensati per durare nel tempo e accompagnarti nei momenti più belli della quotidianità. Ogni collezione nasce dalla passione per l'artigianato, dall'attenzione ai dettagli e dalla volontà di offrirti prodotti autentici, scelti uno a uno. Più che vendere, vogliamo raccontarti ciò che rende speciale ogni creazione, perché dietro ogni dettaglio c'è un'idea, una lavorazione e un'anima.",
-            "truncate_length": 300,
+            "truncate_length": 270,
             "width": "100%",
             "alignment": "center",
             "padding-block-start": 0,
@@ -289,7 +288,7 @@
             "body": {
               "type": "text",
               "settings": {
-                "text": "<p>Non produciamo in serie. Ogni oggetto che trovi qui — che sia un gioiello, una sfera di vetro o un ventaglio — è stato scelto, studiato e lavorato con una logica precisa: durare nel tempo e avere qualcosa da dire.</p><p>L'ottone placcato oro che usiamo per i nostri gioielli non è una scorciatoia: è un materiale con carattere, che richiede cura e restituisce bellezza. Le sfere di vetro nascono da una tradizione artigianale che affonda le radici nel mondo del mare e della navigazione. I ventagli che selezioniamo sono pezzi da tenere, non da dimenticare in un cassetto.</p><p>Ogni volta che acquisti da noi, ti portiamo a casa anche il perché: da dove viene quell'oggetto, come è fatto, cosa lo rende diverso. Perché crediamo che capire un prodotto sia il primo passo per amarlo davvero.</p>",
+                "text": "<p>Non produciamo in serie e non crediamo nella produzione di massa. Ogni oggetto che trovi qui — che sia un anello, bracciale o paio di orecchini — è stato scelto, studiato e lavorato con una logica precisa: durare nel tempo e avere qualcosa da dire. <br/><br/>Scegliamo collezioni che valorizzano la semplicità dei dettagli e materiali capaci di accompagnarti nel tempo.<br/>L'ottone placcato oro che usiamo per i nostri gioielli non è una scorciatoia: è un materiale con carattere, che richiede cura e restituisce bellezza. <br/><br/>Ogni volta che acquisti da noi, ti portiamo a casa anche il perché: da dove viene quell'oggetto, come è fatto, cosa lo rende diverso. Perché crediamo che capire un prodotto sia il primo passo per amarlo davvero.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -667,10 +666,9 @@
       "type": "our-shop",
       "name": "Our Shop",
       "settings": {
-        "title": "Come to visit our shop in Palau",
-        "content": "<p>C'è qualcosa che uno schermo non riesce a trasmettere: il peso di un bracciale tra le mani, il riflesso della luce su una sfera di vetro, la texture di un ventaglio aperto per la prima volta.</p><p>Il nostro negozio a Palau è il posto dove ogni oggetto racconta la sua storia di persona. Puoi toccare, provare, fare domande — e scoprire che dietro ogni pezzo c'è un processo, una scelta, un perché.</p><p>Non venire solo per comprare. Vieni per capire cosa rende un gioiello diverso dagli altri, cosa significa lavorare l'ottone placcato oro, perché una sfera di vetro può diventare un oggetto da custodire per anni.</p><p><strong>Ti aspettiamo.</strong></p>",
+        "title": "Vieni a trovarci nei nostri punti vendita",
+        "content": "<p>C'è qualcosa che uno schermo non riesce a trasmettere: il peso di un bracciale tra le mani, il riflesso della luce su una sfera di vetro, la texture di un ventaglio aperto per la prima volta.</p><p>Il nostro negozio a <strong>Palau</strong> è il posto dove ogni oggetto racconta la sua storia di persona. Puoi toccare, provare, fare domande — e scoprire che dietro ogni pezzo c'è un processo, una scelta, un perché.</p><p>Ma il nostro viaggio non si ferma qui. Durante l'anno partecipiamo ai mercatini artigianali di <strong>Santa Teresa Gallura</strong>, <strong>Cannigione</strong> e a numerosi eventi in tutta Italia, portando le nostre collezioni e la nostra passione direttamente tra le persone. È un'occasione per incontrarci, raccontarti il valore di ogni creazione e condividere l'amore per l'artigianato.<br/></p><p>Non venire solo per comprare. Vieni per capire cosa rende un gioiello diverso dagli altri, cosa significa lavorare l'ottone placcato oro, perché una sfera di vetro può diventare un oggetto da custodire per anni.</p><p><strong>Ti aspettiamo.</strong></p>",
         "image": "shopify://shop_images/shop.png",
-        "section_height": "60svh",
         "padding-block-start": 60,
         "padding-block-end": 60
       }
