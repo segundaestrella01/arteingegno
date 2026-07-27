@@ -216,7 +216,7 @@
       },
       "name": "Categorie prodotto",
       "settings": {
-        "collection_handles": "necklaces,rings,bracelets,earrings,our-choices",
+        "collection_handles": "braccialetti,collane,orecchini,anelli,best-sellers",
         "layout_type": "carousel",
         "columns": 3,
         "mobile_card_size": "60cqw",
