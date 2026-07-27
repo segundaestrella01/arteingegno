@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_top": {
@@ -5,7 +14,7 @@
       "name": "Hero banner",
       "settings": {
         "media_type_1": "image",
-        "image_1": "",
+        "image_1": "shopify://shop_images/Screenshot_2026-07-27_at_17.18.12.png",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -159,7 +168,7 @@
             "external_video_url": "",
             "external_video_autoplay": true,
             "external_video_loop": true,
-            "image": "",
+            "image": "shopify://shop_images/Screenshot_2026-07-27_at_17.18.02.png",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
