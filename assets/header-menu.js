@@ -35,6 +35,7 @@ class HeaderMenu extends Component {
     super.disconnectedCallback();
     window.removeEventListener('resize', this.#resizeListener);
     clearTimeout(this.#deactivateTimer);
+    clearTimeout(this.#activateTimer);
     document.body.removeEventListener('pointermove', this.#onPointerMove);
     if (this.#state.activeItem) {
       this.#stopPointerTracking(this.#state.activeItem);
@@ -74,6 +75,16 @@ class HeaderMenu extends Component {
    * @type {ReturnType<typeof setTimeout> | undefined}
    */
   #deactivateTimer;
+
+  /**
+   * Pending switch to a different top-level item while one is already open. A diagonal move
+   * toward a far column of the open dropdown often has to sweep across an earlier sibling item
+   * in the nav row on the way there (e.g. reaching a right-hand column means crossing whatever
+   * item sits immediately to the right of the trigger) — that's a fly-by, not a real hover, so
+   * it shouldn't instantly steal the still-open dropdown out from under the pointer.
+   * @type {ReturnType<typeof setTimeout> | undefined}
+   */
+  #activateTimer;
 
   /**
    * Last known pointer position for Safari hit-test reconciliation.
@@ -186,7 +197,9 @@ class HeaderMenu extends Component {
   }
 
   /**
-   * Activate the selected menu item immediately
+   * Activate the selected menu item, immediately in the common case. If a different item is
+   * already open and this came from a pointer (not keyboard focus), the switch is held for a
+   * brief hover-intent check first — see `#activateTimer`.
    * @param {PointerEvent | FocusEvent} event
    */
   activate = (event) => {
@@ -195,11 +208,31 @@ class HeaderMenu extends Component {
 
     if (!(event.target instanceof Element) || !this.headerComponent) return;
 
-    let item = findMenuItem(event.target);
+    const item = findMenuItem(event.target);
 
     if (!item || item == this.#state.activeItem) return;
 
-    const isDefaultSlot = event.target.slot === '';
+    if (this.#state.activeItem && event instanceof PointerEvent) {
+      clearTimeout(this.#activateTimer);
+      this.#activateTimer = setTimeout(() => {
+        if (item.closest('.menu-list__list-item')?.matches(':hover')) {
+          this.#commitActivate(item, event);
+        }
+      }, 100);
+      return;
+    }
+
+    this.#commitActivate(item, event);
+  };
+
+  /**
+   * @param {HTMLElement} item
+   * @param {PointerEvent | FocusEvent} event
+   */
+  #commitActivate(item, event) {
+    if (!this.headerComponent) return;
+
+    const isDefaultSlot = event.target instanceof Element && event.target.slot === '';
 
     this.dataset.overflowExpanded = (!isDefaultSlot).toString();
 
@@ -271,7 +304,7 @@ class HeaderMenu extends Component {
     this.#setFullOpenHeaderHeight(finalHeight);
     this.style.setProperty('--submenu-opacity', '1');
     this.#startPointerTracking(item, previouslyActiveItem);
-  };
+  }
 
   /**
    * Deactivate the active item after a delay
