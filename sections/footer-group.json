@@ -18,7 +18,7 @@
           "type": "menu",
           "settings": {
             "menu": "footer-chi-siamo",
-            "heading": "Chi Siamo",
+            "heading": "Su di noi",
             "menu_spacing": 12,
             "show_as_accordion": true,
             "accordion_icon": "plus",
