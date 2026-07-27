@@ -12,16 +12,56 @@ its top row. A separate, larger newsletter signup section already exists
 higher on the page, making the footer copy redundant — a visitor who
 dismissed or ignored the first prompt would immediately see it again.
 
-Separately, footer text was unreadable: the footer's background is
-`--color-brand-forest` (dark green), but several footer components
-(`blocks/footer-policy-list.liquid`, `sections/footer-utilities.liquid`) read
-Shopify's `--color-foreground` CSS custom property directly rather than
-inheriting the `color` property. That variable is defined by
-`snippets/color-schemes.liquid` and defaults at `:root` to `scheme-1`'s dark
-warm-brown (`#4a4035`) — nearly invisible against forest green.
-`assets/arteingegno-identity.css` only overrode the `color` *property* on
-`footer`, never the `--color-foreground` *variable*, so anything reading the
-variable directly ignored the override.
+Separately, footer text was unreadable. Several dead ends were tried and
+discarded before finding the real fix (kept here so they aren't retried):
+
+1. Overriding `color` on `footer`/`.footer` in `assets/arteingegno-identity.css`
+   — didn't reach components that read Shopify's `--color-foreground`
+   variable directly (`blocks/footer-policy-list.liquid`,
+   `sections/footer-utilities.liquid`) instead of inheriting `color`.
+2. Redeclaring `--color-foreground`/`--color-foreground-heading` scoped to
+   `footer`, then forcing `color: var(--color-foreground-heading) !important`
+   on every footer descendant — this masked the symptom without finding the
+   cause, and broke the moment a section's actual color scheme turned out to
+   differ from what was assumed.
+3. Aliasing `--font-h3-color` (single hyphen — what `base.css`'s heading
+   rules actually read, a Horizon typo; the color-scheme system only ever
+   defines `--font-h3--color`, double hyphen) at `:root` in
+   `arteingegno-identity.css`. This looked plausible but doesn't work: a
+   custom property's `var()` references are resolved once, in the cascade
+   context of wherever the alias itself is declared — declared at `:root`,
+   it permanently resolves against `:root`'s own scheme (`scheme-1`) and
+   never updates for a descendant in a different `.color-scheme-N`.
+
+Reproducing locally (`shopify theme dev` + a headless Chrome check of
+`getComputedStyle`) surfaced the actual causes:
+
+- **The footer sections were never forest-colored to begin with.** Both
+  `footer_m9NzUG` and `footer_utilities_jLGE8U` had `"color_scheme": ""` in
+  `footer-group.json`. Shopify does not treat that as "no scheme" — a
+  `color_scheme`-type setting with a blank/invalid value renders using the
+  section's schema `"default"` instead (both sections' schemas default to
+  `"scheme-1"`, confirmed by inspecting the rendered `class="... color-scheme-1"`
+  in the live HTML). So the sections were rendering `scheme-1` (light
+  parchment, dark text) all along, not forest.
+- **`base.css`'s typo is real** (`color: var(--color, var(--font-hN-color))`
+  should read `--font-hN--color`, double hyphen — see `assets/base.css:753,
+  775, 798, 820, 842, 864`), confirmed by reading `--font-h3-color` vs.
+  `--font-h3--color` via `getComputedStyle` inside a `.color-scheme-4`
+  element: the double-hyphen one correctly resolved to that scheme's heading
+  color, the single-hyphen one didn't exist anywhere and resolved to nothing.
+
+The theme already ships a forest color scheme with the exact intended
+palette — `scheme-4` in `config/settings_data.json` (background `#2b3d28`,
+foreground `#c8b490`, foreground_heading `#f2ead8`) — it was just never
+assigned to the footer sections.
+
+For footer content structure, [Arms of Eve's footer](https://uk.armsofeve.com/pages/who-we-are)
+was used as the template: three accordion/column groups (About, Help,
+Connect) plus a bottom bar (region selector, social icons, policy links,
+copyright). Of those, only **About** and **Help** are in scope for now —
+**Connect** (work-with-us, wholesale, stockists, referrals, ambassador
+program) is deferred until Arte&Ingegno has content for it.
 
 For footer content structure, [Arms of Eve's footer](https://uk.armsofeve.com/pages/who-we-are)
 was used as the template: three accordion/column groups (About, Help,
@@ -43,12 +83,21 @@ below). Concretely, the footer (`footer-group.json`) now has:
   - **Assistenza** (block `menu_assistenza`, menu handle `footer-assistenza`)
     — practical/bureaucratic content: FAQ, shipping & returns, contact.
 
-  This row's `color_scheme` was changed from `scheme-1` to `""` (inherit),
-  so it renders forest-green like the rest of the footer instead of a
-  separate light parchment band.
+  Both this row and the bottom row now have `"color_scheme": "scheme-4"`
+  explicitly (not `""` — see Context: blank falls back to the schema
+  default, `scheme-1`, not "inherit").
 
-- **Bottom row** (`footer_utilities_jLGE8U`, unchanged) — copyright, the
-  built-in Shopify policies popover, and social icons.
+- **Bottom row** (`footer_utilities_jLGE8U`) — copyright, the built-in
+  Shopify policies popover, and social icons. Content unchanged, only
+  `color_scheme` set to `scheme-4` to match.
+
+Additionally, `snippets/color-schemes.liquid` now also emits
+`--font-h1-color` through `--font-h6-color` (single hyphen) alongside the
+correctly-named `--font-h1--color` etc., inside the same per-scheme block —
+this fixes `base.css`'s typo'd fallback everywhere, for every color scheme,
+site-wide, not just the footer. (`assets/arteingegno-identity.css` no longer
+carries any footer-specific color override — the sections' own
+`color_scheme` handles it natively.)
 
 **Top navigation scope: selling.** All product/category/collection
 navigation belongs in the header/mega-menu, not the footer. The footer never
@@ -82,8 +131,12 @@ to real pages when creating the menus.
 - Any future footer content addition should be sorted into "Chi Siamo"
   (narrative/brand) vs "Assistenza" (practical/support) rather than growing
   a third ad-hoc column — that's the dividing line this ADR establishes.
-- If a future footer block needs a color that isn't `color`-property driven
-  (i.e. it reads a `--color-*` variable directly), the fix belongs in the
-  variable override block in `assets/arteingegno-identity.css` (section 22),
-  not a one-off `color:` override — the whole point of this fix was that
-  property-only overrides don't reach variable-reading components.
+- A blank `"color_scheme": ""` in any section/block JSON is not "no scheme" —
+  it renders using that section's schema default. To make a section
+  colorless/transparent, it needs an actual scheme built for that (e.g.
+  `scheme-6`, which already has `background: rgba(0,0,0,0)`), not an empty
+  string.
+- If a future section's text still looks wrong after setting `color_scheme`
+  correctly, verify with `getComputedStyle` in a real browser
+  (`shopify theme dev` + chrome-devtools) before writing a CSS override —
+  the override attempts above cost more time than the actual fix.
