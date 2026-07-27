@@ -2,7 +2,42 @@
 
 ## Status
 
-Accepted
+Accepted — **feature currently disabled** (2026-07-27). The header-menu block's
+`menu_style` was switched from `category_hover_products` back to `text` in
+`sections/header-group.json`, as part of flattening the top menu (Collezioni's dropdown
+children promoted to top-level items, Contatti removed).
+
+A first attempt kept the original settings as an extra inert block object next to the
+live `header-menu` block in that same file, but Shopify's section schema validates every
+entry under `blocks` — this section only permits its two declared static blocks, so any
+extra key is rejected outright ("Blocks are not allowed in this context"), even one
+nothing renders. The backup below lives here in the ADR instead, since this file isn't
+parsed by Shopify.
+
+**To restore:** paste the block below over the live `header-menu` block's `settings` in
+`sections/header-group.json`.
+
+```json
+{
+  "menu": "main-menu",
+  "color_scheme": "",
+  "type_font_primary_size": "0.875rem",
+  "menu_font_style": "inverse",
+  "type_font_primary_link": "body",
+  "type_case_primary_link": "none",
+  "menu_style": "category_hover_products",
+  "category_hover_tag": "menu-featured",
+  "category_hover_aspect_ratio": "4 / 5",
+  "featured_products_aspect_ratio": "4 / 5",
+  "featured_collections_aspect_ratio": "16 / 9",
+  "image_border_radius": 0,
+  "navigation_bar": false,
+  "color_scheme_navigation_bar": "",
+  "drawer_accordion": false,
+  "drawer_accordion_expand_first": false,
+  "drawer_dividers": false
+}
+```
 
 ## Context
 
