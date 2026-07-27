@@ -29,6 +29,12 @@ class HeaderMenu extends Component {
     this.#setupHoverPanelImageFade();
     window.addEventListener('resize', this.#resizeListener);
     this.overflowMenu?.addEventListener('pointerleave', this.#overflowSubmenuListener);
+    // Native (bubbling) listener rather than a declarative `on:focus`, so keyboard focus on a
+    // category link updates its hover-swap panel without shadowing the outer list item's
+    // `on:focus="/activate"` (the declarative event system resolves to the closest ancestor
+    // with the same attribute, so a second `on:focus` on the link itself would take over instead
+    // — see `activateHoverPanel`).
+    this.addEventListener('focusin', this.#onHoverPanelFocusIn);
   }
 
   disconnectedCallback() {
@@ -42,8 +48,18 @@ class HeaderMenu extends Component {
     }
     this.overflowMenu?.removeEventListener('pointerleave', this.#overflowSubmenuListener);
     this.removeEventListener('load', this.#onHoverPanelImageLoad, true);
+    this.removeEventListener('focusin', this.#onHoverPanelFocusIn);
     this.#cleanupMutationObserver();
   }
+
+  /**
+   * @param {FocusEvent} event
+   */
+  #onHoverPanelFocusIn = (event) => {
+    if (event.target instanceof HTMLElement && event.target.dataset.hoverKey) {
+      this.activateHoverPanel(event);
+    }
+  };
 
   /**
    * Debounced resize event listener to recalculate menu style
@@ -307,6 +323,25 @@ class HeaderMenu extends Component {
   }
 
   /**
+   * Track the last-hovered category of a category-hover-swap submenu (see `[data-panel]` in
+   * mega-menu-list.liquid) so its panel stays visible while the pointer travels from the
+   * category link toward the panel itself. The panel swap used to be driven purely by `:hover`
+   * on the category link, which reverted to the default panel the instant the pointer left that
+   * link — including mid-transit on a diagonal move toward the panel it had just opened.
+   * @param {PointerEvent | FocusEvent} event
+   */
+  activateHoverPanel = (event) => {
+    if (!(event.target instanceof HTMLElement)) return;
+
+    const grid = event.target.closest('[data-menu-grid-id]');
+    const hoverKey = event.target.dataset.hoverKey;
+
+    if (!(grid instanceof HTMLElement) || !hoverKey) return;
+
+    grid.dataset.activePanel = hoverKey;
+  };
+
+  /**
    * Deactivate the active item after a delay
    * @param {PointerEvent | FocusEvent} event
    */
@@ -390,6 +425,13 @@ class HeaderMenu extends Component {
     // Remove active state from submenu after animation completes
     if (submenu) {
       delete submenu.dataset.active;
+
+      // Reset the category hover-swap panel (see `activateHoverPanel`) so the next time this
+      // submenu opens, it starts back on the default panel instead of wherever it was left.
+      const grid = submenu.querySelector('[data-menu-grid-id]');
+      if (grid instanceof HTMLElement) {
+        delete grid.dataset.activePanel;
+      }
     }
   };
 
