@@ -190,7 +190,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>[Nome punto vendita]</h2>",
+                "text": "<h2>ARTE & INGEGNO</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -215,7 +215,7 @@
             "subtitle": {
               "type": "text",
               "settings": {
-                "text": "<p>[Città, Regione]</p>",
+                "text": "<p>Palau, Sardegna</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
