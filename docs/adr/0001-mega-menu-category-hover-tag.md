@@ -14,7 +14,12 @@ read as unrelated/broken content next to the hovered category.
 `snippets/mega-menu-list.liquid` now supports a `category_hover_products` menu style: hovering a
 left-column category swaps the right panel to show that category's own collection, filtered down
 to products carrying a single shared tag. The panels are pre-rendered (hidden) server-side and
-swapped via CSS `:has()`/`:hover`/`:focus` — no fetch, no JS state.
+swapped via a `data-active-panel` attribute that `assets/header-menu.js`
+(`activateHoverPanel`/`#onHoverPanelFocusIn`) sets on `pointerenter`/focus of a category link —
+no fetch. A pure CSS `:has()`/`:hover` swap was tried first but reverted the panel to the default
+category the instant the pointer left the category link, including mid-transit on a diagonal move
+toward the panel it had just opened; tracking the last-hovered category in JS instead keeps it
+shown until a different category is hovered or the submenu closes.
 
 ## Decision
 
