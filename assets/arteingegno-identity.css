@@ -280,15 +280,9 @@ h1.product__title {
 }
 
 /* ============================================================
-   8. FOOTER — warm cream background, uppercase tracked links
+   8. FOOTER — uppercase tracked links (color comes from the
+   section's own color_scheme — see section 22 below)
    ============================================================ */
-.footer,
-footer,
-.footer__inner {
-  background-color: var(--color-brand-cream);
-  color: var(--color-brand-charcoal);
-}
-
 .footer__heading,
 .footer__column-heading,
 [class*="footer"] h3,
@@ -299,7 +293,6 @@ footer,
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
-  color: var(--color-brand-near-black);
 }
 
 .footer a,
@@ -310,13 +303,11 @@ footer,
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-brand);
-  color: var(--color-brand-charcoal);
   text-decoration: none;
 }
 
 .footer a:hover,
 [class*="footer__link"]:hover {
-  color: var(--color-brand-near-black);
   text-decoration: underline;
 }
 
@@ -548,33 +539,17 @@ li,
 }
 
 /* ============================================================
-   22. FOOTER — use new palette variables
+   22. FOOTER — colors come from the section's own color_scheme
+
+   Both footer sections (footer-group.json) are set to "scheme-4",
+   the theme's existing forest scheme (background #2b3d28, foreground
+   #c8b490, foreground_heading #f2ead8 — see config/settings_data.json).
+   Shopify's color-scheme system (snippets/color-schemes.liquid) already
+   propagates --color-foreground/-heading correctly to every component
+   that reads them, so there is nothing to override here — forcing
+   colors with !important fought the cascade instead of using it, and
+   broke as soon as a section's color_scheme didn't resolve as assumed.
    ============================================================ */
-.footer,
-footer,
-.footer__inner {
-  background-color: var(--color-brand-forest);
-  color: var(--color-brand-parchment);
-}
-
-.footer__heading,
-.footer__column-heading,
-[class*="footer"] h3,
-[class*="footer"] h4,
-[class*="footer"] strong {
-  color: var(--color-brand-parchment);
-}
-
-.footer a,
-.footer__list-item a,
-[class*="footer__link"] {
-  color: var(--color-brand-linen);
-}
-
-.footer a:hover,
-[class*="footer__link"]:hover {
-  color: var(--color-brand-parchment);
-}
 
 /* ============================================================
    GALLERY CONTROLS — hide dots/counter, keep arrows only
