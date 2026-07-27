@@ -132,7 +132,7 @@
 
       if show_hover_key
         capture hover_panel_rule
-          echo '[data-menu-grid-id="' | append: id | append: '"]:has([data-hover-key="' | append: forloop.index | append: '"]:is(:hover, :focus)) [data-panel="' | append: id | append: '-' | append: forloop.index | append: '"] { display: grid; }'
+          echo '[data-menu-grid-id="' | append: id | append: '"][data-active-panel="' | append: forloop.index | append: '"] [data-panel="' | append: id | append: '-' | append: forloop.index | append: '"] { display: grid; }'
         endcapture
         assign hover_panel_css = hover_panel_css | append: hover_panel_rule
         if default_panel_index == blank
@@ -146,6 +146,7 @@
         class="mega-menu__link {% if link.links != blank %}mega-menu__link--parent{% endif %}"
         {% if show_hover_key %}
           data-hover-key="{{ forloop.index }}"
+          on:pointerenter="/activateHoverPanel"
         {% endif %}
       >
         {% if menu_content_type == 'collection_images' %}
@@ -324,7 +325,7 @@
     {{ hover_panel_css }}
 
     {% if default_panel_index != blank %}
-      [data-menu-grid-id="{{ id }}"]:not(:has([data-hover-key]:is(:hover, :focus)))
+      [data-menu-grid-id="{{ id }}"]:not([data-active-panel])
         [data-panel="{{ id }}-{{ default_panel_index }}"] {
         display: grid;
       }
