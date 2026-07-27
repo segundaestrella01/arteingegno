@@ -68,9 +68,9 @@ class HeaderMenu extends Component {
   #pointerIdleTimer;
 
   /**
-   * Grace period before a pending deactivation actually closes the menu, so a diagonal
-   * mouse move from the trigger toward either side of the dropdown (which briefly leaves
-   * both the trigger and the submenu) doesn't close it mid-transit.
+   * Pending close, re-armed by `#onPointerMove` for as long as the pointer keeps moving outside
+   * the trigger/submenu, so a diagonal move toward either side of the dropdown doesn't get
+   * closed out from under it mid-transit.
    * @type {ReturnType<typeof setTimeout> | undefined}
    */
   #deactivateTimer;
@@ -94,6 +94,19 @@ class HeaderMenu extends Component {
 
     const moving = Math.abs(event.movementX) >= 1 || Math.abs(event.movementY) >= 1;
     activeLink.dataset.safetyBox = `${moving}`;
+
+    // A diagonal move from the trigger toward either side of a (potentially very wide) mega
+    // menu spends time in transit over neither the trigger nor the submenu. As long as the
+    // pointer keeps moving at all, keep pushing the close out — see `#scheduleDeactivate` —
+    // instead of closing on a single fixed delay that a long/slow diagonal can outlast. Once
+    // the pointer actually lands on the trigger or submenu, cancel the pending close outright.
+    const li = activeLink.closest('.menu-list__list-item');
+    const submenu = findSubmenu(activeLink);
+    if (li?.matches(':hover') || submenu?.matches(':hover')) {
+      clearTimeout(this.#deactivateTimer);
+    } else {
+      this.#scheduleDeactivate(activeLink);
+    }
 
     clearTimeout(this.#pointerIdleTimer);
     if (moving) {
@@ -292,11 +305,14 @@ class HeaderMenu extends Component {
   }
 
   /**
-   * Schedule deactivation after a short grace period instead of closing immediately, so a
-   * diagonal move from the trigger toward the submenu (left or right column) has time to land
-   * before the menu closes underneath it. Cancelled by `activate` if the pointer lands back on
-   * the trigger or on a different item; confirmed against the trigger/submenu hover state once
-   * the timer fires so a genuine move away still closes the menu.
+   * Schedule deactivation after a short grace period instead of closing immediately. Re-armed
+   * on every pointer move while the pointer is outside the trigger/submenu (see `#onPointerMove`),
+   * so a diagonal move toward either side of the dropdown keeps deferring the close for as long
+   * as the pointer keeps moving, however far or slow the diagonal is — it only actually fires
+   * once movement settles (or `deactivate` calls it once, unrenewed, for a plain leave). Cancelled
+   * by `activate` if the pointer lands back on the trigger or a different item; re-confirmed
+   * against the trigger/submenu hover state when the timer fires so a genuine move away still
+   * closes the menu.
    * @param {HTMLElement | null} [item]
    */
   #scheduleDeactivate(item = this.#state.activeItem) {
@@ -311,7 +327,7 @@ class HeaderMenu extends Component {
       if (li?.matches(':hover') || menu?.matches(':hover')) return;
 
       this.#deactivate(item);
-    }, 200);
+    }, 300);
   }
 
   /**
