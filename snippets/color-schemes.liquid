@@ -86,6 +86,16 @@
         --font-h4--color: var(--color-foreground-heading);
         --font-h5--color: var(--color-foreground-heading);
         --font-h6--color: var(--color-foreground-heading);
+        /* base.css's h1-h6 rules read `--font-hN-color` (single hyphen) as
+           their fallback, not `--font-hN--color` above — alias it here, at
+           the same per-scheme scope, so it resolves per color-scheme rather
+           than freezing to whichever scheme owns :root. */
+        --font-h1-color: var(--color-foreground-heading);
+        --font-h2-color: var(--color-foreground-heading);
+        --font-h3-color: var(--color-foreground-heading);
+        --font-h4-color: var(--color-foreground-heading);
+        --font-h5-color: var(--color-foreground-heading);
+        --font-h6-color: var(--color-foreground-heading);
 
         /* Shadows */
         {% if settings.drawer_drop_shadow %}
