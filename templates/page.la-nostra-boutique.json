@@ -75,7 +75,7 @@
         "heading": {
           "type": "text",
           "settings": {
-            "text": "<h1>La Nostra Boutique</h1>",
+            "text": "<h1>I NOSTRI PUNTI VENDITA</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "center",
