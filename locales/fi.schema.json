@@ -316,6 +316,7 @@
     "cart_total": "Ostoskorin loppusumma",
     "cart_type": "Tyyppi",
     "case": "Kirjainkoko",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Nopeutetun kassan painikkeet",
     "collection_list": "Kokoelmat",
     "collection_templates": "Kokoelmamallit",
@@ -589,6 +590,7 @@
     "box": "Laatikko",
     "buttons": "Painikkeet",
     "carrot": "Porkkana",
+    "category_hover_products": "Category-featured products",
     "center": "Keskellä",
     "chat_bubble": "Chat-kupla",
     "clipboard": "Leikepöytä",
@@ -1088,6 +1090,7 @@
     "hover_effects": "Koskee tuote- ja kokoelmakortteja",
     "hide_logo_on_home_page_help": "Logo pysyy näkyvissä, kun kiinteä ylätunniste on aktiivinen",
     "media_type_info": "Ominaisuudet noudetaan valikkolinkeistäsi",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Vaikuttaa vain ylätunnisteen logoon",
     "actions_display_style": "Kuvakkeet ovat aina käytössä mobiililaitteilla"
   },

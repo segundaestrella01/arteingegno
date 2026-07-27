@@ -317,6 +317,7 @@
     "cart_total": "Total du panier",
     "cart_type": "Type",
     "case": "Casse",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Boutons de paiement accéléré",
     "collection_list": "Collections",
     "collection_templates": "Modèles de collection",
@@ -588,6 +589,7 @@
     "box": "Boîte",
     "buttons": "Boutons",
     "carrot": "Carotte",
+    "category_hover_products": "Category-featured products",
     "center": "Centre",
     "chat_bubble": "Bulle de chat",
     "clipboard": "Presse-papiers",
@@ -1088,6 +1090,7 @@
     "hover_effects": "S’applique aux cartes de produit et de collection",
     "hide_logo_on_home_page_help": "Le logo restera visible lorsque l’en-tête fixe est actif",
     "media_type_info": "Les fonctionnalités sont renseignées à partir des liens de votre menu",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Affecte uniquement le logo de l’en-tête",
     "actions_display_style": "Les icônes sont toujours utilisées sur mobile"
   },

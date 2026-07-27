@@ -318,6 +318,7 @@
     "cart_total": "Totalsum for handlekurv",
     "cart_type": "Type",
     "case": "Store/små bokstaver",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Knapper for hurtigkasse",
     "collection_list": "Samlinger",
     "collection_templates": "Samlingsmaler",
@@ -589,6 +590,7 @@
     "box": "Boks",
     "buttons": "Knapper",
     "carrot": "Gulrot",
+    "category_hover_products": "Category-featured products",
     "center": "Midtstilt",
     "chat_bubble": "Chat-boble",
     "clipboard": "Utklippstavle",
@@ -1088,6 +1090,7 @@
     "hover_effects": "Gjelder for produkt- og samlingskort",
     "hide_logo_on_home_page_help": "Logoen forblir synlig når klebrig topptekst er aktiv",
     "media_type_info": "Funksjonene hentes fra menykoblingene",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Påvirker kun logoen i toppteksten",
     "actions_display_style": "Ikoner brukes alltid på mobil"
   },

@@ -329,6 +329,7 @@
     "cart_total": "Totale carrello",
     "cart_type": "Tipo",
     "case": "Maiuscole/minuscole",
+    "category_hover_tag": "Tag prodotto condiviso",
     "checkout_buttons": "Pulsanti di check-out veloce",
     "collection_list": "Collezioni",
     "collection_templates": "Modelli di collezione",
@@ -589,6 +590,7 @@
     "box": "Riquadro",
     "buttons": "Pulsanti",
     "carrot": "Carota",
+    "category_hover_products": "Prodotti in evidenza per categoria",
     "center": "Centrato",
     "chat_bubble": "Fumetto chat",
     "clipboard": "Appunti",
@@ -1088,6 +1090,7 @@
     "hover_effects": "Si applica alle schede di prodotto e di collezione",
     "hide_logo_on_home_page_help": "Il logo rimarrà visibile quando l'header permanente è attivo",
     "media_type_info": "Le funzionalità vengono popolate dai link del menu",
+    "category_hover_tag_info": "Passando il mouse su una categoria, i prodotti con questo tag vengono mostrati qui. I tag distinguono maiuscole e minuscole.",
     "logo_height": "Riguarda solo il logo dell’header",
     "actions_display_style": "Le icone vengono sempre usate sui dispositivi mobili"
   },

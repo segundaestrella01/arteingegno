@@ -328,6 +328,7 @@
     "cart_total": "Suma w koszyku",
     "cart_type": "Typ",
     "case": "Wielkość liter",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Przyciski przyspieszonej realizacji zakupu",
     "collection_list": "Kolekcje",
     "collection_templates": "Szablony kolekcji",
@@ -588,6 +589,7 @@
     "box": "Ramka",
     "buttons": "Przyciski",
     "carrot": "Marchewka",
+    "category_hover_products": "Category-featured products",
     "center": "Środek",
     "chat_bubble": "Dymek czatu",
     "clipboard": "Schowek",
@@ -1088,6 +1090,7 @@
     "pills_usage": "Używane w przypadku zastosowanych filtrów, kodów rabatowych i sugestii wyszukiwania",
     "hide_logo_on_home_page_help": "Logo pozostanie widoczne, gdy aktywny jest lepki nagłówek",
     "media_type_info": "Funkcje są pobierane z linków menu",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Dotyczy tylko logo w nagłówku",
     "actions_display_style": "Na urządzeniach mobilnych zawsze używane są ikony"
   },

@@ -233,7 +233,8 @@
     "video_autoplay": "Videos will be muted by default",
     "video_external": "Use a YouTube or Vimeo URL",
     "pills_usage": "Used for applied filters, discount codes, and search suggestions",
-    "media_type_info": "Features are populated from your menu links"
+    "media_type_info": "Features are populated from your menu links",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive."
   },
   "names": {
     "column": "Column",
@@ -474,6 +475,7 @@
     "carousel": "Carousel",
     // Icon selection option for carrot graphic
     "carrot": "Carrot",
+    "category_hover_products": "Category-featured products",
     // Alignment option to center content horizontally or vertically
     "center": "Center",
     "chat_bubble": "Chat bubble",
@@ -809,6 +811,7 @@
     "auto_open_cart_drawer": "\"Add to cart\" auto-opens drawer",
     // Text case setting for typography (uppercase/lowercase)
     "case": "Case",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Accelerated checkout buttons",
     "collection": "Collection",
     "collection_count": "Collection count",

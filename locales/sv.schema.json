@@ -319,6 +319,7 @@
     "cart_total": "Varukorgens totalsumma",
     "cart_type": "Typ",
     "case": "Skiftläge",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Knappar för snabbkassa",
     "collection_list": "Produktserier",
     "collection_templates": "Produktseriemallar",
@@ -589,6 +590,7 @@
     "box": "Ruta",
     "buttons": "Knappar",
     "carrot": "Morot",
+    "category_hover_products": "Category-featured products",
     "center": "Centrerad",
     "chat_bubble": "Pratbubbla",
     "clipboard": "Urklipp",
@@ -1088,6 +1090,7 @@
     "hover_effects": "Gäller produkt- och produktseriekort",
     "hide_logo_on_home_page_help": "Logotypen förblir synlig när klistrigt sidhuvud är aktivt",
     "media_type_info": "Funktionerna hämtas från menylänkarna",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Påverkar endast sidhuvudslogotypen",
     "actions_display_style": "Ikoner används alltid på mobilen"
   },

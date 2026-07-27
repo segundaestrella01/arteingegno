@@ -331,6 +331,7 @@
     "cart_total": "カートの合計金額",
     "cart_type": "タイプ",
     "case": "大文字/小文字",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "簡単なチェックアウトボタン",
     "collection_list": "コレクション",
     "collection_templates": "コレクションテンプレート",
@@ -589,6 +590,7 @@
     "box": "ボックス",
     "buttons": "ボタン",
     "carrot": "ニンジン",
+    "category_hover_products": "Category-featured products",
     "center": "中央",
     "chat_bubble": "チャットバブル",
     "clipboard": "クリップボード",
@@ -1088,6 +1090,7 @@
     "pills_usage": "適用された絞り込み、ディスカウントコード、検索候補に使用されます",
     "hide_logo_on_home_page_help": "ロゴは、固定ヘッダーが有効な場合は表示されたままになります",
     "media_type_info": "機能はメニューのリンクを元に表示されます。",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "ヘッダーのロゴにのみ適用されます。",
     "actions_display_style": "モバイルでは常にアイコンが表示されます"
   },

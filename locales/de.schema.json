@@ -315,6 +315,7 @@
     "cart_total": "Warenkorb-Gesamtsumme",
     "cart_type": "Typ",
     "case": "Schreibweise",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Schaltflächen für beschleunigten Checkout",
     "collection_list": "Kollektionen",
     "collection_templates": "Kollektionsvorlagen",
@@ -588,6 +589,7 @@
     "box": "Box",
     "buttons": "Schaltflächen",
     "carrot": "Karotte",
+    "category_hover_products": "Category-featured products",
     "center": "Zentriert",
     "chat_bubble": "Sprechblase",
     "clipboard": "Zwischenablage",
@@ -1088,6 +1090,7 @@
     "pills_usage": "Wird für angewendete Filter, Rabattcodes und Suchvorschläge verwendet",
     "hide_logo_on_home_page_help": "Das Logo bleibt sichtbar, wenn der fixierte Header aktiv ist",
     "media_type_info": "Die Funktionen werden aus deinen Menü-Links übernommen",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Betrifft nur das Header-Logo",
     "actions_display_style": "Auf Mobilgeräten werden immer Symbole verwendet"
   },

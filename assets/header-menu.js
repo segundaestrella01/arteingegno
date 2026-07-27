@@ -26,6 +26,7 @@ class HeaderMenu extends Component {
     super.connectedCallback();
 
     onDocumentLoaded(this.#preloadImages);
+    this.#setupHoverPanelImageFade();
     window.addEventListener('resize', this.#resizeListener);
     this.overflowMenu?.addEventListener('pointerleave', this.#overflowSubmenuListener);
   }
@@ -33,11 +34,13 @@ class HeaderMenu extends Component {
   disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener('resize', this.#resizeListener);
+    clearTimeout(this.#deactivateTimer);
     document.body.removeEventListener('pointermove', this.#onPointerMove);
     if (this.#state.activeItem) {
       this.#stopPointerTracking(this.#state.activeItem);
     }
     this.overflowMenu?.removeEventListener('pointerleave', this.#overflowSubmenuListener);
+    this.removeEventListener('load', this.#onHoverPanelImageLoad, true);
     this.#cleanupMutationObserver();
   }
 
@@ -65,6 +68,14 @@ class HeaderMenu extends Component {
   #pointerIdleTimer;
 
   /**
+   * Grace period before a pending deactivation actually closes the menu, so a diagonal
+   * mouse move from the trigger toward either side of the dropdown (which briefly leaves
+   * both the trigger and the submenu) doesn't close it mid-transit.
+   * @type {ReturnType<typeof setTimeout> | undefined}
+   */
+  #deactivateTimer;
+
+  /**
    * Last known pointer position for Safari hit-test reconciliation.
    * @type {{ x: number, y: number }}
    */
@@ -81,7 +92,7 @@ class HeaderMenu extends Component {
     this.#lastPointer.x = event.clientX;
     this.#lastPointer.y = event.clientY;
 
-    const moving = Math.abs(event.movementX) >= 1 || event.movementY >= 1;
+    const moving = Math.abs(event.movementX) >= 1 || Math.abs(event.movementY) >= 1;
     activeLink.dataset.safetyBox = `${moving}`;
 
     clearTimeout(this.#pointerIdleTimer);
@@ -166,6 +177,7 @@ class HeaderMenu extends Component {
    * @param {PointerEvent | FocusEvent} event
    */
   activate = (event) => {
+    clearTimeout(this.#deactivateTimer);
     this.dispatchEvent(new MegaMenuHoverEvent());
 
     if (!(event.target instanceof Element) || !this.headerComponent) return;
@@ -255,6 +267,13 @@ class HeaderMenu extends Component {
   deactivate(event) {
     if (!(event.target instanceof Element)) return;
 
+    // A leave whose relatedTarget is a descendant of the element being left isn't a real
+    // leave — the browser can fire this spuriously right after the safety-box pseudo-element
+    // toggles under a stationary-ish pointer, and it would otherwise close the menu the pointer
+    // is still over, with no compensating re-entry (the recovering pointerenter targets the
+    // descendant, not this element, so it's invisible to the declarative event system).
+    if (event.relatedTarget instanceof Node && event.target.contains(event.relatedTarget)) return;
+
     const menu = findSubmenu(this.#state.activeItem);
     const isMovingWithinMenu = event.relatedTarget instanceof Node && menu?.contains(document.activeElement);
     const isMovingToSubmenu =
@@ -269,7 +288,30 @@ class HeaderMenu extends Component {
       return;
     }
 
-    this.#deactivate();
+    this.#scheduleDeactivate();
+  }
+
+  /**
+   * Schedule deactivation after a short grace period instead of closing immediately, so a
+   * diagonal move from the trigger toward the submenu (left or right column) has time to land
+   * before the menu closes underneath it. Cancelled by `activate` if the pointer lands back on
+   * the trigger or on a different item; confirmed against the trigger/submenu hover state once
+   * the timer fires so a genuine move away still closes the menu.
+   * @param {HTMLElement | null} [item]
+   */
+  #scheduleDeactivate(item = this.#state.activeItem) {
+    clearTimeout(this.#deactivateTimer);
+
+    this.#deactivateTimer = setTimeout(() => {
+      if (!item || item !== this.#state.activeItem) return;
+
+      const li = item.closest('.menu-list__list-item');
+      const menu = findSubmenu(item);
+
+      if (li?.matches(':hover') || menu?.matches(':hover')) return;
+
+      this.#deactivate(item);
+    }, 200);
   }
 
   /**
@@ -350,10 +392,42 @@ class HeaderMenu extends Component {
 
   /**
    * Preload images that are set to load lazily.
+   *
+   * Category hover-swap panels (`[data-panel]`, see mega-menu-list.liquid) are an exception:
+   * only the default/initially-visible panel's images are preloaded here. The other panels stay
+   * lazy and fade in on first hover (see #setupHoverPanelImageFade) so hovering categories the
+   * visitor never looks at doesn't force extra image downloads on every page load.
    */
   #preloadImages = () => {
     const images = this.querySelectorAll('img[loading="lazy"]');
-    images?.forEach((image) => image.removeAttribute('loading'));
+    images?.forEach((image) => {
+      const hoverPanel = image.closest('[data-panel]');
+      if (hoverPanel && !hoverPanel.hasAttribute('data-panel-default')) return;
+      image.removeAttribute('loading');
+    });
+  };
+
+  /**
+   * Fade in hover-panel images as they load, instead of letting them pop in abruptly the first
+   * time a non-default category is hovered (its images are still `loading="lazy"` at that point).
+   */
+  #setupHoverPanelImageFade = () => {
+    this.querySelectorAll('[data-panel] img').forEach((image) => {
+      if (image instanceof HTMLImageElement && image.complete) image.classList.add('is-loaded');
+    });
+
+    // 'load' doesn't bubble, but a capture-phase listener still observes it on the way down.
+    this.addEventListener('load', this.#onHoverPanelImageLoad, true);
+  };
+
+  /**
+   * @param {Event} event
+   */
+  #onHoverPanelImageLoad = (event) => {
+    const image = event.target;
+    if (image instanceof HTMLImageElement && image.closest('[data-panel]')) {
+      image.classList.add('is-loaded');
+    }
   };
 
   #cleanupMutationObserver() {

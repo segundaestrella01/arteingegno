@@ -314,6 +314,7 @@
     "cart_total": "Total for indkøbskurv",
     "cart_type": "Type",
     "case": "Bogstavstørrelse",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Knapper til hurtigere betaling",
     "collection_list": "Kollektioner",
     "collection_templates": "Skabeloner til kollektion",
@@ -589,6 +590,7 @@
     "box": "Boks",
     "buttons": "Knapper",
     "carrot": "Gulerod",
+    "category_hover_products": "Category-featured products",
     "center": "Centreret",
     "chat_bubble": "Chatboble",
     "clipboard": "Udklipsholder",
@@ -1088,6 +1090,7 @@
     "hover_effects": "Gælder for produkt- og kollektionskort",
     "hide_logo_on_home_page_help": "Logoet vil forblive synligt, når fastgjort sidehoved er aktivt",
     "media_type_info": "Funktioner hentes fra linksene i menuen",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Påvirker kun logoet i sidehovedet",
     "actions_display_style": "Ikoner bruges altid på mobil"
   },

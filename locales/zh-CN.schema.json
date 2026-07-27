@@ -329,6 +329,7 @@
     "cart_total": "购物车总计",
     "cart_type": "类型",
     "case": "大小写",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "快捷结账按钮",
     "collection_list": "产品系列",
     "collection_templates": "产品系列模板",
@@ -589,6 +590,7 @@
     "box": "方框",
     "buttons": "按钮",
     "carrot": "胡萝卜",
+    "category_hover_products": "Category-featured products",
     "center": "居中",
     "chat_bubble": "聊天气泡",
     "clipboard": "剪贴板",
@@ -1088,6 +1090,7 @@
     "applies_on_image_only": "仅适用于图片",
     "hide_logo_on_home_page_help": "当粘性标头处于活动状态时，logo 将保持可见",
     "media_type_info": "功能内容来自您的菜单链接",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "仅影响标头 logo",
     "actions_display_style": "在移动设备上始终使用图标"
   },

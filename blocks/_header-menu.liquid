@@ -79,6 +79,8 @@
         assign ratio = block_settings.featured_collections_aspect_ratio
       elsif block_settings.menu_style == 'featured_products'
         assign ratio = block_settings.featured_products_aspect_ratio
+      elsif block_settings.menu_style == 'category_hover_products'
+        assign ratio = block_settings.category_hover_aspect_ratio
       endif
     %}
 
@@ -130,7 +132,8 @@
                       grid_columns_count_collection_images: 8,
                       menu_content_type: menu_content_type,
                       content_aspect_ratio: ratio,
-                      image_border_radius: image_border_radius
+                      image_border_radius: image_border_radius,
+                      category_hover_tag: block_settings.category_hover_tag
                     %}
                   </div>
                 </div>
@@ -291,6 +294,10 @@
     cursor: pointer;
     height: 100%;
     margin-block: 0;
+    /* Containing block for ::after below — without it, the safety-box spans the
+       whole header row (nearest positioned ancestor) instead of just this link,
+       and intercepts hover/pointer events meant for neighboring menu items. */
+    position: relative;
 
     &::after {
       content: '';
@@ -662,6 +669,17 @@
     }
   }
 
+  /* Category hover-swap panels (see mega-menu-list.liquid): non-default panels stay lazy and
+     fade in on first hover instead of popping in once their image finishes loading. */
+  [data-panel] .resource-card__image {
+    opacity: 0;
+    transition: opacity var(--animation-speed, 0.3s) var(--animation-easing, ease);
+  }
+
+  [data-panel] .resource-card__image.is-loaded {
+    opacity: 1;
+  }
+
   .menu-list__list-item[slot='overflow'] .section {
     grid-template-columns: 1fr;
   }
@@ -821,9 +839,42 @@
         {
           "value": "featured_collections",
           "label": "t:options.featured_collections"
+        },
+        {
+          "value": "category_hover_products",
+          "label": "t:options.category_hover_products"
         }
       ],
       "default": "collection_images"
+    },
+    {
+      "type": "text",
+      "id": "category_hover_tag",
+      "label": "t:settings.category_hover_tag",
+      "info": "t:info.category_hover_tag_info",
+      "default": "menu-featured",
+      "visible_if": "{{ block.settings.menu_style == 'category_hover_products' }}"
+    },
+    {
+      "type": "select",
+      "id": "category_hover_aspect_ratio",
+      "label": "t:settings.image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:options.auto"
+        },
+        {
+          "value": "4 / 5",
+          "label": "t:options.portrait"
+        },
+        {
+          "value": "1 / 1",
+          "label": "t:options.square"
+        }
+      ],
+      "default": "4 / 5",
+      "visible_if": "{{ block.settings.menu_style == 'category_hover_products' }}"
     },
     {
       "type": "select",

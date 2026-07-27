@@ -327,6 +327,7 @@
     "cart_total": "Total del carrito",
     "cart_type": "Tipo",
     "case": "Mayúsculas/minúsculas",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Botones de proceso de pago acelerado",
     "collection_list": "Colecciones",
     "collection_templates": "Plantillas de colección",
@@ -589,6 +590,7 @@
     "box": "Caja",
     "buttons": "Botones",
     "carrot": "Zanahoria",
+    "category_hover_products": "Category-featured products",
     "center": "Centro",
     "chat_bubble": "Burbuja de chat",
     "clipboard": "Portapapeles",
@@ -1088,6 +1090,7 @@
     "pills_usage": "Se usa para filtros aplicados, códigos de descuento y sugerencias de búsqueda",
     "hide_logo_on_home_page_help": "El logo seguirá visible cuando el encabezado fijo esté activo",
     "media_type_info": "Los destacados se completan con los enlaces del menú",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Solo afecta el logo del encabezado",
     "actions_display_style": "Los íconos siempre se usan en la versión móvil"
   },

@@ -328,6 +328,7 @@
     "cart_total": "Sepet toplamı",
     "cart_type": "Tür",
     "case": "Büyük/küçük harf",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Hızlı ödeme düğmeleri",
     "collection_list": "Koleksiyonlar",
     "collection_templates": "Koleksiyon şablonları",
@@ -588,6 +589,7 @@
     "box": "Kutu",
     "buttons": "Düğmeler",
     "carrot": "Havuç",
+    "category_hover_products": "Category-featured products",
     "center": "Orta",
     "chat_bubble": "Sohbet balonu",
     "clipboard": "Pano",
@@ -1088,6 +1090,7 @@
     "pills_usage": "Uygulanan filtreler, indirim kodları ve arama önerileri için kullanılır",
     "hide_logo_on_home_page_help": "Yapışkan üstbilgi etkinken logo görünür kalır",
     "media_type_info": "Özellikler, menü bağlantılarınız kullanılarak oluşturulur",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Yalnızca üstbilgi logosunu etkiler",
     "actions_display_style": "Mobilde her zaman simgeler kullanılır"
   },

@@ -314,6 +314,7 @@
     "cart_total": "Celkem v košíku",
     "cart_type": "Typ",
     "case": "Velká/malá písmena",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Tlačítka zrychlené pokladny",
     "collection_list": "Kolekce",
     "collection_templates": "Šablony kolekcí",
@@ -589,6 +590,7 @@
     "box": "Rámeček",
     "buttons": "Tlačítka",
     "carrot": "Mrkev",
+    "category_hover_products": "Category-featured products",
     "center": "Uprostřed",
     "chat_bubble": "Bublina chatu",
     "clipboard": "Schránka",
@@ -1088,6 +1090,7 @@
     "pills_usage": "Používá se pro aktivní filtry, slevové kódy a návrhy vyhledávání",
     "hide_logo_on_home_page_help": "Logo zůstane viditelné, když je aktivní přilepené záhlaví",
     "media_type_info": "Funkce se načítají z odkazů v nabídce",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Týká se pouze loga v záhlaví",
     "actions_display_style": "Na mobilních zařízeních se vždy používají ikony"
   },

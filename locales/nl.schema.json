@@ -330,6 +330,7 @@
     "cart_total": "Totaalbedrag winkelwagen",
     "cart_type": "Type",
     "case": "Hoofdlettergebruik",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "Knoppen voor versnelde checkout",
     "collection_list": "Collecties",
     "collection_templates": "Collectietemplates",
@@ -588,6 +589,7 @@
     "box": "Vak",
     "buttons": "Knoppen",
     "carrot": "Wortel",
+    "category_hover_products": "Category-featured products",
     "center": "Midden",
     "chat_bubble": "Tekstballon",
     "clipboard": "Klembord",
@@ -1088,6 +1090,7 @@
     "hover_effects": "Van toepassing op product- en collectiekaarten",
     "hide_logo_on_home_page_help": "Logo blijft zichtbaar wanneer de vaste koptekst actief is",
     "media_type_info": "Functies worden gevuld vanuit je menulinks",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "Alleen van invloed op het koptekstlogo",
     "actions_display_style": "Op mobiel worden altijd pictogrammen gebruikt"
   },

@@ -316,6 +316,7 @@
     "cart_total": "購物車總計",
     "cart_type": "類型",
     "case": "大小寫",
+    "category_hover_tag": "Shared product tag",
     "checkout_buttons": "加速結帳作業按鈕",
     "collection_list": "商品系列",
     "collection_templates": "商品系列範本",
@@ -589,6 +590,7 @@
     "box": "方塊",
     "buttons": "按鈕",
     "carrot": "紅蘿蔔",
+    "category_hover_products": "Category-featured products",
     "center": "置中",
     "chat_bubble": "聊天泡泡",
     "clipboard": "剪貼簿",
@@ -1088,6 +1090,7 @@
     "hover_effects": "適用於產品卡片與商品系列卡片",
     "hide_logo_on_home_page_help": "啟用固定頁首時，標誌仍會顯示",
     "media_type_info": "功能會根據您的選單連結自動帶入",
+    "category_hover_tag_info": "Hovering a category with this tag on a matching product shows it here. Tags are case-sensitive.",
     "logo_height": "僅影響頁首標誌",
     "actions_display_style": "在行動裝置上一律使用圖示"
   },

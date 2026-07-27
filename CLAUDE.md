@@ -152,7 +152,11 @@ Short version:
     revisits this.
 - **Tags** — reserved for internal operational flags only (e.g.
   `new-in`, `restock-soon`, `photo-needed`). Never for customer-facing
-  taxonomy — use metafields / metaobjects for that.
+  taxonomy — use metafields / metaobjects for that. This includes the
+  mega-menu's category hover-panel tag (theme setting, drives which
+  products show up when a shopper hovers a category) — see
+  `docs/adr/0001-mega-menu-category-hover-tag.md` for the current
+  tag value(s) in use before tagging a product.
 
 ## Scripts folder layout
 
