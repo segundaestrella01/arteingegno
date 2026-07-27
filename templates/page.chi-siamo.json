@@ -1,17 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_top": {
       "type": "hero",
-      "blocks": {},
-      "block_order": [],
       "name": "Hero banner",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/Screenshot_2026-07-27_at_17.00.54.png",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
         "section_height": "medium",
+        "section_height_custom": 50,
         "color_scheme": "scheme-1",
         "toggle_overlay": false,
+        "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -95,7 +123,11 @@
           "blocks": {}
         }
       },
-      "block_order": ["kicker", "heading", "intro_body"],
+      "block_order": [
+        "kicker",
+        "heading",
+        "intro_body"
+      ],
       "name": "Intro",
       "settings": {
         "content_direction": "column",
@@ -107,6 +139,8 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
         "color_scheme": "scheme-1",
         "background_media": "none",
         "video_position": "cover",
@@ -134,7 +168,7 @@
             "external_video_url": "",
             "external_video_autoplay": true,
             "external_video_loop": true,
-            "image": "",
+            "image": "shopify://shop_images/Screenshot_2026-07-27_at_17.11.35.png",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -204,10 +238,12 @@
               "blocks": {}
             }
           },
-          "block_order": ["heading", "body"]
+          "block_order": [
+            "heading",
+            "body"
+          ]
         }
       },
-      "block_order": ["media", "content"],
       "name": "Materiali",
       "settings": {
         "media_position": "right",
@@ -231,7 +267,7 @@
             "external_video_url": "",
             "external_video_autoplay": true,
             "external_video_loop": true,
-            "image": "",
+            "image": "shopify://shop_images/Screenshot_2026-07-27_at_16.53.34.png",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -301,10 +337,12 @@
               "blocks": {}
             }
           },
-          "block_order": ["heading", "body"]
+          "block_order": [
+            "heading",
+            "body"
+          ]
         }
       },
-      "block_order": ["media", "content"],
       "name": "Missione",
       "settings": {
         "media_position": "left",
@@ -328,7 +366,7 @@
             "external_video_url": "",
             "external_video_autoplay": true,
             "external_video_loop": true,
-            "image": "",
+            "image": "shopify://shop_images/Screenshot_2026-07-27_at_17.01.34.png",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -398,10 +436,12 @@
               "blocks": {}
             }
           },
-          "block_order": ["heading", "body"]
+          "block_order": [
+            "heading",
+            "body"
+          ]
         }
       },
-      "block_order": ["media", "content"],
       "name": "I Nostri Temi",
       "settings": {
         "media_position": "right",
@@ -468,7 +508,10 @@
           "blocks": {}
         }
       },
-      "block_order": ["heading", "body"],
+      "block_order": [
+        "heading",
+        "body"
+      ],
       "name": "Valori (esempio)",
       "settings": {
         "content_direction": "column",
@@ -480,6 +523,8 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
         "color_scheme": "scheme-1",
         "background_media": "none",
         "video_position": "cover",
@@ -525,6 +570,13 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -557,6 +609,13 @@
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -566,12 +625,17 @@
                 "img_1": {
                   "type": "image",
                   "settings": {
-                    "image": "",
+                    "image": "shopify://shop_images/Screenshot_2026-07-27_at_16.58.08.png",
+                    "link": "",
                     "image_ratio": "square",
                     "width": "fill",
+                    "custom_width": 100,
                     "width_mobile": "fill",
+                    "custom_width_mobile": 100,
                     "height": "fit",
                     "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
                     "border_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -583,12 +647,17 @@
                 "img_2": {
                   "type": "image",
                   "settings": {
-                    "image": "",
+                    "image": "shopify://shop_images/Screenshot_2026-07-27_at_16.52.59.png",
+                    "link": "",
                     "image_ratio": "square",
                     "width": "fill",
+                    "custom_width": 100,
                     "width_mobile": "fill",
+                    "custom_width_mobile": 100,
                     "height": "fit",
                     "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
                     "border_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -600,12 +669,17 @@
                 "img_3": {
                   "type": "image",
                   "settings": {
-                    "image": "",
+                    "image": "shopify://shop_images/Screenshot_2026-07-27_at_17.01.03.png",
+                    "link": "",
                     "image_ratio": "square",
                     "width": "fill",
+                    "custom_width": 100,
                     "width_mobile": "fill",
+                    "custom_width_mobile": 100,
                     "height": "fit",
                     "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
                     "border_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -615,7 +689,11 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["img_1", "img_2", "img_3"]
+              "block_order": [
+                "img_1",
+                "img_2",
+                "img_3"
+              ]
             },
             "row_2": {
               "type": "group",
@@ -643,6 +721,13 @@
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -652,12 +737,17 @@
                 "img_4": {
                   "type": "image",
                   "settings": {
-                    "image": "",
+                    "image": "shopify://shop_images/Screenshot_2026-07-27_at_17.13.15.png",
+                    "link": "",
                     "image_ratio": "square",
                     "width": "fill",
+                    "custom_width": 100,
                     "width_mobile": "fill",
+                    "custom_width_mobile": 100,
                     "height": "fit",
                     "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
                     "border_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -669,12 +759,17 @@
                 "img_5": {
                   "type": "image",
                   "settings": {
-                    "image": "",
+                    "image": "shopify://shop_images/Screenshot_2026-07-27_at_17.01.18.png",
+                    "link": "",
                     "image_ratio": "square",
                     "width": "fill",
+                    "custom_width": 100,
                     "width_mobile": "fill",
+                    "custom_width_mobile": 100,
                     "height": "fit",
                     "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
                     "border_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -686,12 +781,17 @@
                 "img_6": {
                   "type": "image",
                   "settings": {
-                    "image": "",
+                    "image": "shopify://shop_images/Screenshot_2026-07-27_at_16.54.18.png",
+                    "link": "",
                     "image_ratio": "square",
                     "width": "fill",
+                    "custom_width": 100,
                     "width_mobile": "fill",
+                    "custom_width_mobile": 100,
                     "height": "fit",
                     "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
                     "border_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
@@ -701,13 +801,22 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["img_4", "img_5", "img_6"]
+              "block_order": [
+                "img_4",
+                "img_5",
+                "img_6"
+              ]
             }
           },
-          "block_order": ["row_1", "row_2"]
+          "block_order": [
+            "row_1",
+            "row_2"
+          ]
         }
       },
-      "block_order": ["grid"],
+      "block_order": [
+        "grid"
+      ],
       "name": "Galleria",
       "settings": {
         "content_direction": "column",
@@ -719,6 +828,8 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
         "color_scheme": "scheme-3",
         "background_media": "none",
         "video_position": "cover",
@@ -764,7 +875,9 @@
           "blocks": {}
         }
       },
-      "block_order": ["body"],
+      "block_order": [
+        "body"
+      ],
       "name": "Frase di chiusura",
       "settings": {
         "content_direction": "column",
@@ -776,6 +889,8 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
         "color_scheme": "scheme-1",
         "background_media": "none",
         "video_position": "cover",
@@ -794,16 +909,35 @@
     },
     "hero_bottom": {
       "type": "hero",
-      "blocks": {},
-      "block_order": [],
       "name": "Hero di chiusura",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/Screenshot_2026-06-01_at_10.51.32.png",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
         "section_height": "small",
+        "section_height_custom": 50,
         "color_scheme": "scheme-1",
         "toggle_overlay": false,
+        "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
