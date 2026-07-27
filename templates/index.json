@@ -117,8 +117,7 @@
       },
       "block_order": [
         "intro_text",
-        "intro_body",
-        "intro_button"
+        "intro_body"
       ],
       "name": "Brand intro",
       "settings": {

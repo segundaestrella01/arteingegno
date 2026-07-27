@@ -7,25 +7,27 @@
   assign full_text = block.settings.text | strip_newlines | strip
   assign truncate_length = block.settings.truncate_length | default: 300
   assign is_long = false
+  assign visible_text = full_text
 
-  if full_text.size > truncate_length
-    assign is_long = true
-    assign next_char = full_text | slice: truncate_length, 1
-
-    if next_char == '' or next_char == ' '
-      assign visible_text = full_text | slice: 0, truncate_length
-    else
-      assign visible_words = full_text | slice: 0, truncate_length | split: ' '
-      assign trimmed_count = visible_words.size | minus: 1
-      assign visible_words = visible_words | slice: 0, trimmed_count
-      assign visible_text = visible_words | join: ' '
-    endif
-
-    assign visible_length = visible_text.size
-    assign hidden_text = full_text | slice: visible_length, 999999
-  else
-    assign visible_text = full_text
-  endif
+  # Show more/less truncation disabled for the moment - full text always visible.
+  #   if full_text.size > truncate_length
+  #     assign is_long = true
+  #     assign next_char = full_text | slice: truncate_length, 1
+  #
+  #     if next_char == '' or next_char == ' '
+  #       assign visible_text = full_text | slice: 0, truncate_length
+  #     else
+  #       assign visible_words = full_text | slice: 0, truncate_length | split: ' '
+  #       assign trimmed_count = visible_words.size | minus: 1
+  #       assign visible_words = visible_words | slice: 0, trimmed_count
+  #       assign visible_text = visible_words | join: ' '
+  #     endif
+  #
+  #     assign visible_length = visible_text.size
+  #     assign hidden_text = full_text | slice: visible_length, 999999
+  #   else
+  #     assign visible_text = full_text
+  #   endif
 %}
 
 {% if full_text != blank %}
