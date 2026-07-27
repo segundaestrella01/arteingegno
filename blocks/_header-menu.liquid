@@ -670,10 +670,12 @@
   }
 
   /* Category hover-swap panels (see mega-menu-list.liquid): non-default panels stay lazy and
-     fade in on first hover instead of popping in once their image finishes loading. */
+     fade in on first hover instead of popping in once their image finishes loading.
+     Deliberately not using --animation-speed (0.125s) here - that's tuned for UI micro-interactions
+     and is too fast to read as a fade once an already-warm CDN thumbnail loads. */
   [data-panel] .resource-card__image {
     opacity: 0;
-    transition: opacity var(--animation-speed, 0.3s) var(--animation-easing, ease);
+    transition: opacity 0.4s var(--animation-easing, ease);
   }
 
   [data-panel] .resource-card__image.is-loaded {
