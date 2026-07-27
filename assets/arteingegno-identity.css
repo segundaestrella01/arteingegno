@@ -280,35 +280,22 @@ h1.product__title {
 }
 
 /* ============================================================
-   8. FOOTER — uppercase tracked links (color comes from the
-   section's own color_scheme — see section 22 below)
+   8. FOOTER — heading matches the home page's section headings
+   (Cormorant Garamond, see section 22); links inherit the page's
+   default Jost body font, same as everywhere else, so no override
+   is needed for them here.
+
+   The footer's menu block renders its heading as
+   <summary class="menu__heading h3"> (blocks/menu.liquid), never a
+   real <h3> tag, so the ".section h3" tag selector in section 22
+   can't reach it — it has to be targeted directly by class instead.
+   Color still comes from the section's own color_scheme — see
+   section 22 below.
    ============================================================ */
-.footer__heading,
-.footer__column-heading,
-[class*="footer"] h3,
-[class*="footer"] h4,
-[class*="footer"] strong {
-  font-family: var(--font-jost);
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-brand);
-}
-
-.footer a,
-.footer__list-item a,
-[class*="footer__link"] {
-  font-family: var(--font-jost);
-  font-size: 0.75rem;
+.footer-content .menu__heading {
+  font-family: var(--font-display);
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-brand);
-  text-decoration: none;
-}
-
-.footer a:hover,
-[class*="footer__link"]:hover {
-  text-decoration: underline;
+  letter-spacing: 0.06em;
 }
 
 /* ============================================================
